@@ -102,16 +102,14 @@ function storeTwitterData(response){
         var urlIndex = tweet.indexOf("http");
         var tweetBox = $("<div>");
 
+        //If the tweet has a url at the end
         if(urlIndex !== -1){
             var newTweetArray = tweet.split(" ");
             var urlTweet = newTweetArray.pop();
             var newTweet = newTweetArray.join(" ");
 
-            var hyperLinkText = " more info";
-            var hyperLink = hyperLinkText.link(urlTweet);
-
+            var hyperLink = $("<a>").text("more info").attr("href",urlTweet).attr("target", "_blank");
             tweetBox.append(newTweet, hyperLink).addClass("tweetText");
-            // $(".tweetsFeed").append(tweetBox);
         }
         else{
             tweetBox.append(tweet).addClass("tweetText");
