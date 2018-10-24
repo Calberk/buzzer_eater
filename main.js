@@ -197,7 +197,7 @@ function storeTwitterData(){
  * @return restaurant coordinates and restaurant information
  * @calls initMap
  */
-function getRestaurantInformation(coordinateArr){
+function getRestaurantInformation(){
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -208,8 +208,8 @@ function getRestaurantInformation(coordinateArr){
             // url: 'api/v2.1/search?q=bar&count=20&lat='+lat+'&lon='+long+'&radius=1.0&cuisines=983%2C%20227'
             url: 'api/v2.1/search',
             count: 10,
-            lat: coordinateArr[0],
-            lon: coordinateArr[1],
+            lat: numCoord[0],
+            lon: numCoord[1],
             radius: 5000,
             cuisines: 227,
             q: "bar",
@@ -231,21 +231,25 @@ function getRestaurantInformation(coordinateArr){
     $.ajax(settings)
 }
 /***************************************************************************************************
- * renderRestaurants - take in a  object, create html elements from the values and then append the elements
- * into the .student_list tbody
+ * renderRestaurants - take in a  object, dynamically create html elements with object values and append the elements
+ * into the restaurantSection
  * @param object of restaurant info
  */
 function renderRestaurants(restObj){
     var restaurantContainer = $("<div>").addClass("mainRestaurantContainer");
     var imageContainer = $("<div>").addClass("image");
     var image = $("<img>").addClass("appImage").attr("src", "images/basketball_beer.jpg");
-    var infoContainer = $("<div>").addClass("info");
+    var infoContainer = $("<a>", {
+        class: "info",
+        href: restObj.url,
+        target: "_blank"
+    });
     var nameContainer = $("<div>").addClass("restaurantName").text(restObj.name);
     var cityContainer = $("<div>").addClass("city").text(restObj.city);
     var addressContainer = $("<div>").addClass("address").text(restObj.address);
     var rateContainer = $("<div>").addClass("rateSection");
     var ratingContainer = $("<div>").addClass("rating").text(restObj.rating);
-    var voteContainer = $("<div>").addClass("votes").text(restObj.votes);
+    var voteContainer = $("<div>").addClass("votes").text(restObj.votes + " reviews");
     infoContainer.append(nameContainer, cityContainer, addressContainer);
     rateContainer.append(ratingContainer, voteContainer);
     imageContainer.append(image);
@@ -260,7 +264,7 @@ function renderRestaurants(restObj){
  */
 function createRestaurantObj(apiObj) {
     var brewery = apiObj.restaurants;
-    var restaurantsArray = []
+    var restaurantsArray = [];
     for (var restaurantIndex = 0; restaurantIndex < brewery.length; restaurantIndex++) {
         var restaurantObj = {};
         var restLat = brewery[restaurantIndex].restaurant.location.latitude;
@@ -271,6 +275,7 @@ function createRestaurantObj(apiObj) {
         var restRating = brewery[restaurantIndex].restaurant.user_rating.aggregate_rating;
         var restCity = brewery[restaurantIndex].restaurant.location.locality;
         var restRateCount = brewery[restaurantIndex].restaurant.user_rating.votes;
+        var restUrl = brewery[restaurantIndex].restaurant.url;
         restaurantObj.latitude = restLat;
         restaurantObj.longitude = restLong;
         restaurantObj.name = restName;
@@ -279,6 +284,7 @@ function createRestaurantObj(apiObj) {
         restaurantObj.rating = restRating;
         restaurantObj.city = restCity;
         restaurantObj.votes = restRateCount;
+        restaurantObj.url = restUrl;
         renderRestaurants(restaurantObj);
         restaurantsArray.push(restaurantObj);
         console.log(restaurantsArray);
