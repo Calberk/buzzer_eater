@@ -44,6 +44,7 @@ var logos = {
     "WAS": "nbaimages/WAS.png"
 };
 
+var numCoord;
 
 /***************************************************************************************************
  * initializeApp
@@ -53,10 +54,9 @@ var logos = {
  */
 function initializeApp(){
     landing();
-    // search_result();
     getNBAData();
-    storeTwitterData();
-    initMap();
+    clickHandlers();
+
 }
 
 /***************************************************************************************************
@@ -102,7 +102,7 @@ function initMap(restArray) {
         // });
 
 
-// }
+}
 
 /***************************************************************************************************
  * attachRestaurantInfo
@@ -127,6 +127,13 @@ function attachRestaurantInfo(marker, info){
  * @return:
  none
  */
+
+function clickHandlers(){
+        document.getElementById('submit').addEventListener('click', function() {
+        search_result(geocoder, map);
+        openPage();
+});
+}
 function landing() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
@@ -138,9 +145,10 @@ function landing() {
     //     geocodeAddress(geocoder, map);
     // });
 
-    document.getElementById('submit').addEventListener('click', function() {
-        search_result(geocoder, map);
-    });
+    // document.getElementById('submit').addEventListener('click', function() {
+    //     search_result(geocoder, map);
+    //     openPage();
+    // });
 }
 
 /***************************************************************************************************
@@ -150,7 +158,7 @@ function landing() {
  none
  */
 
-var numCoord;
+
 
 function search_result(geocoder, resultsMap) {
 
@@ -171,6 +179,7 @@ function search_result(geocoder, resultsMap) {
             alert('Geocode was not successful for the following reason: ' + status);
         }
     });
+    getRestaurantInformation();
 }
 /***************************************************************************************************
  * getTwitterData -
@@ -189,7 +198,7 @@ function getTwitterData(){
  */
 function storeTwitterData(){
     // var array = [33.8169, -118.0369];
-    getRestaurantInformation(array);
+    // getRestaurantInformation(array);
 }
 /***************************************************************************************************
  * getRestaurantInformation - clears out the form values based on inputIds variable
@@ -471,4 +480,14 @@ function generateScoreboard(teamOne, teamTwo, gameInfo) {
     timer.append(timerContainer);
     scoreboard.append(homeTeam, awayTeam, timer);
     $(".gameSection").append(scoreboard);
+}
+
+/***************************************************************************************************
+ * formatTeamInfo -
+ * @param: tricode, score, teamImg
+ * @returns team Obj
+ */
+function openPage() {
+  $(".pageOne").toggle(".display");
+  $(".pageTwo").toggle(".display");
 }
