@@ -11,10 +11,6 @@ body {
     /*display: none;*/
 }
 
-.hide{
-    display: none;
-}
-
 .searchSection {
     position: absolute;
     top: 10px;
@@ -34,7 +30,7 @@ body {
     height: 100vh;
     background-color: purple;
     display: inline-block;
-    /*display: none;*/
+    display: none;
 }
 
 .leftHalf {
@@ -284,4 +280,8 @@ box-shadow: inset 0 0 5px whitesmoke;
 ::-webkit-scrollbar-thumb {
 background: white;
 border-radius: 10px;
+}
+
+.display {
+    display: none;
 }
