@@ -44,7 +44,9 @@ var logos = {
     "WAS": "nbaimages/WAS.png"
 };
 
-var numCoord;  {lat: 41234 , lng 324234}
+var numCoord;
+
+
 
 /***************************************************************************************************
  * initializeApp
@@ -56,6 +58,7 @@ function initializeApp(){
     landing();
     getNBAData();
     clickHandlers();
+
 
 }
 
@@ -73,6 +76,7 @@ function initMap(restArray) {
     var bounds = new google.maps.LatLngBounds();
     var map = new google.maps.Map(
         document.getElementById('map'), {zoom: 15, center: numCoord});// areaOne needs to be the city we are searching
+
 
 
 
@@ -127,28 +131,11 @@ function attachRestaurantInfo(marker, info){
  * @return:
  none
  */
-
 function clickHandlers(){
         document.getElementById('submit').addEventListener('click', function() {
         search_result(geocoder, map);
         openPage();
 });
-}
-function landing() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 10,
-        center: {lat: 33.652775, lng: -117.750732}
-    });
-    var geocoder = new google.maps.Geocoder();
-
-    // $("#submit").addEventListener('click', function() {
-    //     geocodeAddress(geocoder, map);
-    // });
-
-    // document.getElementById('submit').addEventListener('click', function() {
-    //     search_result(geocoder, map);
-    //     openPage();
-    // });
 }
 
 /***************************************************************************************************
@@ -175,6 +162,7 @@ function search_result(geocoder, resultsMap) {
             var long_latArr = coorStr.split(",");
             numCoord = long_latArr.map(Number);
             console.log(numCoord);
+            getRestaurantInformation();
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
@@ -197,8 +185,7 @@ function getTwitterData(){
  * @calls
  */
 function storeTwitterData(){
-    // var array = [33.8169, -118.0369];
-    // getRestaurantInformation(array);
+
 }
 /***************************************************************************************************
  * getRestaurantInformation - clears out the form values based on inputIds variable
