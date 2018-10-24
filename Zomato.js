@@ -53,27 +53,6 @@ function getRestaurantInformation(lat, long) {
             console.log(arguments);
         }
     };
-
-    // var settings = {
-    //     "async": true,
-    //     "crossDomain": true,
-    //     "url": "https://danielpaschal.com/zamatoproxy.php",
-    //     "method": "GET",
-    //     data: {
-    //         url: 'api/v2.1/search?lat=33.6846&lon=-117.8265&cuisines=983%2C%20821%2C%20227%2C%20270'
-    //     },
-    //     "headers": {
-    //         "user-key": "dd384e671b6ae1836ee2ff1a1829fdbc",
-    //
-    //     },
-    //     dataType: 'json',
-    //     success: function( response){
-    //         console.log(response);
-    //     },
-    //     error: function(err){
-    //         console.log(arguments);
-    //     }
-    // }
     $.ajax(settings)
 }
 //
@@ -124,3 +103,24 @@ function getRestaurantInformation(lat, long) {
 //         console.log(arguments);
 //     }
 // };
+
+// var settings = {
+//     "async": true,
+//     "crossDomain": true,
+//     "url": "https://danielpaschal.com/zamatoproxy.php",
+//     "method": "GET",
+//     data: {
+//         url: 'api/v2.1/search?lat=33.6846&lon=-117.8265&cuisines=983%2C%20821%2C%20227%2C%20270'
+//     },
+//     "headers": {
+//         "user-key": "dd384e671b6ae1836ee2ff1a1829fdbc",
+//
+//     },
+//     dataType: 'json',
+//     success: function( response){
+//         console.log(response);
+//     },
+//     error: function(err){
+//         console.log(arguments);
+//     }
+// }
