@@ -206,7 +206,7 @@ function getRestaurantInformation(){
             count: 10,
             lat: numCoord.lat,
             lon: numCoord.lng,
-            radius: 5000,
+            radius: 1000,
             cuisines: 227,
             q: "bar",
 
