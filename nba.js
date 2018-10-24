@@ -5,19 +5,17 @@ function initializeApp() {
 }
 
 
-var currentTime = new Date()
-var month = currentTime.getUTCMonth() + 1; //months from 1-12
-var day =currentTime.getUTCDate()-1;
-var year = currentTime.getUTCFullYear();
-
-
 function getNBAData() {
+    var currentTime = new Date();
+    var month = currentTime.getUTCMonth() + 1;
+    var day =currentTime.getUTCDate()-1;
+    var year = currentTime.getUTCFullYear();
 
     var nbaData = {
         "async": true,
         "crossDomain": true,
         'dataType': 'json',
-        "url": "http://danielpaschal.com/nbaproxy.php?year=" + year + "&month=" + month + "&date=" + day + "",
+        "url": `http://danielpaschal.com/nbaproxy.php?year=${year}&month=${month}&date=${day}`,
         "method": "GET",
     }
 
@@ -29,7 +27,6 @@ function getNBAData() {
 }
 
 function updateNBAScores(nbaData) {
-    // var nbaScoreArray = []
     var numberGames = nbaData.numGames;
     for (var i = 0; i < numberGames; i++) {
         var teamName1 = nbaData.games[i].hTeam.triCode;
