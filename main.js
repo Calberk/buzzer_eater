@@ -44,7 +44,7 @@ var logos = {
     "WAS": "nbaimages/WAS.png"
 };
 
-var numCoord = {lat: 33.5424719, lng: -117.782074};
+var numCoord = {};
 
 
 
@@ -55,11 +55,11 @@ var numCoord = {lat: 33.5424719, lng: -117.782074};
  * initializes the application, including adding click handlers and pulling in any data from the server
  */
 function initializeApp(){
-    // landing();
+    getTwitterData();
     getNBAData();
-    clickHandlers();
-    getRestaurantInformation();
-
+    // clickHandlers();
+    // getRestaurantInformation();
+    landing();
 }
 
 /***************************************************************************************************
@@ -68,43 +68,35 @@ function initializeApp(){
  * @returns  {undefined}
  *
  */
+    function initMap(restArray) {
 
 
-function initMap(restArray) {
+        var bounds = new google.maps.LatLngBounds();
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 10, center: numCoord});// areaOne needs to be the city we are searching
 
 
-    var bounds = new google.maps.LatLngBounds();
-    var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 15, center: numCoord});// areaOne needs to be the city we are searching
 
 
-    for (i = 0; i < restArray.length; i++) {
-        var position = new google.maps.LatLng(restArray[i].latitude, restArray[i].longitude);
-        bounds.extend(position);
-        marker = new google.maps.Marker({
-            position: position,
-            map: map,
-            title: restArray[i].name
-        });
-        var infoWindow = new google.maps.InfoWindow(), marker, i;
+        for (i = 0; i < restArray.length; i++) {
+            var position = new google.maps.LatLng(restArray[i].latitude, restArray[i].longitude);
+            bounds.extend(position);
+            marker = new google.maps.Marker({
+                position: position,
+                map: map,
+                title: restArray[i].name
+            });
+            var infoWindow = new google.maps.InfoWindow(), marker, i;
+            google.maps.event.addListener(marker, 'click', (function(marker, i, infoWindow) {
+                return function() {
+                    infoWindow.setContent(restArray[i].name);
+                    infoWindow.open(map, marker);
+                }
+            })(marker, i, infoWindow));
+        }
+
 
     }
-    google.maps.event.addListener(marker, 'click', (function (marker, i) {
-        return function () {
-            infoWindow.setContent(infoWindowContent[i][0]);
-            infoWindow.open(map, marker);
-        }
-    })(marker, i));
-
-    // var markerOne = new google.maps.Marker({position: position, map: map});
-    // var infowindow = new google.maps.InfoWindow({
-    //     content: 'Wild Wings'
-    // });
-    // markerOne.addListener('click', function () {
-    //     infowindow.open(markerOne.get('map'), markerOne);
-    // });
-
-}
 
 /***************************************************************************************************
  * attachRestaurantInfo
@@ -112,15 +104,32 @@ function initMap(restArray) {
  * @returns  {undefined}
  *
  */
-function attachRestaurantInfo(marker, info){
-    var infowindow = new google.maps.InfoWindow({
-        content: 'Wild Wings'
-    });
+// function attachRestaurantInfo(marker, info){
+//     var infowindow = new google.maps.InfoWindow({
+//         content: 'Wild Wings'
+//     });
+//
+//     marker.addListener('click', function() {
+//         infowindow.open(marker.get('map'), marker);
+//     });
+//
+// }
 
-    marker.addListener('click', function() {
-        infowindow.open(marker.get('map'), marker);
+function landing() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: {lat: 33.652775, lng: -117.750732}
     });
+    var geocoder = new google.maps.Geocoder();
 
+    // $("#submit").addEventListener('click', function() {
+    //     geocodeAddress(geocoder, map);
+    // });
+
+    document.getElementById('submit').addEventListener('click', function() {
+        search_result(geocoder, map);
+        openPage();
+    });
 }
 
 /***************************************************************************************************
@@ -129,30 +138,14 @@ function attachRestaurantInfo(marker, info){
  * @return:
  none
  */
-function clickHandlers(){
-        document.getElementById('submit').addEventListener('click', function() {
-        // search_result(geocoder, map);
-        openPage();
-});
-
-}
+// function clickHandlers(){
+//         document.getElementById('submit').addEventListener('click', function() {
+//         search_result();
+//         openPage();
+// });
+//
+// }
 // }}
-
-    /***************************************************************************************************
-     * attachRestaurantInfo
-     * @params {undefined}
-     * @returns  {undefined}
-     *
-     */
-    function attachRestaurantInfo(marker, info) {
-        var infowindow = new google.maps.InfoWindow({
-            content: 'Wild Wings'
-        });
-
-
-        marker.addListener('click', function () {
-            infowindow.open(marker.get('map'), marker);
-        });
 
 /***************************************************************************************************
  * search_result -
@@ -169,21 +162,25 @@ function search_result(geocoder, resultsMap) {
     geocoder.geocode({'address': address}, function(results, status) {
         if (status === 'OK') {
             resultsMap.setCenter(results[0].geometry.location);
+            console.log(results[0]);
             var marker = new google.maps.Marker({
                 map: resultsMap,
                 position: results[0].geometry.location,
             });
             var loc = resultsMap.getCenter();
-            var coorStr = loc.lat() + ',' + loc.lng();
-            var long_latArr = coorStr.split(",");
-            numCoord = long_latArr.map(Number);
+            numCoord = {
+                lat: loc.lat(),
+                lng: loc.lng()
+            };
+            // numCoord.lat=loc.lat();
+            // numCoord.lng=loc.lng();
             console.log(numCoord);
             getRestaurantInformation();
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
     });
-    getRestaurantInformation();
+    // getRestaurantInformation();
 }
 /***************************************************************************************************
  * getTwitterData -
@@ -193,14 +190,58 @@ function search_result(geocoder, resultsMap) {
  */
 function getTwitterData(){
 
+     var ajaxObject = {
+            url: 'https://s-apis.learningfuze.com/hackathon/twitter/index.php',
+            dataType: 'json',
+            method: 'post',
+            data: {
+                action: 'user',
+                screen_name: 'nba',
+                get_timeline: 'true',
+                include_entities: 'true',
+            },
+            success: function(response){
+                storeTwitterData(response);
+            }
+        };
+        $.ajax(ajaxObject)
 }
 /***************************************************************************************************
  * storeTwitterData -
- * @param
- * @return
- * @calls
+ * @param:
+ * @return:
+ * @calls:
  */
-function storeTwitterData(){
+function storeTwitterData(response){
+    var twitterArray = response.info;
+
+    for(var i = 0; i < twitterArray.length; i++){
+        var tweet = twitterArray[i].text;
+        var urlIndex = tweet.indexOf("http");
+        var tweetBox = $("<div>");
+
+        //If the tweet has a url at the end
+        if(urlIndex !== -1){
+            var newTweetArray = tweet.split(" ");
+            var urlTweet = newTweetArray.pop();
+            var newTweet = newTweetArray.join(" ");
+
+            var hyperLink = $("<a>").text("more info").attr("href",urlTweet).attr("target", "_blank");
+            tweetBox.append(newTweet, hyperLink).addClass("tweetText");
+        }
+        else{
+            tweetBox.append(tweet).addClass("tweetText");
+        }
+        $(".tweetsFeed").append(tweetBox);
+    }
+
+    var nbaLogo = $("<img>").attr("src", "images/nbalogo.jpg");
+    var verifiedLogo = $("<img>").attr("src", "images/verified2.png");
+    var nbaHandleName = response.info[0].user.name;
+
+    $(".tweetLogo").append(nbaLogo);
+    $(".twitterHandle").append(nbaHandleName);
+    $(".twitterVerified").append(verifiedLogo);
 
 }
 /***************************************************************************************************
@@ -210,6 +251,7 @@ function storeTwitterData(){
  * @calls initMap
  */
 function getRestaurantInformation(){
+    console.log(numCoord.lat, numCoord.lng);
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -217,16 +259,14 @@ function getRestaurantInformation(){
         "method": "GET",
         dataType: 'json',
         data: {
-            // url: 'api/v2.1/search?q=bar&count=20&lat='+lat+'&lon='+long+'&radius=1.0&cuisines=983%2C%20227'
             url: 'api/v2.1/search',
             count: 10,
             lat: numCoord.lat,
             lon: numCoord.lng,
-            radius: 5000,
+            radius: 1000,
             cuisines: 227,
             q: "bar",
 
-            //url: 'api/v2.1/search?lat=33.6846&lon=-117.8265&cuisines=983%2C%20821%2C%20227%2C%20270'
         },
         "headers": {
             "user-key": "dd384e671b6ae1836ee2ff1a1829fdbc",
@@ -268,148 +308,6 @@ function renderRestaurants(restObj){
     restaurantContainer.append(imageContainer, infoContainer, rateContainer);
     $(".restaurantSection").append(restaurantContainer);
 }
-
-    }
-
-    /***************************************************************************************************
-     * land -
-     * @param:
-     * @return:
-     none
-     */
-    function landing() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 10,
-            center: {lat: 33.652775, lng: -117.750732}
-        });
-        var geocoder = new google.maps.Geocoder();
-
-        // $("#submit").addEventListener('click', function() {
-        //     geocodeAddress(geocoder, map);
-        // });
-
-        document.getElementById('submit').addEventListener('click', function () {
-            search_result(geocoder, map);
-        });
-    }
-
-    /***************************************************************************************************
-     * search_result -
-     * @param: two (geocoder, resultsMap)
-     * @return:
-     none
-     */
-
-    var numCoord;
-
-    function search_result(geocoder, resultsMap) {
-
-        var address = $("#address").val();
-        geocoder.geocode({'address': address}, function (results, status) {
-            if (status === 'OK') {
-                resultsMap.setCenter(results[0].geometry.location);
-                var marker = new google.maps.Marker({
-                    map: resultsMap,
-                    position: results[0].geometry.location,
-                });
-                var loc = resultsMap.getCenter();
-                var coorStr = loc.lat() + ',' + loc.lng();
-                var long_latArr = coorStr.split(",");
-                numCoord = long_latArr.map(Number);
-                console.log(numCoord);
-            } else {
-                alert('Geocode was not successful for the following reason: ' + status);
-            }
-        });
-    }
-
-    /***************************************************************************************************
-     * getTwitterData -
-     * @param:
-     * @returns:
-     * @calls:
-     */
-    function getTwitterData() {
-
-    }
-
-    /***************************************************************************************************
-     * storeTwitterData -
-     * @param
-     * @return
-     * @calls
-     */
-    function storeTwitterData() {
-        // var array = [33.8169, -118.0369];
-        getRestaurantInformation(array);
-    }
-
-    /***************************************************************************************************
-     * getRestaurantInformation - clears out the form values based on inputIds variable
-     * @param {undefined} lat, long
-     * @return restaurant coordinates and restaurant information
-     * @calls initMap
-     */
-    function getRestaurantInformation() {
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://danielpaschal.com/zamatoproxy.php",
-            "method": "GET",
-            dataType: 'json',
-            data: {
-                // url: 'api/v2.1/search?q=bar&count=20&lat='+lat+'&lon='+long+'&radius=1.0&cuisines=983%2C%20227'
-                url: 'api/v2.1/search',
-                count: 10,
-                lat: numCoord[0],
-                lon: numCoord[1],
-                radius: 5000,
-                cuisines: 227,
-                q: "bar",
-
-                //url: 'api/v2.1/search?lat=33.6846&lon=-117.8265&cuisines=983%2C%20821%2C%20227%2C%20270'
-            },
-            "headers": {
-                "user-key": "dd384e671b6ae1836ee2ff1a1829fdbc",
-
-            },
-            success: function (response) {
-                console.log(response);
-                createRestaurantObj(response);
-            },
-            error: function (err) {
-                console.log(arguments);
-            }
-        };
-        $.ajax(settings)
-    }
-
-    /***************************************************************************************************
-     * renderRestaurants - take in a  object, dynamically create html elements with object values and append the elements
-     * into the restaurantSection
-     * @param object of restaurant info
-     */
-    function renderRestaurants(restObj) {
-        var restaurantContainer = $("<div>").addClass("mainRestaurantContainer");
-        var imageContainer = $("<div>").addClass("image");
-        var image = $("<img>").addClass("appImage").attr("src", "images/basketball_beer.jpg");
-        var infoContainer = $("<a>", {
-            class: "info",
-            href: restObj.url,
-            target: "_blank"
-        });
-        var nameContainer = $("<div>").addClass("restaurantName").text(restObj.name);
-        var cityContainer = $("<div>").addClass("city").text(restObj.city);
-        var addressContainer = $("<div>").addClass("address").text(restObj.address);
-        var rateContainer = $("<div>").addClass("rateSection");
-        var ratingContainer = $("<div>").addClass("rating").text(restObj.rating);
-        var voteContainer = $("<div>").addClass("votes").text(restObj.votes + " reviews");
-        infoContainer.append(nameContainer, cityContainer, addressContainer);
-        rateContainer.append(ratingContainer, voteContainer);
-        imageContainer.append(image);
-        restaurantContainer.append(imageContainer, infoContainer, rateContainer);
-        $(".restaurantSection").append(restaurantContainer);
-    }
 
     /***************************************************************************************************
      * createRestaurantObj - take in a  object, create html elements from the values and then append the elements
@@ -646,9 +544,13 @@ function getNBADataInterval() {
         timer.append(timerContainer);
         scoreboard.append(homeTeam, awayTeam, timer);
         $(".gameSection").append(scoreboard);
+
         getNBADataInterval();
 
 }
+
+ 
+
 
 /***************************************************************************************************
  * formatTeamInfo -

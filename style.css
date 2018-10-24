@@ -33,7 +33,7 @@ body {
 .pageTwo {
     width: 100vw;
     height: 100vh;
-    background-color: purple;
+    background-color: black;
     display: inline-block;
     /*display: none;*/
 }
@@ -41,7 +41,7 @@ body {
 .leftHalf {
     width: 50%;
     height: 100%;
-    background-color: orange;
+    background-color: black;
     display: inline-block;
 }
 
@@ -999,7 +999,6 @@ body {
 
 /*LOGO ANIMATION END from (clemishow on https://codepen.io/clemishow/pen/ZYPPeE) and (Vladimir Gashenko onhttps://codepen.io/gxash/pen/QNzKoj)*/
 
-=======
 .display {
     display: none;
 }
