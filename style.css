@@ -7,8 +7,12 @@ body {
 .pageOne {
     width: 100vw;
     height: 100vh;
+<<<<<<< HEAD
     /*background-color: gold;*/
     display: none;
+=======
+    /*display: none;*/
+>>>>>>> d56511f039fdffce3877640fc98085cdfe3b3b33
 }
 
 .searchSection {
@@ -867,7 +871,6 @@ body {
     z-index: 10;
 }
 
-
 /*Shadow on floor*/
 
 #ballShadow {
@@ -996,3 +999,7 @@ body {
 
 /*LOGO ANIMATION END from (clemishow on https://codepen.io/clemishow/pen/ZYPPeE) and (Vladimir Gashenko onhttps://codepen.io/gxash/pen/QNzKoj)*/
 
+=======
+.display {
+    display: none;
+}
