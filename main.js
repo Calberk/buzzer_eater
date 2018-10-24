@@ -44,7 +44,7 @@ var logos = {
     "WAS": "nbaimages/WAS.png"
 };
 
-var numCoord;
+var numCoord;  {lat: 41234 , lng 324234}
 
 /***************************************************************************************************
  * initializeApp
