@@ -52,8 +52,8 @@ var logos = {
  * initializes the application, including adding click handlers and pulling in any data from the server
  */
 function initializeApp(){
-    landing();
-    search_result();
+    // landing();
+    // search_result();
     getNBAData();
     storeTwitterData();
 }
@@ -64,65 +64,65 @@ function initializeApp(){
  * @returns  {undefined}
  *
  */
-function initMap(){
-    var areaOne = {lat: 34.101302, lng: -118.343581};
-    var areaTwo = {lat: 34.103300, lng: -118.339200};
-    var areaThree = {lat: 34.104600, lng: -118.341800};
-    var areaFour = {lat: 34.101700, lng: -118.338200};
-    var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 15, center: areaOne});// areaOne needs to be the city we are searching
-    var markerOne = new google.maps.Marker({position: areaOne, map: map});
-    var infowindow = new google.maps.InfoWindow({
-        content: 'Wild Wings'
-    });
-    markerOne.addListener('click', function() {
-        infowindow.open(markerOne.get('map'), markerOne);
-    });
-    // var markerTwo = new google.maps.Marker({position: areaTwo, map: map});
-    // var markerThree = new google.maps.Marker({position: areaThree, map: map});
-    // var markerFour = new google.maps.Marker({position: areaFour, map: map});
-
-}
-
-// var position = {lat: 34.101302, lng: -118.343581};
-
-var marker = new google.maps.Marker({
-    position: {
-        lat: 34.101302,
-        lng: -118.343581
-    },
-    map: map
-});
-
-var zomato = {
-    position: {
-        lat: zomatoResult[i]['coordinates']['latitude'],
-        lng: zomatoResult[i]['coordinates']['longitude']
-    },
-    name: {
-        zomatoResult[i]['name']
-    }
-}
-
-for (var key in object) { }
-
-
-
-
-
-    var marker = new google.maps.Marker({
-        position: position,
-        map: map,
-        title: zomatoResult['name']
-    });
-    var infowindow = new google.maps.InfoWindow({
-        content: 'Wild Wings'
-    });
-    markerOne.addListener('click', function() {
-        infowindow.open(markerOne.get('map'), markerOne);
-    });
-
-}
+// function initMap(){
+//     var areaOne = {lat: 34.101302, lng: -118.343581};
+//     var areaTwo = {lat: 34.103300, lng: -118.339200};
+//     var areaThree = {lat: 34.104600, lng: -118.341800};
+//     var areaFour = {lat: 34.101700, lng: -118.338200};
+//     var map = new google.maps.Map(
+//         document.getElementById('map'), {zoom: 15, center: areaOne});// areaOne needs to be the city we are searching
+//     var markerOne = new google.maps.Marker({position: areaOne, map: map});
+//     var infowindow = new google.maps.InfoWindow({
+//         content: 'Wild Wings'
+//     });
+//     markerOne.addListener('click', function() {
+//         infowindow.open(markerOne.get('map'), markerOne);
+//     });
+//     // var markerTwo = new google.maps.Marker({position: areaTwo, map: map});
+//     // var markerThree = new google.maps.Marker({position: areaThree, map: map});
+//     // var markerFour = new google.maps.Marker({position: areaFour, map: map});
+//
+// }
+//
+// // var position = {lat: 34.101302, lng: -118.343581};
+//
+// var marker = new google.maps.Marker({
+//     position: {
+//         lat: 34.101302,
+//         lng: -118.343581
+//     },
+//     map: map
+// });
+//
+// var zomato = {
+//     position: {
+//         lat: zomatoResult[i]['coordinates']['latitude'],
+//         lng: zomatoResult[i]['coordinates']['longitude']
+//     },
+//     name: {
+//         zomatoResult[i]['name']
+//     }
+// }
+//
+// for (var key in object) { }
+//
+//
+//
+//
+//
+//     var marker = new google.maps.Marker({
+//         position: position,
+//         map: map,
+//         title: zomatoResult['name']
+//     });
+//     var infowindow = new google.maps.InfoWindow({
+//         content: 'Wild Wings'
+//     });
+//     markerOne.addListener('click', function() {
+//         infowindow.open(markerOne.get('map'), markerOne);
+//     });
+//
+// }
 
 /***************************************************************************************************
  * attachRestaurantInfo
@@ -130,16 +130,16 @@ for (var key in object) { }
  * @returns  {undefined}
  *
  */
-function attachRestaurantInfo(marker, info){
-    var infowindow = new google.maps.InfoWindow({
-        content: 'Wild Wings'
-    });
-
-    marker.addListener('click', function() {
-        infowindow.open(marker.get('map'), marker);
-    });
-
-}
+// function attachRestaurantInfo(marker, info){
+//     var infowindow = new google.maps.InfoWindow({
+//         content: 'Wild Wings'
+//     });
+//
+//     marker.addListener('click', function() {
+//         infowindow.open(marker.get('map'), marker);
+//     });
+//
+// }
 
 /***************************************************************************************************
  * land -
@@ -147,21 +147,21 @@ function attachRestaurantInfo(marker, info){
  * @return:
  none
  */
-function landing() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 10,
-        center: {lat: 33.652775, lng: -117.750732}
-    });
-    var geocoder = new google.maps.Geocoder();
-
-    // $("#submit").addEventListener('click', function() {
-    //     geocodeAddress(geocoder, map);
-    // });
-
-    document.getElementById('submit').addEventListener('click', function() {
-        search_result(geocoder, map);
-    });
-}
+// function landing() {
+//     var map = new google.maps.Map(document.getElementById('map'), {
+//         zoom: 10,
+//         center: {lat: 33.652775, lng: -117.750732}
+//     });
+//     var geocoder = new google.maps.Geocoder();
+//
+//     // $("#submit").addEventListener('click', function() {
+//     //     geocodeAddress(geocoder, map);
+//     // });
+//
+//     document.getElementById('submit').addEventListener('click', function() {
+//         search_result(geocoder, map);
+//     });
+// }
 
 /***************************************************************************************************
  * search_result -
@@ -170,27 +170,27 @@ function landing() {
  none
  */
 
-var long_lat = [];
-function search_result(geocoder, resultsMap) {
-
-    var address = $("#address").val();
-    geocoder.geocode({'address': address}, function(results, status) {
-        if (status === 'OK') {
-            resultsMap.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-                map: resultsMap,
-                position: results[0].geometry.location,
-            });
-            /* locale.push(resultsMap.getCenter());  */
-            var loc = resultsMap.getCenter();
-            alert(loc);
-            var spli = loc.split(",");
-            long_lat.push(spli);
-        } else {
-            alert('Geocode was not successful for the following reason: ' + status);
-        }
-    });
-}
+// var long_lat = [];
+// function search_result(geocoder, resultsMap) {
+//
+//     var address = $("#address").val();
+//     geocoder.geocode({'address': address}, function(results, status) {
+//         if (status === 'OK') {
+//             resultsMap.setCenter(results[0].geometry.location);
+//             var marker = new google.maps.Marker({
+//                 map: resultsMap,
+//                 position: results[0].geometry.location,
+//             });
+//             /* locale.push(resultsMap.getCenter());  */
+//             var loc = resultsMap.getCenter();
+//             alert(loc);
+//             var spli = loc.split(",");
+//             long_lat.push(spli);
+//         } else {
+//             alert('Geocode was not successful for the following reason: ' + status);
+//         }
+//     });
+// }
 /***************************************************************************************************
  * getTwitterData -
  * @param:
@@ -264,7 +264,7 @@ function renderRestaurants(restObj){
     var addressContainer = $("<div>").addClass("address").text(restObj.address);
     var rateContainer = $("<div>").addClass("rateSection");
     var ratingContainer = $("<div>").addClass("rating").text(restObj.rating);
-    var voteContainer = $("<div>").addClass("votes").text(restObj.votes);
+    var voteContainer = $("<div>").addClass("votes").text(restObj.votes + " reviews");
     infoContainer.append(nameContainer, cityContainer, addressContainer);
     rateContainer.append(ratingContainer, voteContainer);
     imageContainer.append(image);
@@ -279,7 +279,7 @@ function renderRestaurants(restObj){
  */
 function createRestaurantObj(apiObj) {
     var brewery = apiObj.restaurants;
-    var restaurantsArray = []
+    var restaurantsArray = [];
     for (var restaurantIndex = 0; restaurantIndex < brewery.length; restaurantIndex++) {
         var restaurantObj = {};
         var restLat = brewery[restaurantIndex].restaurant.location.latitude;
@@ -302,7 +302,7 @@ function createRestaurantObj(apiObj) {
         restaurantsArray.push(restaurantObj);
         console.log(restaurantsArray);
     }
-    initMap(restaurantsArray);
+    // initMap(restaurantsArray);
 }
 
 
