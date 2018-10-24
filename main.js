@@ -73,7 +73,7 @@ function landing() {
  * @return:
  none
  */
-}
+
 var long_lat = [];
 function search_result(geocoder, resultsMap) {
 
@@ -84,10 +84,12 @@ function search_result(geocoder, resultsMap) {
             var marker = new google.maps.Marker({
                 map: resultsMap,
                 position: results[0].geometry.location,
-                // text: resultsMap.getCenter()
             });
-            long_lat.push(resultsMap.getCenter());
-            console.log("result: " + long_lat);
+            /* locale.push(resultsMap.getCenter());  */
+            var loc = resultsMap.getCenter();
+            alert(loc);
+            var spli = loc.split(",");
+            long_lat.push(spli);
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
