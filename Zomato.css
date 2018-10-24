@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    height: 100%vh
+}
+
+.citySearch {
+    background-color: blue;
+    display: inline-block;
+}
+
+.button {
+    display: inline-block;
+
+}
