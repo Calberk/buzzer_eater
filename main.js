@@ -52,9 +52,10 @@ var logos = {
  * initializes the application, including adding click handlers and pulling in any data from the server
  */
 function initializeApp(){
-    // landing();
-    // search_result();
+    landing();
+    search_result();
     getNBAData();
+    storeTwitterData();
 }
 
 /***************************************************************************************************
@@ -206,7 +207,8 @@ function getTwitterData(){
  * @calls
  */
 function storeTwitterData(){
-
+    var array = [33.8169, -118.0369];
+    getRestaurantInformation(array);
 }
 /***************************************************************************************************
  * getRestaurantInformation - clears out the form values based on inputIds variable
@@ -253,8 +255,9 @@ function getRestaurantInformation(coordinateArr){
  * @param object of restaurant info
  */
 function renderRestaurants(restObj){
-    var restContainer = $("<div>").addClass("image");
-    var imageContainer = $("<img>").addClass("appImage").attr("src", "images/basketball_beer.jpg");
+    var restaurantContainer = $("<div>").addClass("mainRestaurantContainer");
+    var imageContainer = $("<div>").addClass("image");
+    var image = $("<img>").addClass("appImage").attr("src", "images/basketball_beer.jpg");
     var infoContainer = $("<div>").addClass("info");
     var nameContainer = $("<div>").addClass("restaurantName").text(restObj.name);
     var cityContainer = $("<div>").addClass("city").text(restObj.city);
@@ -264,7 +267,9 @@ function renderRestaurants(restObj){
     var voteContainer = $("<div>").addClass("votes").text(restObj.votes);
     infoContainer.append(nameContainer, cityContainer, addressContainer);
     rateContainer.append(ratingContainer, voteContainer);
-    restContainer.append(imageContainer, infoContainer, rateContainer);
+    imageContainer.append(image);
+    restaurantContainer.append(imageContainer, infoContainer, rateContainer);
+    $(".restaurantSection").append(restaurantContainer);
 }
 
 /***************************************************************************************************
@@ -293,9 +298,9 @@ function createRestaurantObj(apiObj) {
         restaurantObj.rating = restRating;
         restaurantObj.city = restCity;
         restaurantObj.votes = restRateCount;
-        console.log(restLat, restLong, restName, restAddress, restPricing, restRating, restCity, restRateCount);
         renderRestaurants(restaurantObj);
         restaurantsArray.push(restaurantObj);
+        console.log(restaurantsArray);
     }
     initMap(restaurantsArray);
 }

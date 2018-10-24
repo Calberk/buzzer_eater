@@ -1,7 +1,7 @@
 body {
     margin: 0;
     height: 100vh;
-    /*font-size: 0;*/
+    font-size: 0;
 }
 
 .pageOne {
@@ -72,7 +72,9 @@ body {
 .restaurantSection {
     height: 55%;
     width: 75%;
+    font-size: 1px;
     background-color: lime;
+    overflow: auto;
 }
 
 /*NBA Scoreboard*/
@@ -181,7 +183,88 @@ body {
 
 /*end NBA Scoreboard*/
 
+.mainRestaurantContainer {
+    width: 100%;
+    height: 20%;
+    border: 1px solid white;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.image {
+    width: 25%;
+    height: 95%;
+    align-items: center;
+    justify-content: center;
+}
+
+.appImage {
+    width: 80%;
+    height: 80%;
+    border-radius: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.info {
+    width: 60%;
+    height: 95%;
+    font-size: 1rem;
+}
+
+.restaurantName {
+    width: 100%;
+    height: 40%;
+    font-size: 25px;
+    color: red;
+}
+
+.city {
+    width: 100%;
+    height: 10%;
+    font-size: 1em;
+    color: slategrey;
+}
+
+.address {
+    width: 100%;
+    height: 35%;
+    font-size: 10px;
+    color: #2b542c;
+}
+
+.rateSection {
+    width: 10%;
+    height: 95%;
+}
+
+.rating {
+    width: 20%;
+    height: 20%;
+    font-size: 10px;
+    color: white;
+}
+
+.votes{
+    width: 20%;
+    height: 20%;
+    font-size: 10px;
+    color: dimgrey;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
 
 
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px whitesmoke;
+    border-radius: 10px;
+}
 
 
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
