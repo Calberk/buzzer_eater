@@ -53,7 +53,7 @@ var logos = {
  */
 function initializeApp(){
     landing();
-    search_result();
+    // search_result();
     getNBAData();
     storeTwitterData();
 }
@@ -86,43 +86,43 @@ function initMap(){
 
 // var position = {lat: 34.101302, lng: -118.343581};
 
-var marker = new google.maps.Marker({
-    position: {
-        lat: 34.101302,
-        lng: -118.343581
-    },
-    map: map
-});
+// var marker = new google.maps.Marker({
+//     position: {
+//         lat: 34.101302,
+//         lng: -118.343581
+//     },
+//     map: map
+// });
 
-var zomato = {
-    position: {
-        lat: zomatoResult[i]['coordinates']['latitude'],
-        lng: zomatoResult[i]['coordinates']['longitude']
-    },
-    name: {
-        zomatoResult[i]['name']
-    }
-}
+// var zomato = {
+//     position: {
+//         lat: zomatoResult[i]['coordinates']['latitude'],
+//         lng: zomatoResult[i]['coordinates']['longitude']
+//     },
+//     // name: {
+//     //     zomatoResult[i]['name']
+//     // }
+// }
 
-for (var key in object) { }
-
-
+// for (var key in object) { }
 
 
 
-    var marker = new google.maps.Marker({
-        position: position,
-        map: map,
-        title: zomatoResult['name']
-    });
-    var infowindow = new google.maps.InfoWindow({
-        content: 'Wild Wings'
-    });
-    markerOne.addListener('click', function() {
-        infowindow.open(markerOne.get('map'), markerOne);
-    });
 
-}
+    //
+    // var marker = new google.maps.Marker({
+    //     position: position,
+    //     map: map,
+    //     title: zomatoResult['name']
+    // });
+    // var infowindow = new google.maps.InfoWindow({
+    //     content: 'Wild Wings'
+    // });
+    // markerOne.addListener('click', function() {
+    //     infowindow.open(markerOne.get('map'), markerOne);
+    // });
+
+// }
 
 /***************************************************************************************************
  * attachRestaurantInfo
@@ -170,7 +170,8 @@ function landing() {
  none
  */
 
-var long_lat = [];
+var numCoord;
+
 function search_result(geocoder, resultsMap) {
 
     var address = $("#address").val();
@@ -181,11 +182,11 @@ function search_result(geocoder, resultsMap) {
                 map: resultsMap,
                 position: results[0].geometry.location,
             });
-            /* locale.push(resultsMap.getCenter());  */
             var loc = resultsMap.getCenter();
-            alert(loc);
-            var spli = loc.split(",");
-            long_lat.push(spli);
+            var coorStr = loc.lat() + ',' + loc.lng();
+            var long_latArr = coorStr.split(",");
+            numCoord = long_latArr.map(Number);
+            console.log(numCoord);
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
@@ -207,7 +208,7 @@ function getTwitterData(){
  * @calls
  */
 function storeTwitterData(){
-    var array = [33.8169, -118.0369];
+    // var array = [33.8169, -118.0369];
     getRestaurantInformation(array);
 }
 /***************************************************************************************************
