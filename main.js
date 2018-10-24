@@ -60,21 +60,35 @@ var marker = new google.maps.Marker({
     map: map
 });
 
-// for (var i = 0; i < zomatoResult.length; i++) {
-//     var position = {lat: zomatoResult[i]['coordinates']['latitude'], lng: zomatoResult[i]['coordinates']['longitude']};
-//     var marker = new google.maps.Marker({
-//         position: position,
-//         map: map,
-//         title: zomatoResult['name']
-//     });
-//     var infowindow = new google.maps.InfoWindow({
-//         content: 'Wild Wings'
-//     });
-//     markerOne.addListener('click', function() {
-//         infowindow.open(markerOne.get('map'), markerOne);
-//     });
-//
-// }
+var zomato = {
+    position: {
+        lat: zomatoResult[i]['coordinates']['latitude'],
+        lng: zomatoResult[i]['coordinates']['longitude']
+    },
+    name: {
+        zomatoResult[i]['name']
+    }
+}
+
+for (var key in object) { }
+
+
+
+
+
+    var marker = new google.maps.Marker({
+        position: position,
+        map: map,
+        title: zomatoResult['name']
+    });
+    var infowindow = new google.maps.InfoWindow({
+        content: 'Wild Wings'
+    });
+    markerOne.addListener('click', function() {
+        infowindow.open(markerOne.get('map'), markerOne);
+    });
+
+}
 
 /***************************************************************************************************
  * attachRestaurantInfo
