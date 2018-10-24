@@ -55,10 +55,10 @@ var numCoord = {lat: 33.5424719, lng: -117.782074};
  * initializes the application, including adding click handlers and pulling in any data from the server
  */
 function initializeApp(){
-    // landing();
     getNBAData();
     clickHandlers();
     getRestaurantInformation();
+
 
 }
 
@@ -145,16 +145,17 @@ function search_result(geocoder, resultsMap) {
     geocoder.geocode({'address': address}, function(results, status) {
         if (status === 'OK') {
             resultsMap.setCenter(results[0].geometry.location);
+            console.log(results[0]);
             var marker = new google.maps.Marker({
                 map: resultsMap,
                 position: results[0].geometry.location,
             });
             var loc = resultsMap.getCenter();
-            var coorStr = loc.lat() + ',' + loc.lng();
-            var long_latArr = coorStr.split(",");
-            numCoord = long_latArr.map(Number);
-            console.log(numCoord);
-            getRestaurantInformation();
+            var obj = {
+                latitude: loc.lat(),
+                longitude: loc.lng()
+            };
+            console.log(obj);
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
