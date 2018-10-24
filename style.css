@@ -1,0 +1,999 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-size: 0;
+}
+
+.pageOne {
+    width: 100vw;
+    height: 100vh;
+    /*display: none;*/
+}
+
+.searchSection {
+    position: absolute;
+    top: 10px;
+    left: 25%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+    font-size: 2rem;
+}
+
+.pageTwo {
+    width: 100vw;
+    height: 100vh;
+    background-color: purple;
+    display: inline-block;
+    display: none;
+}
+
+.leftHalf {
+    width: 50%;
+    height: 100%;
+    background-color: orange;
+    display: inline-block;
+}
+
+.rightHalf {
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    display: inline-block;
+}
+
+.twitterSection {
+    width: 60%;
+    height: 40%;
+    background-color: green;
+}
+
+.mapSection {
+    width: 50%;
+    height: 40%;
+    background-color: #985f0d;
+}
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.restaurantSection {
+    height: 55%;
+    width: 80%;
+    font-size: 35px;
+    overflow: auto;
+}
+
+
+
+.mainRestaurantContainer {
+    width: 100%;
+    height: 20%;
+    border: 1px solid white;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.image {
+    width: 25%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.appImage {
+    width: 80%;
+    height: 80%;
+    border-radius: 30%;
+}
+
+.info {
+    width: 60%;
+    height: 95%;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.restaurantName {
+    width: 100%;
+    height: 30%;
+    font-size: 100%;
+    color: red;
+}
+
+.city {
+    width: 100%;
+    height: 20%;
+    font-size: 75%;
+    color: slategrey;
+}
+
+.address {
+    width: 100%;
+    height: 20%;
+    font-size: 100%;
+    color: #2b542c;
+}
+
+.rateSection {
+    width: 10%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.rating {
+    width: 40%;
+    height: 20%;
+    font-size: 40%;
+    color: white;
+}
+
+.votes{
+    width: 100%;
+    height: 20%;
+    font-size: 30%;
+    color: dimgrey;
+    text-align: right;
+}
+
+::-webkit-scrollbar {
+width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+box-shadow: inset 0 0 5px whitesmoke;
+/*border-radius: 10px;*/
+}
+
+
+::-webkit-scrollbar-thumb {
+background: white;
+border-radius: 10px;
+}
+/*.titleContainer{*/
+    /*display: inline-flex;*/
+/*}*/
+
+
+
+
+/*NBA Scoreboard*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.gameSection {
+    font-family: "Montserrat", "Arial";
+    color: white;
+    background-color: #444;
+    height: 50%;
+    width:80%;
+    overflow: scroll;
+    font-size:1rem;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction:row;
+    width:100%;
+    height: 15%;
+}
+
+.scoreboard > * {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    height: 50px;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+}
+
+.scoreboard > *:first-child {
+    border-left: 1px solid white;
+}
+
+.team {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.team-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.team-detail {
+    padding: 0em 0.5em;
+}
+
+.team-detail {
+    font-size: 1.5em;
+}
+
+.team-detail .team-nameandscore {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.team-detail .space {
+    width: 150px;
+    font-size: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    opacity: 0.8;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #222;
+}
+
+.timer-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.timer-container > * {
+    border-right: 1px solid white;
+    padding: 0em 1em;
+    color: white;
+}
+
+.timer-container > *:last-child {
+    border-right: 0;
+    color: yellow;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0em 0.5em;
+    background-color: black;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.hometeam {
+    background-color: black;
+}
+
+.awayteam {
+    background-color: black;
+}
+
+/*end NBA Scoreboard*/
+
+
+
+
+/*LOGO ANIMATION from (clemishow on https://codepen.io/clemishow/pen/ZYPPeE) and (Vladimir Gashenko onhttps://codepen.io/gxash/pen/QNzKoj)*/
+
+
+#beer_text {
+    font-family: 'futura';
+    color: white;
+    letter-spacing: 20px;
+    font-size: 30px;
+    position: absolute;
+    top: 195px;
+    left: 370px;
+}
+
+#dribbble {
+    color: #EC4E8B;
+}
+
+#hetic {
+    color: #6FB400;
+}
+
+#text {
+    position: absolute;
+    top: 335px;
+    left: 150px;
+    font-family: "futura std";
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: #201F1E;
+}
+
+#glass {
+    width: 70px;
+    height: 90px;
+    background: transparent;
+    border: solid 3.5px white;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    overflow: hidden;
+    transform: rotate(-20deg);
+    -webkit-animation: glass 10s infinite;
+}
+
+#poignet {
+    width: 30px;
+    height: 55px;
+    background: transparent;
+    border: solid 3.5px white;
+    position: absolute;
+    top: 192px;
+    left: 270px;
+    border-radius: 0 16px 16px 0;
+    border-left: none;
+    transform: rotate(-20deg);
+    -webkit-animation: poignet 10s infinite;
+}
+
+#beer {
+    width: 58px;
+    height: 84px;
+    background: transparent;
+    position: absolute;
+    left: 6px;
+    top: 0px;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+}
+
+#beer::before {
+    content: "";
+    width: 250px;
+    height: 250px;
+    background: #E8B504;
+    position: absolute;
+    top: 83px;
+    left: -190px;
+    transform: rotate(40deg);
+    -webkit-animation: beer 10s infinite;
+}
+
+#mousse_1 {
+    position: absolute;
+    top: 192px;
+    left: 198px;
+    z-index: 4;
+}
+
+#mousse_1::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse 10s infinite;
+}
+
+#mousse_1::after {
+    content: "";
+    width: 17px;
+    height: 17px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    -webkit-animation: mousse 10s infinite;
+}
+
+#mousse_2 {
+    position: absolute;
+    top: 192px;
+    left: 212px;
+    z-index: 4;
+}
+
+#mousse_2::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse 10s infinite;
+}
+
+#mousse_2::after {
+    content: "";
+    width: 17px;
+    height: 17px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 10px;
+    -webkit-animation: mousse 10s infinite;
+}
+
+#mousse_3 {
+    position: absolute;
+    top: 192px;
+    left: 228px;
+    z-index: 4;
+}
+
+#mousse_3::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse 10s infinite;
+}
+
+#mousse_3::after {
+    content: "";
+    width: 17px;
+    height: 17px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    -webkit-animation: mousse 10s infinite;
+}
+
+#mousse_4 {
+    position: absolute;
+    top: 192px;
+    left: 242px;
+    z-index: 4;
+}
+
+#mousse_4::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse 10s infinite;
+}
+
+#mousse_4::after {
+    content: "";
+    width: 17px;
+    height: 17px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    -webkit-animation: mousse 10s infinite;
+}
+
+#mousse_5 {
+    position: absolute;
+    top: 192px;
+    left: 257px;
+    z-index: 4;
+    -webkit-animation: mousse 10s infinite;
+}
+
+#mousse_5::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#mousse_volante {
+    position: absolute;
+    top: 185px;
+    left: 212px;
+    z-index: 4;
+}
+
+#mousse_volante::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse_volante 10s infinite;
+}
+
+#mousse_volante::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    -webkit-animation: mousse_volante 10s infinite;
+}
+
+#mousse_interieur {
+    position: absolute;
+    top: 255px;
+    left: 218px;
+    z-index: 4;
+    opacity: 0.9;
+}
+
+#mousse_interieur::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse_interieur 10s infinite;
+}
+
+#mousse_interieur::after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    -webkit-animation: mousse_interieur 5s infinite;
+}
+
+#mousse_interieur_2 {
+    position: absolute;
+    top: 235px;
+    left: 225px;
+    z-index: 4;
+    opacity: 0.9;
+}
+
+#mousse_interieur_2::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse_interieur 10s infinite;
+}
+
+#mousse_interieur_2::after {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 17px;
+    -webkit-animation: mousse_interieur 5s infinite;
+}
+
+#mousse_interieur_3 {
+    position: absolute;
+    top: 245px;
+    left: 232px;
+    z-index: 4;
+    opacity: 0.9;
+}
+
+#mousse_interieur_3::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse_interieur 10s infinite;
+}
+
+#mousse_interieur_3::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    -webkit-animation: mousse_interieur 5s infinite;
+}
+
+#mousse_interieur_4 {
+    position: absolute;
+    top: 241px;
+    left: 238px;
+    z-index: 4;
+    opacity: 0.9;
+}
+
+#mousse_interieur_4::before {
+    content: "";
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse_interieur 10s infinite;
+}
+
+#mousse_interieur_4::after {
+    content: "";
+    width: 5.5px;
+    height: 5.5px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 28px;
+    left: 2px;
+    -webkit-animation: mousse_interieur 5s infinite;
+}
+
+/* ANIMATIONS */
+@-webkit-keyframes beer {
+    0% {
+        transform: translateY(-5);
+    }
+
+    17% {
+        transform: translateY(-82px);
+    }
+
+    100% {
+        transform: translateY(-82px);
+    }
+}
+
+@-webkit-keyframes glass {
+    0% {
+        transform: rotate(-20deg);
+    }
+
+    17% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@-webkit-keyframes poignet {
+    0% {
+        transform: rotate(-20deg);
+    }
+
+    17% {
+        transform: rotate(0deg) translateX(5px) translateY(20px);
+    }
+
+    100% {
+        transform: rotate(0deg) translateX(5px) translateY(20px);
+    }
+}
+
+@-webkit-keyframes mousse {
+    0% {
+        transform: scale(0);
+    }
+
+    10% {
+        transform: scale(0);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes mousse_volante {
+    0% {
+        transform: scale(0) translateY(0px);
+    }
+
+    10% {
+        transform: scale(0) translateY(0px);
+    }
+
+    20% {
+        transform: scale(1) translateY(-20px);
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) translateY(-80px);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes mousse_interieur {
+    0% {
+        transform: scale(0) translateY(0px);
+    }
+
+    20% {
+        transform: scale(0) translateY(0px);
+    }
+
+    40% {
+        transform: scale(1) translateY(-60px);
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) translateY(-60px);
+        opacity: 0;
+    }
+}
+
+
+
+/*CSS FOR BASKETBALL*/
+
+
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#basket img {
+    display: block;
+    position: absolute;
+    top: 55px;
+    left: 20px;
+    min-width: 228px;
+    height: 193px;
+}
+
+
+/* wrapper for 800x600 screen */
+
+#allWrapper {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    /*background: url("http://svgur.com/i/5Y.svg");*/
+    background-size: cover;
+    z-index: -5;
+}
+
+
+/* animation container */
+
+#ballWrapper {
+    width: 100px;
+    height: 260px;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    left: 47%;
+    top: 35%;
+}
+
+#ball {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    animation: jump 1s infinite;
+    overflow: hidden;
+}
+
+
+/*Ball texture*/
+
+#ball:after {
+    content: "";
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background: url("http://svgur.com/i/4D.svg");
+    position: absolute;
+    animation: rotate 2s infinite, back 1s infinite;
+    z-index: 5;
+    background-repeat: repeat;
+    background-size: cover;
+    animation-timing-function: linear;
+}
+
+
+/*Ball light*/
+
+#ball:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-image: url("http://svgur.com/i/5C.svg");
+    background-size: 110%;
+    border-radius: 100%;
+    animation: lightop 1s infinite;
+}
+
+
+/*Shadow on ball*/
+
+#ballshad {
+    background: url("http://svgur.com/i/5P.svg");
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 100%;
+    animation: shadop 1s infinite;
+    margin: auto;
+    display: block;
+    background-size: contain;
+    z-index: 10;
+}
+
+/*Shadow on floor*/
+
+#ballShadow {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 10;
+    margin-left: -30px;
+    background-image: url("http://svgur.com/i/4V.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    animation: shrink 1s infinite;
+    z-index: -1;
+    background-position: center;
+}
+
+
+/* Animation keyframes */
+
+@keyframes jump {
+    0% {
+        top: 0;
+        transform: scale3d(1, 1, 1);
+        border-radius: 100%;
+        animation-timing-function: ease-in;
+    }
+    45% {
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        top: 200px;
+        animation-timing-function: ease-out;
+        transform: scale3d(1.3, .8, 1);
+    }
+    55% {
+        transform: scale3d(1, 1, 1);
+    }
+    60% {
+        transform: scale3d(.8, 1.1, 1);
+    }
+    70% {
+        transform: scale3d(.95, 1.05, 1);
+    }
+    72% {
+        transform: scale3d(1, 1, 1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+        top: 0;
+        border-radius: 100%;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shrink {
+    0% {
+        bottom: 0;
+        margin-left: -30px;
+        width: 80px;
+        height: 20px;
+        animation-timing-function: ease-in;
+        left: 150%;
+        opacity: .2;
+    }
+    50% {
+        bottom: 5px;
+        margin-left: -10px;
+        width: 50px;
+        height: 10px;
+        animation-timing-function: ease-out;
+        left: 35%;
+        opacity: 1;
+    }
+    100% {
+        bottom: 0;
+        margin-left: -30px;
+        width: 80px;
+        height: 20px;
+        animation-timing-function: ease-in;
+        left: 150%;
+        opacity: .2;
+    }
+}
+
+@keyframes lightop {
+    0% {
+        opacity: .25;
+    }
+    50% {
+        opacity: .1;
+    }
+    100% {
+        opacity: .25;
+    }
+}
+
+@keyframes shadop {
+    0% {
+        opacity: .25;
+    }
+    50% {
+        opacity: .55;
+    }
+    100% {
+        opacity: .25;
+    }
+}
+
+@keyframes back {
+    0% {
+        background-position: top;
+    }
+    100% {
+        background-position: bottom;
+    }
+}
+
+/*LOGO ANIMATION END from (clemishow on https://codepen.io/clemishow/pen/ZYPPeE) and (Vladimir Gashenko onhttps://codepen.io/gxash/pen/QNzKoj)*/
+
+.display {
+    display: none;
+}
