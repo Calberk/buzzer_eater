@@ -56,9 +56,9 @@ var numCoord = {};
  */
 function initializeApp(){
     getNBAData();
-    clickHandlers();
-    getRestaurantInformation();
-
+    // clickHandlers();
+    // getRestaurantInformation();
+    landing();
 
 }
 
@@ -115,19 +115,36 @@ function initializeApp(){
 //
 // }
 
+function landing() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: {lat: 33.652775, lng: -117.750732}
+    });
+    var geocoder = new google.maps.Geocoder();
+
+    // $("#submit").addEventListener('click', function() {
+    //     geocodeAddress(geocoder, map);
+    // });
+
+    document.getElementById('submit').addEventListener('click', function() {
+        search_result(geocoder, map);
+        openPage();
+    });
+}
+
 /***************************************************************************************************
  * land -
  * @param:
  * @return:
  none
  */
-function clickHandlers(){
-        document.getElementById('submit').addEventListener('click', function() {
-        // search_result(geocoder, map);
-        openPage();
-});
-
-}
+// function clickHandlers(){
+//         document.getElementById('submit').addEventListener('click', function() {
+//         search_result();
+//         openPage();
+// });
+//
+// }
 // }}
 
 /***************************************************************************************************
@@ -158,11 +175,12 @@ function search_result(geocoder, resultsMap) {
             // numCoord.lat=loc.lat();
             // numCoord.lng=loc.lng();
             console.log(numCoord);
+            getRestaurantInformation();
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
     });
-    getRestaurantInformation();
+    // getRestaurantInformation();
 }
 /***************************************************************************************************
  * getTwitterData -
@@ -189,6 +207,7 @@ function storeTwitterData(){
  * @calls initMap
  */
 function getRestaurantInformation(){
+    console.log(numCoord.lat, numCoord.lng);
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -200,7 +219,7 @@ function getRestaurantInformation(){
             count: 10,
             lat: numCoord.lat,
             lon: numCoord.lng,
-            radius: 1000,
+            radius: 8000,
             cuisines: 227,
             q: "bar",
 
@@ -458,7 +477,7 @@ function renderRestaurants(restObj){
         timer.append(timerContainer);
         scoreboard.append(homeTeam, awayTeam, timer);
         $(".gameSection").append(scoreboard);
-
+    }
 
 /***************************************************************************************************
  * formatTeamInfo -
