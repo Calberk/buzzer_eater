@@ -71,7 +71,7 @@ body {
 
 .restaurantSection {
     height: 55%;
-    width: 75%;
+    width: 80%;
     font-size: 35px;
     overflow: auto;
 }
@@ -218,7 +218,7 @@ body {
 .restaurantName {
     width: 100%;
     height: 30%;
-    font-size: 150%;
+    font-size: 100%;
     color: red;
 }
 
