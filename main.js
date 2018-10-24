@@ -21,7 +21,7 @@ $(document).ready(initializeApp);
  * initializes the application, including adding click handlers and pulling in any data from the server
  */
 function initializeApp(){
-
+    getTwitterData();
 }
 
 /***************************************************************************************************
@@ -72,14 +72,60 @@ function search_result(){
  */
 function getTwitterData(){
 
+     var ajaxObject = {
+            url: 'https://s-apis.learningfuze.com/hackathon/twitter/index.php',
+            dataType: 'json',
+            method: 'post',
+            data: {
+                action: 'user',
+                screen_name: 'nba',
+                get_timeline: 'true',
+                include_entities: 'true',
+            },
+            success: function(response){
+                storeTwitterData(response);
+            }
+        };
+        $.ajax(ajaxObject)
 }
 /***************************************************************************************************
  * storeTwitterData -
- * @param
- * @return
- * @calls
+ * @param:
+ * @return:
+ * @calls:
  */
-function storeTwitterData(){
+function storeTwitterData(response){
+    var twitterArray = response.info;
+
+    for(var i = 0; i < twitterArray.length; i++){
+        var tweet = twitterArray[i].text;
+        var urlIndex = tweet.indexOf("http");
+        var tweetBox = $("<div>");
+
+        if(urlIndex !== -1){
+            var newTweetArray = tweet.split(" ");
+            var urlTweet = newTweetArray.pop();
+            var newTweet = newTweetArray.join(" ");
+
+            var hyperLinkText = " more info";
+            var hyperLink = hyperLinkText.link(urlTweet);
+
+            tweetBox.append(newTweet, hyperLink).addClass("tweetText");
+            // $(".tweetsFeed").append(tweetBox);
+        }
+        else{
+            tweetBox.append(tweet).addClass("tweetText");
+        }
+        $(".tweetsFeed").append(tweetBox);
+    }
+
+    var nbaLogo = $("<img>").attr("src", "images/nbalogo.jpg");
+    var verifiedLogo = $("<img>").attr("src", "images/verified2.png");
+    var nbaHandleName = response.info[0].user.name;
+
+    $(".tweetLogo").append(nbaLogo);
+    $(".twitterHandle").append(nbaHandleName);
+    $(".twitterVerified").append(verifiedLogo);
 
 }
 /***************************************************************************************************
