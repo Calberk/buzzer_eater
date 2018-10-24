@@ -21,7 +21,8 @@ $(document).ready(initializeApp);
  * initializes the application, including adding click handlers and pulling in any data from the server
  */
 function initializeApp(){
-
+    landing();
+    search_result();
 }
 
 /***************************************************************************************************
@@ -109,23 +110,53 @@ function attachRestaurantInfo(marker, info){
 
 /***************************************************************************************************
  * land -
- * @param
+ * @param:
  * @return:
  none
  */
-function land(){
+function landing() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: {lat: 33.652775, lng: -117.750732}
+    });
+    var geocoder = new google.maps.Geocoder();
 
+    // $("#submit").addEventListener('click', function() {
+    //     geocodeAddress(geocoder, map);
+    // });
+
+    document.getElementById('submit').addEventListener('click', function() {
+        search_result(geocoder, map);
+    });
 }
-
 
 /***************************************************************************************************
  * search_result -
- * @param
+ * @param: two (geocoder, resultsMap)
  * @return:
  none
  */
-function search_result(){
 
+var long_lat = [];
+function search_result(geocoder, resultsMap) {
+
+    var address = $("#address").val();
+    geocoder.geocode({'address': address}, function(results, status) {
+        if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: resultsMap,
+                position: results[0].geometry.location,
+            });
+            /* locale.push(resultsMap.getCenter());  */
+            var loc = resultsMap.getCenter();
+            alert(loc);
+            var spli = loc.split(",");
+            long_lat.push(spli);
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
 }
 /***************************************************************************************************
  * getTwitterData -
