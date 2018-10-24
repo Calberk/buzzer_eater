@@ -44,7 +44,7 @@ var logos = {
     "WAS": "nbaimages/WAS.png"
 };
 
-var numCoord;
+var numCoord = {lat: 33.5424719, lng: -117.782074};
 
 
 
@@ -55,10 +55,10 @@ var numCoord;
  * initializes the application, including adding click handlers and pulling in any data from the server
  */
 function initializeApp(){
-    landing();
+    // landing();
     getNBAData();
     clickHandlers();
-
+    getRestaurantInformation();
 
 }
 
@@ -133,7 +133,7 @@ function attachRestaurantInfo(marker, info){
  */
 function clickHandlers(){
         document.getElementById('submit').addEventListener('click', function() {
-        search_result(geocoder, map);
+        // search_result(geocoder, map);
         openPage();
 });
 }
@@ -204,8 +204,8 @@ function getRestaurantInformation(){
             // url: 'api/v2.1/search?q=bar&count=20&lat='+lat+'&lon='+long+'&radius=1.0&cuisines=983%2C%20227'
             url: 'api/v2.1/search',
             count: 10,
-            lat: numCoord[0],
-            lon: numCoord[1],
+            lat: numCoord.lat,
+            lon: numCoord.lng,
             radius: 5000,
             cuisines: 227,
             q: "bar",
