@@ -258,7 +258,12 @@ function renderRestaurants(restObj){
     var restaurantContainer = $("<div>").addClass("mainRestaurantContainer");
     var imageContainer = $("<div>").addClass("image");
     var image = $("<img>").addClass("appImage").attr("src", "images/basketball_beer.jpg");
-    var infoContainer = $("<div>").addClass("info");
+    var infoContainer = $("<a>", {
+        class: "info",
+        href: restObj.url,
+        target: "_blank"
+    });
+    // .addClass("info").attr("href", restObj.url);
     var nameContainer = $("<div>").addClass("restaurantName").text(restObj.name);
     var cityContainer = $("<div>").addClass("city").text(restObj.city);
     var addressContainer = $("<div>").addClass("address").text(restObj.address);
@@ -290,6 +295,7 @@ function createRestaurantObj(apiObj) {
         var restRating = brewery[restaurantIndex].restaurant.user_rating.aggregate_rating;
         var restCity = brewery[restaurantIndex].restaurant.location.locality;
         var restRateCount = brewery[restaurantIndex].restaurant.user_rating.votes;
+        var restUrl = brewery[restaurantIndex].restaurant.url;
         restaurantObj.latitude = restLat;
         restaurantObj.longitude = restLong;
         restaurantObj.name = restName;
@@ -298,6 +304,7 @@ function createRestaurantObj(apiObj) {
         restaurantObj.rating = restRating;
         restaurantObj.city = restCity;
         restaurantObj.votes = restRateCount;
+        restaurantObj.url = restUrl;
         renderRestaurants(restaurantObj);
         restaurantsArray.push(restaurantObj);
         console.log(restaurantsArray);
