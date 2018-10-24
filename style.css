@@ -49,20 +49,20 @@ body {
 
 .twitterSection {
     width: 60%;
-    height: 25%;
+    height: 40%;
     background-color: green;
 }
 
-.gameSection {
-    width: 60%;
-    height: 70%;
-    /*background-color: pink;*/
-}
+/*.gameSection {*/
+    /*width: 50%;*/
+    /*height: 70%;*/
+    /*!*background-color: pink;*!*/
+/*}*/
 
 .mapSection {
     width: 50%;
     height: 40%;
-    background-color: #5e5e5e;
+    background-color: #985f0d;
 }
 #map {
     height: 100%;
@@ -84,11 +84,16 @@ body {
     font-family: "Montserrat", "Arial";
     color: white;
     background-color: #444;
+    height: 50%;
+    width:80%;
+    overflow: scroll;
 }
 
 .scoreboard {
     display: flex;
     flex-direction:row;
+    width:100%;
+    height: 15%;
 }
 
 .scoreboard > * {
@@ -97,6 +102,8 @@ body {
     border-right: 1px solid white;
     height: 50px;
     font-weight: bold;
+    width: 100%;
+    height: 100%;
 }
 
 .scoreboard > *:first-child {

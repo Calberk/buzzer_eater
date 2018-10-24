@@ -56,6 +56,7 @@ function initializeApp(){
     // search_result();
     getNBAData();
     storeTwitterData();
+    initMap();
 }
 
 /***************************************************************************************************
@@ -64,63 +65,42 @@ function initializeApp(){
  * @returns  {undefined}
  *
  */
-function initMap(){
-    var areaOne = {lat: 34.101302, lng: -118.343581};
-    var areaTwo = {lat: 34.103300, lng: -118.339200};
-    var areaThree = {lat: 34.104600, lng: -118.341800};
-    var areaFour = {lat: 34.101700, lng: -118.338200};
+
+
+function initMap(restArray) {
+
+
+    var bounds = new google.maps.LatLngBounds();
     var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 15, center: areaOne});// areaOne needs to be the city we are searching
-    var markerOne = new google.maps.Marker({position: areaOne, map: map});
-    var infowindow = new google.maps.InfoWindow({
-        content: 'Wild Wings'
-    });
-    markerOne.addListener('click', function() {
-        infowindow.open(markerOne.get('map'), markerOne);
-    });
-    // var markerTwo = new google.maps.Marker({position: areaTwo, map: map});
-    // var markerThree = new google.maps.Marker({position: areaThree, map: map});
-    // var markerFour = new google.maps.Marker({position: areaFour, map: map});
-
-}
-
-// var position = {lat: 34.101302, lng: -118.343581};
-
-// var marker = new google.maps.Marker({
-//     position: {
-//         lat: 34.101302,
-//         lng: -118.343581
-//     },
-//     map: map
-// });
-
-// var zomato = {
-//     position: {
-//         lat: zomatoResult[i]['coordinates']['latitude'],
-//         lng: zomatoResult[i]['coordinates']['longitude']
-//     },
-//     // name: {
-//     //     zomatoResult[i]['name']
-//     // }
-// }
-
-// for (var key in object) { }
+        document.getElementById('map'), {zoom: 15, center: numCoord});// areaOne needs to be the city we are searching
 
 
 
+    for (i = 0; i < restArray.length; i++) {
+        var position = new google.maps.LatLng(restArray[i].latitude, restArray[i].longitude);
+        bounds.extend(position);
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: restArray[i].name
+        });
+        var infoWindow = new google.maps.InfoWindow(), marker, i;
 
-    //
-    // var marker = new google.maps.Marker({
-    //     position: position,
-    //     map: map,
-    //     title: zomatoResult['name']
-    // });
-    // var infowindow = new google.maps.InfoWindow({
-    //     content: 'Wild Wings'
-    // });
-    // markerOne.addListener('click', function() {
-    //     infowindow.open(markerOne.get('map'), markerOne);
-    // });
+    }
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+            infoWindow.setContent(infoWindowContent[i][0]);
+            infoWindow.open(map, marker);
+        }
+    })(marker, i));
+        // var markerOne = new google.maps.Marker({position: position, map: map});
+        // var infowindow = new google.maps.InfoWindow({
+        //     content: 'Wild Wings'
+        // });
+        // markerOne.addListener('click', function () {
+        //     infowindow.open(markerOne.get('map'), markerOne);
+        // });
+
 
 // }
 
@@ -320,13 +300,13 @@ function renderTwitter(studentArray){
 
 /***************************************************************************************************
  * getNBAData -
- * @param:
- * @returns
+ * @param: none
+ * @returns: object response from NBA API
  */
 function getNBAData() {
     var currentTime = new Date();
-    var month = currentTime.getUTCMonth() + 1;
-    var day =currentTime.getUTCDate()-1;
+    var month = currentTime.getUTCMonth()+1;
+    var day =currentTime.getUTCDate();
     var year = currentTime.getUTCFullYear();
 
     var nbaData = {
@@ -416,9 +396,6 @@ function formatTeamInfo(tricode, score, teamImg) {
  * @returns
  */
 function generateScoreboard(teamOne, teamTwo, gameInfo) {
-
-
-
     var scoreboard = $("<div>").addClass("scoreboard");
 
 
@@ -454,15 +431,38 @@ function generateScoreboard(teamOne, teamTwo, gameInfo) {
     awayTeam.append(homeTeamLogo2, teamDetails2);
     scoreboard.append(awayTeam);
 
-    var timer = $("<div>").addClass("timer");
+
+    var quarter = gameInfo.quarter;
     var timerContainer = $("<div>").addClass("timer-container");
-    var quarter = $("<div>").addClass("quarter").text(gameInfo.quarter);
-    var timeLeft = $("<div>").addClass("timeleft").text(gameInfo.clock);
+    var timer = $("<div>").addClass("timer");
+    var gameStart = gameInfo.gameFinal;
 
-    timerContainer.append(quarter, timeLeft);
+
+
+    if(gameStart == true && quarter > 4) {
+        var quarter1 = $("<div>").addClass("quarter").text("OT");
+        var timeLeft = $("<div>").addClass("timeleft").text(gameInfo.clock);
+        timerContainer.append(quarter1, timeLeft);
+    }
+    if(gameStart == true && quarter <= 4) {
+        var quarter = $("<div>").addClass("quarter").text(gameInfo.quarter);
+        var timeLeft = $("<div>").addClass("timeleft").text(gameInfo.clock);
+        timerContainer.append(quarter, timeLeft);
+    }
+
+    if(gameStart == false && teamOne.score == 0) {
+        var startTime = $("<div>").addClass("timeleft").text(gameInfo.startTime);
+        var quarter2 = $("<div>").addClass("quarter").text("");
+        timerContainer.append(quarter2, startTime);
+    }
+    if(gameStart == false && teamOne.score > 0) {
+        var endTime = $("<div>").addClass("timeleft").text("FINAL");
+        var quarter3 = $("<div>").addClass("quarter").text("");
+        timerContainer.append(quarter3, endTime);
+    }
+
+
     timer.append(timerContainer);
-
-
     scoreboard.append(homeTeam, awayTeam, timer);
     $(".gameSection").append(scoreboard);
 }
