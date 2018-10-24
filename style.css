@@ -7,7 +7,6 @@ body {
 .pageOne {
     width: 100vw;
     height: 100vh;
-    /*background-color: gold;*/
     /*display: none;*/
 }
 
@@ -867,7 +866,6 @@ body {
     z-index: 10;
 }
 
-
 /*Shadow on floor*/
 
 #ballShadow {
@@ -996,3 +994,7 @@ body {
 
 /*LOGO ANIMATION END from (clemishow on https://codepen.io/clemishow/pen/ZYPPeE) and (Vladimir Gashenko onhttps://codepen.io/gxash/pen/QNzKoj)*/
 
+=======
+.display {
+    display: none;
+}

@@ -44,6 +44,9 @@ var logos = {
     "WAS": "nbaimages/WAS.png"
 };
 
+var numCoord = {lat: 33.5424719, lng: -117.782074};
+
+
 
 /***************************************************************************************************
  * initializeApp
@@ -52,11 +55,11 @@ var logos = {
  * initializes the application, including adding click handlers and pulling in any data from the server
  */
 function initializeApp(){
-    landing();
-    // search_result();
+    // landing();
     getNBAData();
-    storeTwitterData();
-    initMap();
+    clickHandlers();
+    getRestaurantInformation();
+
 }
 
 /***************************************************************************************************
@@ -92,6 +95,7 @@ function initMap(restArray) {
             infoWindow.open(map, marker);
         }
     })(marker, i));
+
     // var markerOne = new google.maps.Marker({position: position, map: map});
     // var infowindow = new google.maps.InfoWindow({
     //     content: 'Wild Wings'
@@ -99,6 +103,37 @@ function initMap(restArray) {
     // markerOne.addListener('click', function () {
     //     infowindow.open(markerOne.get('map'), markerOne);
     // });
+
+}
+
+/***************************************************************************************************
+ * attachRestaurantInfo
+ * @params {undefined}
+ * @returns  {undefined}
+ *
+ */
+function attachRestaurantInfo(marker, info){
+    var infowindow = new google.maps.InfoWindow({
+        content: 'Wild Wings'
+    });
+
+    marker.addListener('click', function() {
+        infowindow.open(marker.get('map'), marker);
+    });
+
+}
+
+/***************************************************************************************************
+ * land -
+ * @param:
+ * @return:
+ none
+ */
+function clickHandlers(){
+        document.getElementById('submit').addEventListener('click', function() {
+        // search_result(geocoder, map);
+        openPage();
+});
 
 }
 // }}
@@ -114,9 +149,125 @@ function initMap(restArray) {
             content: 'Wild Wings'
         });
 
+
         marker.addListener('click', function () {
             infowindow.open(marker.get('map'), marker);
         });
+
+/***************************************************************************************************
+ * search_result -
+ * @param: two (geocoder, resultsMap)
+ * @return:
+ none
+ */
+
+
+
+function search_result(geocoder, resultsMap) {
+
+    var address = $("#address").val();
+    geocoder.geocode({'address': address}, function(results, status) {
+        if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: resultsMap,
+                position: results[0].geometry.location,
+            });
+            var loc = resultsMap.getCenter();
+            var coorStr = loc.lat() + ',' + loc.lng();
+            var long_latArr = coorStr.split(",");
+            numCoord = long_latArr.map(Number);
+            console.log(numCoord);
+            getRestaurantInformation();
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+    getRestaurantInformation();
+}
+/***************************************************************************************************
+ * getTwitterData -
+ * @param:
+ * @returns:
+ * @calls:
+ */
+function getTwitterData(){
+
+}
+/***************************************************************************************************
+ * storeTwitterData -
+ * @param
+ * @return
+ * @calls
+ */
+function storeTwitterData(){
+
+}
+/***************************************************************************************************
+ * getRestaurantInformation - clears out the form values based on inputIds variable
+ * @param {undefined} lat, long
+ * @return restaurant coordinates and restaurant information
+ * @calls initMap
+ */
+function getRestaurantInformation(){
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://danielpaschal.com/zamatoproxy.php",
+        "method": "GET",
+        dataType: 'json',
+        data: {
+            // url: 'api/v2.1/search?q=bar&count=20&lat='+lat+'&lon='+long+'&radius=1.0&cuisines=983%2C%20227'
+            url: 'api/v2.1/search',
+            count: 10,
+            lat: numCoord.lat,
+            lon: numCoord.lng,
+            radius: 5000,
+            cuisines: 227,
+            q: "bar",
+
+            //url: 'api/v2.1/search?lat=33.6846&lon=-117.8265&cuisines=983%2C%20821%2C%20227%2C%20270'
+        },
+        "headers": {
+            "user-key": "dd384e671b6ae1836ee2ff1a1829fdbc",
+
+        },
+        success: function( response){
+            console.log(response);
+            createRestaurantObj(response);
+        },
+        error: function(err){
+            console.log(arguments);
+        }
+    };
+    $.ajax(settings)
+}
+/***************************************************************************************************
+ * renderRestaurants - take in a  object, dynamically create html elements with object values and append the elements
+ * into the restaurantSection
+ * @param object of restaurant info
+ */
+function renderRestaurants(restObj){
+    var restaurantContainer = $("<div>").addClass("mainRestaurantContainer");
+    var imageContainer = $("<div>").addClass("image");
+    var image = $("<img>").addClass("appImage").attr("src", "images/basketball_beer.jpg");
+    var infoContainer = $("<a>", {
+        class: "info",
+        href: restObj.url,
+        target: "_blank"
+    });
+    var nameContainer = $("<div>").addClass("restaurantName").text(restObj.name);
+    var cityContainer = $("<div>").addClass("city").text(restObj.city);
+    var addressContainer = $("<div>").addClass("address").text(restObj.address);
+    var rateContainer = $("<div>").addClass("rateSection");
+    var ratingContainer = $("<div>").addClass("rating").text(restObj.rating);
+    var voteContainer = $("<div>").addClass("votes").text(restObj.votes + " reviews");
+    infoContainer.append(nameContainer, cityContainer, addressContainer);
+    rateContainer.append(ratingContainer, voteContainer);
+    imageContainer.append(image);
+    restaurantContainer.append(imageContainer, infoContainer, rateContainer);
+    $(".restaurantSection").append(restaurantContainer);
+}
 
     }
 
@@ -456,6 +607,7 @@ function initMap(restArray) {
             timerContainer.append(quarter, timeLeft);
         }
 
+
         if (gameStart == false && teamOne.score == 0) {
             var startTime = $("<div>").addClass("timeleft").text(gameInfo.startTime);
             var quarter2 = $("<div>").addClass("quarter").text("");
@@ -472,3 +624,18 @@ function initMap(restArray) {
         scoreboard.append(homeTeam, awayTeam, timer);
         $(".gameSection").append(scoreboard);
     }
+    timer.append(timerContainer);
+    scoreboard.append(homeTeam, awayTeam, timer);
+    $(".gameSection").append(scoreboard);
+}
+
+/***************************************************************************************************
+ * formatTeamInfo -
+ * @param: tricode, score, teamImg
+ * @returns team Obj
+ */
+function openPage() {
+  $(".pageOne").toggle(".display");
+  $(".pageTwo").toggle(".display");
+}
+
