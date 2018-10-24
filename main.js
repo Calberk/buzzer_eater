@@ -52,8 +52,8 @@ var logos = {
  * initializes the application, including adding click handlers and pulling in any data from the server
  */
 function initializeApp(){
-    // landing();
-    // search_result();
+    landing();
+    search_result();
     getNBAData();
 }
 
@@ -83,7 +83,7 @@ function initMap(){
 
 }
 
-// var position = {lat: 34.101302, lng: -118.343581};
+var position = {lat: 34.101302, lng: -118.343581};
 
 var marker = new google.maps.Marker({
     position: {
@@ -240,13 +240,13 @@ function renderTwitter(studentArray){
 
 /***************************************************************************************************
  * getNBAData -
- * @param:
- * @returns
+ * @param: none
+ * @returns: object response from NBA API
  */
 function getNBAData() {
     var currentTime = new Date();
-    var month = currentTime.getUTCMonth() + 1;
-    var day =currentTime.getUTCDate()-1;
+    var month = currentTime.getUTCMonth()+1;
+    var day =currentTime.getUTCDate();
     var year = currentTime.getUTCFullYear();
 
     var nbaData = {
@@ -336,9 +336,6 @@ function formatTeamInfo(tricode, score, teamImg) {
  * @returns
  */
 function generateScoreboard(teamOne, teamTwo, gameInfo) {
-
-
-
     var scoreboard = $("<div>").addClass("scoreboard");
 
 
@@ -374,15 +371,38 @@ function generateScoreboard(teamOne, teamTwo, gameInfo) {
     awayTeam.append(homeTeamLogo2, teamDetails2);
     scoreboard.append(awayTeam);
 
-    var timer = $("<div>").addClass("timer");
+
+    var quarter = gameInfo.quarter;
     var timerContainer = $("<div>").addClass("timer-container");
-    var quarter = $("<div>").addClass("quarter").text(gameInfo.quarter);
-    var timeLeft = $("<div>").addClass("timeleft").text(gameInfo.clock);
+    var timer = $("<div>").addClass("timer");
+    var gameStart = gameInfo.gameFinal;
 
-    timerContainer.append(quarter, timeLeft);
+
+
+    if(gameStart == true && quarter > 4) {
+        var quarter1 = $("<div>").addClass("quarter").text("OT");
+        var timeLeft = $("<div>").addClass("timeleft").text(gameInfo.clock);
+        timerContainer.append(quarter1, timeLeft);
+    }
+    if(gameStart == true && quarter <= 4) {
+        var quarter = $("<div>").addClass("quarter").text(gameInfo.quarter);
+        var timeLeft = $("<div>").addClass("timeleft").text(gameInfo.clock);
+        timerContainer.append(quarter, timeLeft);
+    }
+
+    if(gameStart == false && teamOne.score == 0) {
+        var startTime = $("<div>").addClass("timeleft").text(gameInfo.startTime);
+        var quarter2 = $("<div>").addClass("quarter").text("");
+        timerContainer.append(quarter2, startTime);
+    }
+    if(gameStart == false && teamOne.score > 0) {
+        var endTime = $("<div>").addClass("timeleft").text("FINAL");
+        var quarter3 = $("<div>").addClass("quarter").text("");
+        timerContainer.append(quarter3, endTime);
+    }
+
+
     timer.append(timerContainer);
-
-
     scoreboard.append(homeTeam, awayTeam, timer);
     $(".gameSection").append(scoreboard);
 }
