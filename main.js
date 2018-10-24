@@ -44,7 +44,7 @@ var logos = {
     "WAS": "nbaimages/WAS.png"
 };
 
-var numCoord = {lat: 33.5424719, lng: -117.782074};
+var numCoord = {};
 
 
 
@@ -188,11 +188,13 @@ function search_result(geocoder, resultsMap) {
                 position: results[0].geometry.location,
             });
             var loc = resultsMap.getCenter();
-            var obj = {
-                latitude: loc.lat(),
-                longitude: loc.lng()
+            numCoord = {
+                lat: loc.lat(),
+                lng: loc.lng()
             };
-            console.log(obj);
+            // numCoord.lat=loc.lat();
+            // numCoord.lng=loc.lng();
+            console.log(numCoord);
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
@@ -637,7 +639,7 @@ function renderRestaurants(restObj){
         timer.append(timerContainer);
         scoreboard.append(homeTeam, awayTeam, timer);
         $(".gameSection").append(scoreboard);
-    }
+
     timer.append(timerContainer);
     scoreboard.append(homeTeam, awayTeam, timer);
     $(".gameSection").append(scoreboard);
