@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-size: 0;
+}
+
+.pageOne {
+    width: 100vw;
+    height: 100vh;
+    background-color: gold;
+    display: none;
+}
+
+.pageTwo {
+    width: 100vw;
+    height: 100vh;
+    background-color: purple;
+    display: inline-block;
+}
+
+.leftHalf {
+    width: 50%;
+    height: 100%;
+    background-color: orange;
+    display: inline-block;
+}
+
+.rightHalf {
+    width: 50%;
+    height: 100%;
+    background-color: orangered;
+    display: inline-block;
+}
+
+.twitterSection {
+    width: 60%;
+    height: 25%;
+    background-color: green;
+}
+
+.gameSection {
+    width: 60%;
+    height: 70%;
+    background-color: pink;
+}
+
+.mapSection {
+    width: 50%;
+    height: 40%;
+    background-color: #5e5e5e;
+}
+
+.restaurantSection {
+    height: 55%;
+    width: 75%;
+    background-color: lime;
+}
+
