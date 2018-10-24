@@ -360,12 +360,40 @@ function renderRestaurants(restObj){
      * @param: none
      * @returns: object response from NBA API
      */
+
     function getNBAData() {
         var currentTime = new Date();
         var month = currentTime.getUTCMonth() + 1;
         var day = currentTime.getUTCDate();
         var year = currentTime.getUTCFullYear();
 
+            var nbaData = {
+                "async": true,
+                "crossDomain": true,
+                'dataType': 'json',
+                "url": `http://danielpaschal.com/nbaproxy.php?year=${year}&month=${month}&date=${day}`,
+                "method": "GET",
+            };
+
+            $.ajax(nbaData).done(function (response) {
+                var nbaData = response;
+                updateNBAScores(nbaData);
+                console.log(response);
+            })
+    }
+
+
+/***************************************************************************************************
+ * getNBADataInterval -
+ * @param: none
+ * @returns: object response from NBA API
+ */
+function getNBADataInterval() {
+    var currentTime = new Date();
+    var month = currentTime.getUTCMonth() + 1;
+    var day = currentTime.getUTCDate();
+    var year = currentTime.getUTCFullYear();
+    setInterval(function () {
         var nbaData = {
             "async": true,
             "crossDomain": true,
@@ -378,8 +406,10 @@ function renderRestaurants(restObj){
             var nbaData = response;
             updateNBAScores(nbaData);
             console.log(response);
-        });
-    }
+        })
+    }, 50000);
+
+}
 
     /***************************************************************************************************
      * updateNBAScores -
@@ -387,6 +417,8 @@ function renderRestaurants(restObj){
      * @returns teamOne, teamTwo, gameInfo
      */
     function updateNBAScores(nbaData) {
+        $("#gameSection").empty();
+
         var numberGames = nbaData.numGames;
         for (var i = 0; i < numberGames; i++) {
             var teamName1 = nbaData.games[i].hTeam.triCode;
@@ -416,17 +448,6 @@ function renderRestaurants(restObj){
             };
 
             generateScoreboard(teamOne, teamTwo, gameInfo);
-
-
-            console.log(teamName1);
-            console.log(teamName2);
-            console.log(teamScore1);
-            console.log(teamScore2);
-            console.log(quarter);
-            console.log(clock);
-            console.log(startTime);
-
-
         }
 
 
@@ -453,6 +474,8 @@ function renderRestaurants(restObj){
      * @returns
      */
     function generateScoreboard(teamOne, teamTwo, gameInfo) {
+
+
         var scoreboard = $("<div>").addClass("scoreboard");
 
 
@@ -521,7 +544,13 @@ function renderRestaurants(restObj){
         timer.append(timerContainer);
         scoreboard.append(homeTeam, awayTeam, timer);
         $(".gameSection").append(scoreboard);
-    }
+
+        getNBADataInterval();
+
+}
+
+ 
+
 
 /***************************************************************************************************
  * formatTeamInfo -
@@ -532,4 +561,5 @@ function openPage() {
   $(".pageOne").toggle(".display");
   $(".pageTwo").toggle(".display");
 }
+
 
