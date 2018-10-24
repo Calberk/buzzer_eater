@@ -53,7 +53,7 @@ var numCoord;  {lat: 41234 , lng 324234}
  * initializes the application, including adding click handlers and pulling in any data from the server
  */
 function initializeApp(){
-    landing();
+    // landing();
     getNBAData();
     clickHandlers();
 
