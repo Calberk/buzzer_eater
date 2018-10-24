@@ -44,6 +44,7 @@ var logos = {
     "WAS": "nbaimages/WAS.png"
 };
 
+var numCoord;
 
 /***************************************************************************************************
  * initializeApp
@@ -52,11 +53,13 @@ var logos = {
  * initializes the application, including adding click handlers and pulling in any data from the server
  */
 function initializeApp(){
-    landing();
+//     landing();
     // search_result();
+    clickHandlers();
     getNBAData();
     storeTwitterData();
     initMap();
+
 }
 
 /***************************************************************************************************
@@ -73,6 +76,7 @@ function initMap(restArray) {
     var bounds = new google.maps.LatLngBounds();
     var map = new google.maps.Map(
         document.getElementById('map'), {zoom: 15, center: numCoord});// areaOne needs to be the city we are searching
+
 
 
 
@@ -102,7 +106,7 @@ function initMap(restArray) {
         // });
 
 
-// }
+}
 
 /***************************************************************************************************
  * attachRestaurantInfo
@@ -127,19 +131,16 @@ function attachRestaurantInfo(marker, info){
  * @return:
  none
  */
-function landing() {
+function clickHandlers() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
         center: {lat: 33.652775, lng: -117.750732}
     });
     var geocoder = new google.maps.Geocoder();
 
-    // $("#submit").addEventListener('click', function() {
-    //     geocodeAddress(geocoder, map);
-    // });
-
     document.getElementById('submit').addEventListener('click', function() {
         search_result(geocoder, map);
+        $(".pageOne").addClass("hide");
     });
 }
 
@@ -150,7 +151,7 @@ function landing() {
  none
  */
 
-var numCoord;
+
 
 function search_result(geocoder, resultsMap) {
 
@@ -167,6 +168,7 @@ function search_result(geocoder, resultsMap) {
             var long_latArr = coorStr.split(",");
             numCoord = long_latArr.map(Number);
             console.log(numCoord);
+            getRestaurantInformation();
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
@@ -189,7 +191,7 @@ function getTwitterData(){
  */
 function storeTwitterData(){
     // var array = [33.8169, -118.0369];
-    getRestaurantInformation(array);
+    getRestaurantInformation();
 }
 /***************************************************************************************************
  * getRestaurantInformation - clears out the form values based on inputIds variable
