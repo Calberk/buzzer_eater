@@ -73,7 +73,7 @@ function initializeApp(){
 
         var bounds = new google.maps.LatLngBounds();
         var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 15, center: numCoord});// areaOne needs to be the city we are searching
+            document.getElementById('map'), {zoom: 10, center: numCoord});// areaOne needs to be the city we are searching
 
 
 
@@ -219,7 +219,7 @@ function getRestaurantInformation(){
             count: 10,
             lat: numCoord.lat,
             lon: numCoord.lng,
-            radius: 8000,
+            radius: 1000,
             cuisines: 227,
             q: "bar",
 
