@@ -7,12 +7,6 @@ body {
 .pageOne {
     width: 100vw;
     height: 100vh;
-<<<<<<< HEAD
-    /*background-color: gold;*/
-    display: none;
-=======
-    /*display: none;*/
->>>>>>> d56511f039fdffce3877640fc98085cdfe3b3b33
 }
 
 .searchSection {
@@ -35,7 +29,7 @@ body {
     height: 100vh;
     background-color: black;
     display: inline-block;
-    /*display: none;*/
+    display: none;
 }
 
 .leftHalf {
