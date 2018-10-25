@@ -55,11 +55,11 @@ var numCoord = {};
  * initializes the application, including adding click handlers and pulling in any data from the server
  */
 function initializeApp(){
+    getTwitterData();
     getNBAData();
     // clickHandlers();
     // getRestaurantInformation();
     landing();
-
 }
 
 /***************************************************************************************************
@@ -73,7 +73,7 @@ function initializeApp(){
 
         var bounds = new google.maps.LatLngBounds();
         var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 15, center: numCoord});// areaOne needs to be the city we are searching
+            document.getElementById('map'), {zoom: 10, center: numCoord});// areaOne needs to be the city we are searching
 
 
 
@@ -190,14 +190,59 @@ function search_result(geocoder, resultsMap) {
  */
 function getTwitterData(){
 
+     var ajaxObject = {
+            url: 'https://s-apis.learningfuze.com/hackathon/twitter/index.php',
+            dataType: 'json',
+            method: 'post',
+            data: {
+                action: 'user',
+                screen_name: 'nba',
+                get_timeline: 'true',
+                include_entities: 'true',
+            },
+            success: function(response){
+                storeTwitterData(response);
+                console.log(response);
+            }
+        };
+        $.ajax(ajaxObject)
 }
 /***************************************************************************************************
  * storeTwitterData -
- * @param
- * @return
- * @calls
+ * @param:
+ * @return:
+ * @calls:
  */
-function storeTwitterData(){
+function storeTwitterData(response){
+    var twitterArray = response.info;
+
+    for(var i = 0; i < twitterArray.length; i++){
+        var tweet = twitterArray[i].text;
+        var urlIndex = tweet.indexOf("http");
+        var tweetBox = $("<div>");
+
+        //If the tweet has a url at the end
+        if(urlIndex !== -1){
+            var newTweetArray = tweet.split(" ");
+            var urlTweet = newTweetArray.pop();
+            var newTweet = newTweetArray.join(" ");
+
+            var hyperLink = $("<a>").text("more info").attr("href",urlTweet).attr("target", "_blank");
+            tweetBox.append(newTweet, hyperLink).addClass("tweetText");
+        }
+        else{
+            tweetBox.append(tweet).addClass("tweetText");
+        }
+        $(".tweetsFeed").append(tweetBox);
+    }
+
+    var nbaLogo = $("<img>").attr("src", "images/nbalogo.jpg");
+    var verifiedLogo = $("<img>").attr("src", "images/verified2.png");
+    var nbaHandleName = response.info[0].user.name;
+
+    $(".tweetLogo").append(nbaLogo);
+    $(".twitterHandle").append(nbaHandleName);
+    $(".twitterVerified").append(verifiedLogo);
 
 }
 /***************************************************************************************************
@@ -219,7 +264,7 @@ function getRestaurantInformation(){
             count: 10,
             lat: numCoord.lat,
             lon: numCoord.lng,
-            radius: 8000,
+            radius: 1000,
             cuisines: 227,
             q: "bar",
 
@@ -316,12 +361,40 @@ function renderRestaurants(restObj){
      * @param: none
      * @returns: object response from NBA API
      */
+
     function getNBAData() {
         var currentTime = new Date();
         var month = currentTime.getUTCMonth() + 1;
         var day = currentTime.getUTCDate();
         var year = currentTime.getUTCFullYear();
 
+            var nbaData = {
+                "async": true,
+                "crossDomain": true,
+                'dataType': 'json',
+                "url": `http://danielpaschal.com/nbaproxy.php?year=${year}&month=${month}&date=${day}`,
+                "method": "GET",
+            };
+
+            $.ajax(nbaData).done(function (response) {
+                var nbaData = response;
+                updateNBAScores(nbaData);
+                console.log(response);
+            })
+    }
+
+
+/***************************************************************************************************
+ * getNBADataInterval -
+ * @param: none
+ * @returns: object response from NBA API
+ */
+function getNBADataInterval() {
+    var currentTime = new Date();
+    var month = currentTime.getUTCMonth() + 1;
+    var day = currentTime.getUTCDate();
+    var year = currentTime.getUTCFullYear();
+    setInterval(function () {
         var nbaData = {
             "async": true,
             "crossDomain": true,
@@ -334,8 +407,10 @@ function renderRestaurants(restObj){
             var nbaData = response;
             updateNBAScores(nbaData);
             console.log(response);
-        });
-    }
+        })
+    }, 50000);
+
+}
 
     /***************************************************************************************************
      * updateNBAScores -
@@ -343,6 +418,8 @@ function renderRestaurants(restObj){
      * @returns teamOne, teamTwo, gameInfo
      */
     function updateNBAScores(nbaData) {
+        $("#gameSection").empty();
+
         var numberGames = nbaData.numGames;
         for (var i = 0; i < numberGames; i++) {
             var teamName1 = nbaData.games[i].hTeam.triCode;
@@ -372,17 +449,6 @@ function renderRestaurants(restObj){
             };
 
             generateScoreboard(teamOne, teamTwo, gameInfo);
-
-
-            console.log(teamName1);
-            console.log(teamName2);
-            console.log(teamScore1);
-            console.log(teamScore2);
-            console.log(quarter);
-            console.log(clock);
-            console.log(startTime);
-
-
         }
 
 
@@ -409,6 +475,8 @@ function renderRestaurants(restObj){
      * @returns
      */
     function generateScoreboard(teamOne, teamTwo, gameInfo) {
+
+
         var scoreboard = $("<div>").addClass("scoreboard");
 
 
@@ -477,7 +545,13 @@ function renderRestaurants(restObj){
         timer.append(timerContainer);
         scoreboard.append(homeTeam, awayTeam, timer);
         $(".gameSection").append(scoreboard);
-    }
+
+        getNBADataInterval();
+
+}
+
+ 
+
 
 /***************************************************************************************************
  * formatTeamInfo -
@@ -488,4 +562,5 @@ function openPage() {
   $(".pageOne").toggle(".display");
   $(".pageTwo").toggle(".display");
 }
+
 

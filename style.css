@@ -13,7 +13,6 @@ body {
 .pageOne {
     width: 100vw;
     height: 100vh;
-    /*display: none;*/
 }
 
 .searchSection {
@@ -34,7 +33,7 @@ body {
 .pageTwo {
     width: 100vw;
     height: 100vh;
-    background-color: purple;
+    background-color: black;
     display: inline-block;
     display: none;
 }
@@ -42,7 +41,7 @@ body {
 .leftHalf {
     width: 50%;
     height: 100%;
-    background-color: orange;
+    background-color: black;
     display: inline-block;
 }
 
@@ -53,14 +52,14 @@ body {
     display: inline-block;
 }
 
-.twitterSection {
-    width: 60%;
-    height: 40%;
-    background-color: green;
-}
+/*.twitterSection {*/
+    /*width: 60%;*/
+    /*height: 40%;*/
+    /*background-color: green;*/
+/*}*/
 
 .mapSection {
-    width: 50%;
+    width: 80%;
     height: 40%;
     background-color: #985f0d;
 }
@@ -122,8 +121,9 @@ body {
     width: 100%;
     height: 20%;
     font-size: 75%;
-    color: slategrey;
+    color: white;
 }
+
 
 #address {
     width: 40%;
@@ -138,7 +138,7 @@ body {
     height: 22px;
     border-radius: 7px;
     background-color: chocolate;
-}
+
 
 .rateSection {
     width: 10%;
@@ -161,6 +161,7 @@ body {
     font-size: 30%;
     color: dimgrey;
     text-align: right;
+    color: white;
 }
 
 ::-webkit-scrollbar {
@@ -1011,3 +1012,85 @@ body {
 .display {
     display: none;
 }
+
+/*TWITTER CSS BEGINS HERE*/
+
+.twitterContainer{
+    width: 35vw;
+    height: 40vh;
+    background-color: black;
+    color: white;
+    padding: 1%;
+    font-size: 1rem;
+    border: 1px solid white;
+}
+
+.tweetLogo{
+    height: 97%;
+    width: 15%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.tweetLogo img{
+    border-radius: 50%;
+}
+
+.tweetMain{
+    height: 98%;
+    width: 82%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.tweetMainHeader{
+    height: 10%;
+    width: 99%;
+    font-size: 1rem;
+}
+
+.twitterHandle{
+    height: 80%;
+    width: 8%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.twitterVerified{
+    height: 80%;
+    width: 5%;
+    display: inline-block;
+}
+
+.twitterVerified img{
+    width: 80%;
+}
+
+.tweetsFeed{
+    height: 80%;
+    width: 99%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+
+.tweetsFeed a{
+    color: lightskyblue;
+    margin: 0 5px;
+}
+
+.tweetText{
+    height: 25%;
+    width: 99%;
+    border: solid lightskyblue 2px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/*TWITTER CSS ENDS HERE*/
