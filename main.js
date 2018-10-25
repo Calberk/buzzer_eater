@@ -202,6 +202,7 @@ function getTwitterData(){
             },
             success: function(response){
                 storeTwitterData(response);
+                console.log(response);
             }
         };
         $.ajax(ajaxObject)
