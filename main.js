@@ -34,6 +34,7 @@ var logos = {
     "NOP": "nbaimages/NOP.png",
     "NYK": "nbaimages/NYK.png",
     "OKC": "nbaimages/OKC.png",
+    "ORL": "nbaimages/ORL.png",
     "PHI": "nbaimages/PHI.png",
     "PHX": "nbaimages/PHX.png",
     "POR": "nbaimages/POR.png",
@@ -365,7 +366,7 @@ function renderRestaurants(restObj){
     function getNBAData() {
         var currentTime = new Date();
         var month = currentTime.getUTCMonth() + 1;
-        var day = currentTime.getUTCDate();
+        var day = currentTime.getUTCDate() -1;
         var year = currentTime.getUTCFullYear();
 
             var nbaData = {
