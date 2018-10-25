@@ -364,7 +364,7 @@ function renderRestaurants(restObj){
     function getNBAData() {
         var currentTime = new Date();
         var month = currentTime.getUTCMonth() + 1;
-        var day = currentTime.getUTCDate() -1;
+        var day = currentTime.getUTCDate()-1;
         var year = currentTime.getUTCFullYear();
 
             var nbaData = {
@@ -391,7 +391,7 @@ function renderRestaurants(restObj){
 function getNBADataInterval() {
     var currentTime = new Date();
     var month = currentTime.getUTCMonth() + 1;
-    var day = currentTime.getUTCDate();
+    var day = currentTime.getUTCDate()-1;
     var year = currentTime.getUTCFullYear();
     setInterval(function () {
         var nbaData = {
