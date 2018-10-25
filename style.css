@@ -7,7 +7,7 @@ body {
 .mainContent{
     position: relative;
     left: 15%;
-    top: 15%;
+    /*top: 15%;*/
 }
 
 .pageOne {
@@ -17,11 +17,11 @@ body {
 
 .searchSection {
     position: absolute;
-    top: 6%;
+    top: 55%;
     left: 35%;
     z-index: 5;
     padding: 5px;
-    color: yellow;
+    color: gold;
     border-radius: 10px;
     text-align: center;
     font-family: 'Roboto','sans-serif';
@@ -95,7 +95,7 @@ body {
 }
 
 .appImage {
-    width: 80%;
+    width: 70%;
     height: 80%;
     border-radius: 30%;
 }
@@ -788,15 +788,6 @@ body {
 /*CSS FOR BASKETBALL*/
 
 
-body {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 #basket img {
     display: block;
     position: absolute;
@@ -807,15 +798,14 @@ body {
 }
 
 
-/* wrapper for 800x600 screen */
-
 #allWrapper {
     position: relative;
-    width: 800px;
-    height: 600px;
+    width: 50%;
+    height: 200px;
     /*background: url("http://svgur.com/i/5Y.svg");*/
     background-size: cover;
     z-index: -5;
+    left: 20%;
 }
 
 
