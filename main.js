@@ -7,8 +7,6 @@
  */
 $(document).ready(initializeApp);
 
-
-
 /**
  * Define all global variables here.
  */
@@ -78,11 +76,14 @@ function initializeApp(){
 
 
         for (i = 0; i < restArray.length; i++) {
+            var icon = {url: 'http://kindersay.com/files/images/basketball.png',
+                scaledSize: new google.maps.Size(40,35)};
             var position = new google.maps.LatLng(restArray[i].latitude, restArray[i].longitude);
             bounds.extend(position);
             marker = new google.maps.Marker({
                 position: position,
                 map: map,
+                icon: icon,
                 title: restArray[i].name
             });
             var infoWindow = new google.maps.InfoWindow(), marker, i;
@@ -98,21 +99,11 @@ function initializeApp(){
     }
 
 /***************************************************************************************************
- * attachRestaurantInfo
+ * landing
  * @params {undefined}
  * @returns  {undefined}
  *
  */
-// function attachRestaurantInfo(marker, info){
-//     var infowindow = new google.maps.InfoWindow({
-//         content: 'Wild Wings'
-//     });
-//
-//     marker.addListener('click', function() {
-//         infowindow.open(marker.get('map'), marker);
-//     });
-//
-// }
 
 function landing() {
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -121,30 +112,11 @@ function landing() {
     });
     var geocoder = new google.maps.Geocoder();
 
-    // $("#submit").addEventListener('click', function() {
-    //     geocodeAddress(geocoder, map);
-    // });
-
     document.getElementById('submit').addEventListener('click', function() {
         search_result(geocoder, map);
         openPage();
     });
 }
-
-/***************************************************************************************************
- * land -
- * @param:
- * @return:
- none
- */
-// function clickHandlers(){
-//         document.getElementById('submit').addEventListener('click', function() {
-//         search_result();
-//         openPage();
-// });
-//
-// }
-// }}
 
 /***************************************************************************************************
  * search_result -
@@ -161,7 +133,6 @@ function search_result(geocoder, resultsMap) {
     geocoder.geocode({'address': address}, function(results, status) {
         if (status === 'OK') {
             resultsMap.setCenter(results[0].geometry.location);
-            console.log(results[0]);
             var marker = new google.maps.Marker({
                 map: resultsMap,
                 position: results[0].geometry.location,
@@ -171,15 +142,11 @@ function search_result(geocoder, resultsMap) {
                 lat: loc.lat(),
                 lng: loc.lng()
             };
-            // numCoord.lat=loc.lat();
-            // numCoord.lng=loc.lng();
-            console.log(numCoord);
             getRestaurantInformation();
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
     });
-    // getRestaurantInformation();
 }
 /***************************************************************************************************
  * getTwitterData -
@@ -201,7 +168,6 @@ function getTwitterData(){
             },
             success: function(response){
                 storeTwitterData(response);
-                console.log(response);
             }
         };
         $.ajax(ajaxObject)
@@ -251,7 +217,6 @@ function storeTwitterData(response){
  * @calls initMap
  */
 function getRestaurantInformation(){
-    console.log(numCoord.lat, numCoord.lng);
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -273,11 +238,10 @@ function getRestaurantInformation(){
 
         },
         success: function( response){
-            console.log(response);
             createRestaurantObj(response);
         },
         error: function(err){
-            console.log(arguments);
+
         }
     };
     $.ajax(settings)
@@ -339,20 +303,8 @@ function renderRestaurants(restObj){
             restaurantObj.url = restUrl;
             renderRestaurants(restaurantObj);
             restaurantsArray.push(restaurantObj);
-            console.log(restaurantsArray);
         }
         initMap(restaurantsArray);
-    }
-
-
-    /***************************************************************************************************
-     * renterTwitter -
-     * @param
-     * @returns
-     * @calls
-     */
-    function renderTwitter(studentArray) {
-
     }
 
     /***************************************************************************************************
@@ -378,7 +330,6 @@ function renderRestaurants(restObj){
             $.ajax(nbaData).done(function (response) {
                 var nbaData = response;
                 updateNBAScores(nbaData);
-                console.log(response);
             })
     }
 
@@ -405,7 +356,6 @@ function getNBADataInterval() {
         $.ajax(nbaData).done(function (response) {
             var nbaData = response;
             updateNBAScores(nbaData);
-            console.log(response);
         })
     }, 50000);
 
@@ -449,8 +399,6 @@ function getNBADataInterval() {
 
             generateScoreboard(teamOne, teamTwo, gameInfo);
         }
-
-
     }
 
     /***************************************************************************************************
@@ -553,9 +501,9 @@ function getNBADataInterval() {
 
 
 /***************************************************************************************************
- * formatTeamInfo -
- * @param: tricode, score, teamImg
- * @returns team Obj
+ * openPage - switch between opening page and main page
+ * @param:
+ * @returns
  */
 function openPage() {
   $(".pageOne").toggle(".display");
