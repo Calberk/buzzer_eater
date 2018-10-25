@@ -58,8 +58,6 @@ var numCoord = {};
 function initializeApp(){
     getTwitterData();
     getNBAData();
-    // clickHandlers();
-    // getRestaurantInformation();
     landing();
 }
 
