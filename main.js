@@ -330,6 +330,8 @@ function renderRestaurants(restObj){
             $.ajax(nbaData).done(function (response) {
                 var nbaData = response;
                 updateNBAScores(nbaData);
+                getNBADataInterval();
+
             })
     }
 
@@ -357,7 +359,7 @@ function getNBADataInterval() {
             var nbaData = response;
             updateNBAScores(nbaData);
         })
-    }, 50000);
+    }, 15000);
 
 }
 
@@ -493,7 +495,6 @@ function getNBADataInterval() {
         scoreboard.append(homeTeam, awayTeam, timer);
         $(".gameSection").append(scoreboard);
 
-        getNBADataInterval();
 
 }
 
