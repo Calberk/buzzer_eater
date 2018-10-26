@@ -116,6 +116,7 @@ function landing() {
 
     document.getElementById('submit').addEventListener('click', function() {
         search_result(geocoder, map);
+        $("#address").val('');
         openPage();
     });
 }
@@ -281,6 +282,7 @@ function renderRestaurants(restObj){
      * @param object of restaurant info
      */
     function createRestaurantObj(apiObj) {
+        $(".restaurantSection").empty();
         var brewery = apiObj.restaurants;
         var restaurantsArray = [];
         for (var restaurantIndex = 0; restaurantIndex < brewery.length; restaurantIndex++) {
