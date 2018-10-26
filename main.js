@@ -315,9 +315,9 @@ function renderRestaurants(restObj){
 
     function getNBAData() {
         var currentTime = new Date();
-        var month = currentTime.getUTCMonth() + 1;
-        var day = currentTime.getUTCDate()-1;
-        var year = currentTime.getUTCFullYear();
+        var month = currentTime.getMonth() + 1;
+        var day = currentTime.getDate();
+        var year = currentTime.getFullYear();
 
             var nbaData = {
                 "async": true,
@@ -343,9 +343,9 @@ function renderRestaurants(restObj){
  */
 function getNBADataInterval() {
     var currentTime = new Date();
-    var month = currentTime.getUTCMonth() + 1;
-    var day = currentTime.getUTCDate()-1;
-    var year = currentTime.getUTCFullYear();
+    var month = currentTime.getMonth() + 1;
+    var day = currentTime.getDate();
+    var year = currentTime.getFullYear();
     setInterval(function () {
         var nbaData = {
             "async": true,
@@ -465,17 +465,23 @@ function getNBADataInterval() {
         var timerContainer = $("<div>").addClass("timer-container");
         var timer = $("<div>").addClass("timer");
         var gameStart = gameInfo.gameFinal;
+        var clock = gameInfo.clock
 
 
         if (gameStart == true && quarter > 4) {
             var quarter1 = $("<div>").addClass("quarter").text("OT");
-            var timeLeft = $("<div>").addClass("timeleft").text(gameInfo.clock);
+            var timeLeft = $("<div>").addClass("timeleft").text(clock);
             timerContainer.append(quarter1, timeLeft);
         }
         if (gameStart == true && quarter <= 4) {
             var quarter = $("<div>").addClass("quarter").text(gameInfo.quarter);
-            var timeLeft = $("<div>").addClass("timeleft").text(gameInfo.clock);
+            var timeLeft = $("<div>").addClass("timeleft").text(clock);
             timerContainer.append(quarter, timeLeft);
+        }
+        if (gameStart == true && quarter == 2 && clock == "0.0") {
+            var quarter = $("<div>").addClass("quarter").text(gameInfo.quarter);
+            var halftime = $("<div>").addClass("timeleft").text("HALF");
+            timerContainer.append(quarter, halftime);
         }
 
 
