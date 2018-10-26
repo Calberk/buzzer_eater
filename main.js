@@ -57,6 +57,8 @@ function initializeApp(){
     getTwitterData();
     getNBAData();
     landing();
+    playIntro();
+    clickHandler();
 }
 
 /***************************************************************************************************
@@ -511,4 +513,12 @@ function openPage() {
   $(".pageTwo").toggle(".display");
 }
 
+function playIntro(){
+    var audio = new Audio('sounds/buzzer-eater.mp3');
+    audio.play();
+}
+
+function clickHandler(){
+    $(".reset").click(openPage);
+}
 

@@ -1019,6 +1019,7 @@ body {
     padding: 1%;
     font-size: 1rem;
     border: 1px solid white;
+    display: inline-block;
 }
 
 .tweetLogo{
@@ -1065,12 +1066,12 @@ body {
 .tweetsFeed{
     height: 80%;
     width: 99%;
-    overflow: scroll;
-    overflow-x: hidden;
+    overflow: auto;
+    /*overflow-x: hidden;*/
 }
 
 ::-webkit-scrollbar {
-    width: 0px;
+    /*width: 0px;*/
     background: transparent;
 }
 
@@ -1090,3 +1091,13 @@ body {
 }
 
 /*TWITTER CSS ENDS HERE*/
+
+
+.reset {
+    position: relative;
+    left: 5%;
+    width: 20%;
+    height: 22px;
+    border-radius: 7px;
+    background-color: chocolate;
+}
