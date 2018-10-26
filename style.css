@@ -144,6 +144,7 @@ body {
     height: 22px;
     border-radius: 7px;
     background-color: chocolate;
+    cursor: pointer;
 }
 
 .rateSection {
@@ -805,7 +806,7 @@ body {
     /*background: url("http://svgur.com/i/5Y.svg");*/
     background-size: cover;
     z-index: -5;
-    left: 20%;
+    left: 28%;
 }
 
 
@@ -1100,4 +1101,13 @@ body {
     height: 22px;
     border-radius: 7px;
     background-color: chocolate;
+    cursor: pointer;
+}
+
+.reset:hover {
+    background-color: saddlebrown;
+}
+
+#submit:hover {
+    background-color: saddlebrown;
 }
