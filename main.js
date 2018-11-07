@@ -322,7 +322,24 @@ function renderRestaurants(restObj){
         var month = currentTime.getMonth() + 1;
         var day = currentTime.getDate();
         var year = currentTime.getFullYear();
-
+        if(day < 10) {
+            var nbaData = {
+                "async": true,
+                "crossDomain": true,
+                'dataType': 'json',
+                "url": `http://danielpaschal.com/nbaproxy.php?year=${year}&month=${month}&date=0${day}`,
+                "method": "GET",
+            };
+    
+            $.ajax(nbaData).done(function (response) {
+                var nbaData = response;
+                updateNBAScores(nbaData);
+                getNBADataInterval();
+    
+            })
+    
+        }
+    else{
             var nbaData = {
                 "async": true,
                 "crossDomain": true,
@@ -330,13 +347,14 @@ function renderRestaurants(restObj){
                 "url": `http://danielpaschal.com/nbaproxy.php?year=${year}&month=${month}&date=${day}`,
                 "method": "GET",
             };
-
+    
             $.ajax(nbaData).done(function (response) {
                 var nbaData = response;
                 updateNBAScores(nbaData);
                 getNBADataInterval();
-
+    
             })
+    }
     }
 
 
@@ -351,6 +369,24 @@ function getNBADataInterval() {
     var day = currentTime.getDate();
     var year = currentTime.getFullYear();
     setInterval(function () {
+        if(day < 10) {
+            var nbaData = {
+                "async": true,
+                "crossDomain": true,
+                'dataType': 'json',
+                "url": `http://danielpaschal.com/nbaproxy.php?year=${year}&month=${month}&date=0${day}`,
+                "method": "GET",
+            };
+    
+            $.ajax(nbaData).done(function (response) {
+                var nbaData = response;
+                updateNBAScores(nbaData);
+        
+    
+            })
+    
+        }
+        else{
         var nbaData = {
             "async": true,
             "crossDomain": true,
@@ -363,6 +399,9 @@ function getNBADataInterval() {
             var nbaData = response;
             updateNBAScores(nbaData);
         })
+
+
+    }
     }, 15000);
 
 }
