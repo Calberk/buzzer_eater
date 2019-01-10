@@ -7,12 +7,14 @@ body {
 .mainContent{
     position: relative;
     left: 15%;
+   
     /*top: 15%;*/
 }
 
 .pageOne {
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
 
 .searchSection {
@@ -1039,6 +1041,7 @@ body {
     width: 82%;
     display: inline-block;
     vertical-align: top;
+    overflow: scroll;
 }
 
 .tweetMainHeader{
