@@ -322,17 +322,37 @@ function renderRestaurants(restObj){
         var month = currentTime.getMonth() + 1;
         var day = currentTime.getDate();
         var year = currentTime.getFullYear();
+        console.log(month,day, year)
         if(day < 10) {
+            var date = `${year}${month}0${day}`
             var nbaData = {
                 "async": true,
                 "crossDomain": true,
                 'dataType': 'json',
-                "url": `http://danielpaschal.com/nbaproxy.php?year=${year}&month=${month}&date=0${day}`,
+                "url": `https://place.kim-chris.com/nba/${date}`,
                 "method": "GET",
             };
     
             $.ajax(nbaData).done(function (response) {
-                var nbaData = response;
+                var nbaData = response.data;
+                updateNBAScores(nbaData);
+                getNBADataInterval();
+    
+            })
+    
+        }
+        if(month < 10) {
+            var date = `${year}0${month}${day}`
+            var nbaData = {
+                "async": true,
+                "crossDomain": true,
+                'dataType': 'json',
+                "url": `https://place.kim-chris.com/nba/${date}`,
+                "method": "GET",
+            };
+    
+            $.ajax(nbaData).done(function (response) {
+                var nbaData = response.data;
                 updateNBAScores(nbaData);
                 getNBADataInterval();
     
@@ -340,16 +360,17 @@ function renderRestaurants(restObj){
     
         }
     else{
+        var date = `${year}0${month}${day}`
             var nbaData = {
-                "async": true,
-                "crossDomain": true,
-                'dataType': 'json',
-                "url": `http://danielpaschal.com/nbaproxy.php?year=${year}&month=${month}&date=${day}`,
+                // "async": true,
+                // "crossDomain": true,
+                // 'dataType': 'json',
+                "url": `https://place.kim-chris.com/nba/${date}`,
                 "method": "GET",
             };
     
             $.ajax(nbaData).done(function (response) {
-                var nbaData = response;
+                var nbaData = response.data;
                 updateNBAScores(nbaData);
                 getNBADataInterval();
     
@@ -368,39 +389,60 @@ function getNBADataInterval() {
     var month = currentTime.getMonth() + 1;
     var day = currentTime.getDate();
     var year = currentTime.getFullYear();
+    
     setInterval(function () {
         if(day < 10) {
+            var date = `${year}${month}0${day}`
             var nbaData = {
                 "async": true,
                 "crossDomain": true,
                 'dataType': 'json',
-                "url": `http://danielpaschal.com/nbaproxy.php?year=${year}&month=${month}&date=0${day}`,
+                "url": `https://place.kim-chris.com/nba/${date}`,
                 "method": "GET",
             };
     
             $.ajax(nbaData).done(function (response) {
-                var nbaData = response;
+                var nbaData = response.data;
                 updateNBAScores(nbaData);
-        
+             
     
             })
     
         }
-        else{
-        var nbaData = {
-            "async": true,
-            "crossDomain": true,
-            'dataType': 'json',
-            "url": `http://danielpaschal.com/nbaproxy.php?year=${year}&month=${month}&date=${day}`,
-            "method": "GET",
-        };
-
-        $.ajax(nbaData).done(function (response) {
-            var nbaData = response;
-            updateNBAScores(nbaData);
-        })
-
-
+        if(month < 10) {
+            var date = `${year}0${month}${day}`
+            var nbaData = {
+                "async": true,
+                "crossDomain": true,
+                'dataType': 'json',
+                "url": `https://place.kim-chris.com/nba/${date}`,
+                "method": "GET",
+            };
+    
+            $.ajax(nbaData).done(function (response) {
+                var nbaData = response.data;
+                updateNBAScores(nbaData);
+               
+    
+            })
+    
+        }
+    else{
+        var date = `${year}${month}${day}`
+            var nbaData = {
+                // "async": true,
+                // "crossDomain": true,
+                // 'dataType': 'json',
+                "url": `https://place.kim-chris.com/nba/${date}`,
+                "method": "GET",
+            };
+    
+            $.ajax(nbaData).done(function (response) {
+                var nbaData = response.data;
+                updateNBAScores(nbaData);
+                
+    
+            })
     }
     }, 15000);
 
@@ -412,7 +454,9 @@ function getNBADataInterval() {
      * @returns teamOne, teamTwo, gameInfo
      */
     function updateNBAScores(nbaData) {
+        console.log(nbaData)
         $("#gameSection").empty();
+        
 
         var numberGames = nbaData.numGames;
         for (var i = 0; i < numberGames; i++) {
