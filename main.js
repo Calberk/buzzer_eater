@@ -58,7 +58,7 @@ function initializeApp(){
     getNBAData();
     landing();
     playIntro();
-    clickHandler();
+    // clickHandler();
 }
 
 /***************************************************************************************************
@@ -73,8 +73,6 @@ function initializeApp(){
         var bounds = new google.maps.LatLngBounds();
         var map = new google.maps.Map(
             document.getElementById('map'), {zoom: 10, center: numCoord});// areaOne needs to be the city we are searching
-
-
 
 
         for (i = 0; i < restArray.length; i++) {
@@ -108,16 +106,46 @@ function initializeApp(){
  */
 
 function landing() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 10,
-        center: {lat: 33.652775, lng: -117.750732}
-    });
-    var geocoder = new google.maps.Geocoder();
+    // var map = new google.maps.Map(document.getElementById('map'), {
+    //     zoom: 10,
+    //     center: {lat: 33.652775, lng: -117.750732}
+    // });
+    // var geocoder = new google.maps.Geocoder();
 
     document.getElementById('submit').addEventListener('click', function() {
-        search_result(geocoder, map);
+        search_result();
         $("#address").val('');
-        openPage();
+        // openPage();
+    });
+    document.getElementById('nba').addEventListener('click', function() {
+        // search_result(geocoder, map);
+        // $("#address").val('');
+        openPageNBA();
+    });
+    document.getElementById('nba1').addEventListener('click', function() {
+        // search_result(geocoder, map);
+        // $("#address").val('');
+        openPageNBA1();
+    });
+    document.getElementById('eats').addEventListener('click', function() {
+        // search_result(geocoder, map);
+        // $("#address").val('');
+        openPageEats();
+    });
+    document.getElementById('eats1').addEventListener('click', function() {
+        // search_result(geocoder, map);
+        // $("#address").val('');
+        openPageEats1();
+    });
+    document.getElementById('home1').addEventListener('click', function() {
+        // search_result(geocoder, map);
+        // $("#address").val('');
+        openPageHome1();
+    });
+    document.getElementById('home2').addEventListener('click', function() {
+        // search_result(geocoder, map);
+        // $("#address").val('');
+        openPageHome2();
     });
 }
 
@@ -130,17 +158,20 @@ function landing() {
 
 
 
-function search_result(geocoder, resultsMap) {
+function search_result(geocoder) {
+    var geocoder = new google.maps.Geocoder();
 
     var address = $("#address").val();
     geocoder.geocode({'address': address}, function(results, status) {
         if (status === 'OK') {
-            resultsMap.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-                map: resultsMap,
-                position: results[0].geometry.location,
-            });
-            var loc = resultsMap.getCenter();
+            console.log("RESULTSSS", results)
+            // resultsMap.setCenter(results[0].geometry.location);
+            // var marker = new google.maps.Marker({
+            //     map: resultsMap,
+            //     position: results[0].geometry.location,
+            // });
+            // var loc = resultsMap.getCenter();
+            var loc = results[0].geometry.location
             numCoord = {
                 lat: loc.lat(),
                 lng: loc.lng()
@@ -599,17 +630,49 @@ function getNBADataInterval() {
  * @param:
  * @returns
  */
-function openPage() {
+
+
+
+function openPageNBA() {
   $(".pageOne").toggle(".display");
   $(".pageTwo").toggle(".display");
+//   $(".pageThree").toggle(".display");
 }
+function openPageNBA1() {
+    // $(".pageOne").toggle(".display");
+    $(".pageTwo").toggle(".display");
+    $(".pageThree").toggle(".display");
+  }
+function openPageEats() {
+    $(".pageOne").toggle(".display");
+    // $(".pageTwo").toggle(".display");
+    $(".pageThree").toggle(".display");
+  }
+  function openPageEats1() {
+    // $(".pageOne").toggle(".display");
+    $(".pageTwo").toggle(".display");
+    $(".pageThree").toggle(".display");
+  }
+  function openPageHome1() {
+    $(".pageOne").toggle(".display");
+    $(".pageTwo").toggle(".display");
+    // $(".pageThree").toggle(".display");
+  }
+  function openPageHome2() {
+    $(".pageOne").toggle(".display");
+    // $(".pageTwo").toggle(".display");
+    $(".pageThree").toggle(".display");
+  }
 
 function playIntro(){
     var audio = new Audio('sounds/buzzer-eater.mp3');
     audio.play();
 }
 
-function clickHandler(){
-    $(".reset").click(openPage);
-}
+// function clickHandler(){
+//     $(".reset").click(openPage);
+// }
+
+
+
 
