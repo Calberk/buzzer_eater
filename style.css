@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    padding-top: 70px; 
     height: 100vh;
     font-size: 0;
 }
@@ -21,7 +22,6 @@ body {
     background-color: orange;
 }
  #home1, #home2, #eats1, #nba1 {
-    background-color: rgb(113, 113, 113);
     font-size: 1rem;
 }
 #search {
@@ -43,18 +43,12 @@ body {
     font-size: 2rem;
 }
 .addressSection {
-    /* position: absolute; */
+    position: relative;
     height: 15%;
-    top: 55%;
-    left: 35%;
-    z-index: 5;
-    padding: 5px;
+    top: 50px;
     color: gold;
-    border-radius: 10px;
     text-align: center;
     font-family: 'Roboto','sans-serif';
-    /* line-height: 30px; */
-    padding-left: 10px;
     font-size: 2rem;
 }
 
@@ -66,8 +60,8 @@ body {
     display: none;
 }
 .pageThree {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: black;
     display: inline-block;
     display: none;
@@ -168,8 +162,9 @@ body {
     height: 20px;
     text-align: center;
     border-radius: 7px;
-    font-size: 45%;
+    font-size: 16px;
 }
+
 .address {
     width: 100%;
     height: 20%;
@@ -179,11 +174,11 @@ body {
 
 #submit {
     width: 20%;
-    height: 22px;
     border-radius: 7px;
     background-color: chocolate;
     cursor: pointer;
 }
+
 .landingButtons {
     width: 40%;
     height: 30px;
@@ -217,21 +212,20 @@ body {
     color: white;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
 width: 10px;
-}
+} */
 
 
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
 box-shadow: inset 0 0 5px whitesmoke;
-/*border-radius: 10px;*/
-}
+} */
 
 
-::-webkit-scrollbar-thumb {
+/* ::-webkit-scrollbar-thumb {
 background: white;
 border-radius: 10px;
-}
+} */
 /*.titleContainer{*/
     /*display: inline-flex;*/
 /*}*/
@@ -872,7 +866,7 @@ body {
     width: 70px;
     height: 70px;
     position: relative;
-    animation: jump 1s infinite;
+    animation: jump 1s 5;
     overflow: hidden;
 }
 
@@ -886,7 +880,7 @@ body {
     border-radius: 100%;
     background: url("http://svgur.com/i/4D.svg");
     position: absolute;
-    animation: rotate 2s infinite, back 1s infinite;
+    animation: rotate 2s 2, back 1s 5;
     z-index: 5;
     background-repeat: repeat;
     background-size: cover;
@@ -905,7 +899,7 @@ body {
     background-image: url("http://svgur.com/i/5C.svg");
     background-size: 110%;
     border-radius: 100%;
-    animation: lightop 1s infinite;
+    animation: lightop 1s 5;
 }
 
 
@@ -917,7 +911,7 @@ body {
     height: 100%;
     position: absolute;
     border-radius: 100%;
-    animation: shadop 1s infinite;
+    animation: shadop 1s 5;
     margin: auto;
     display: block;
     background-size: contain;
@@ -936,7 +930,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 100%;
-    animation: shrink 1s infinite;
+    animation: shrink 1s 5;
     z-index: -1;
     background-position: center;
 }
@@ -1118,10 +1112,9 @@ body {
     /*overflow-x: hidden;*/
 }
 
-::-webkit-scrollbar {
-    /*width: 0px;*/
+/* ::-webkit-scrollbar {
     background: transparent;
-}
+} */
 
 
 .tweetsFeed a{
@@ -1157,4 +1150,26 @@ body {
 
 #submit:hover {
     background-color: saddlebrown;
+}
+
+/* HEADER NAV SECTION */
+
+#nav-title {
+    font-family: 'futura';
+    color: white;
+    letter-spacing: 20px;
+    font-size: 30px;
+    position: absolute;
+}
+
+.navbar-header {
+    font-family: 'futura';
+    color: white;
+    letter-spacing: 5px;
+    font-size: 30px;
+    position: absolute;
+}
+
+.header-img {
+    height: 50px;
 }
