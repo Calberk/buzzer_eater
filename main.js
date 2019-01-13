@@ -367,7 +367,7 @@ function renderRestaurants(restObj){
             $.ajax(nbaData).done(function (response) {
                 var nbaData = response.data;
                 updateNBAScores(nbaData);
-                getNBADataInterval();
+                // getNBADataInterval();
     
             })
     
@@ -385,7 +385,7 @@ function renderRestaurants(restObj){
             $.ajax(nbaData).done(function (response) {
                 var nbaData = response.data;
                 updateNBAScores(nbaData);
-                getNBADataInterval();
+                // getNBADataInterval();
     
             })
     
@@ -403,7 +403,7 @@ function renderRestaurants(restObj){
             $.ajax(nbaData).done(function (response) {
                 var nbaData = response.data;
                 updateNBAScores(nbaData);
-                getNBADataInterval();
+                // getNBADataInterval();
     
             })
     }
