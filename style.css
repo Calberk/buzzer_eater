@@ -1,20 +1,55 @@
 body {
     margin: 0;
     padding-top: 70px; 
-    height: 100vh;
     font-size: 0;
 }
 
-.mainContent{
+.mainContent {
     position: relative;
-    left: 15%;
-   
-    /*top: 15%;*/
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+.title-grouping {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.beer-icon {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center
+}
+
+.main-title {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#beer_text {
+    font-family: 'futura';
+    color: white;
+    letter-spacing: 20px;
+    font-size: 40px;
+    position: absolute;
+}
+
+.ball-icon {
+    width: 10%;
+    display: flex;
+}
+
+
+
 .pageOne {
-    width: 100vw;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
 }
 .menu {
@@ -29,19 +64,13 @@ body {
 }
 
 .searchSection {
-    position: absolute;
-    top: 55%;
-    left: 35%;
-    z-index: 5;
     padding: 5px;
     color: gold;
-    border-radius: 10px;
     text-align: center;
     font-family: 'Roboto','sans-serif';
-    /* line-height: 30px; */
-    padding-left: 10px;
-    font-size: 2rem;
+    font-size: 35px;
 }
+
 .addressSection {
     position: relative;
     height: 15%;
@@ -180,12 +209,11 @@ body {
 }
 
 .landingButtons {
-    width: 40%;
-    height: 30px;
+    width: 25%;
     border-radius: 7px;
     background-color: chocolate;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 
 .rateSection {
@@ -359,16 +387,6 @@ border-radius: 10px;
 /*LOGO ANIMATION from (clemishow on https://codepen.io/clemishow/pen/ZYPPeE) and (Vladimir Gashenko onhttps://codepen.io/gxash/pen/QNzKoj)*/
 
 
-#beer_text {
-    font-family: 'futura';
-    color: white;
-    letter-spacing: 20px;
-    font-size: 30px;
-    position: absolute;
-    top: 195px;
-    left: 370px;
-}
-
 #dribbble {
     color: #EC4E8B;
 }
@@ -400,12 +418,12 @@ body {
     border: solid 3.5px white;
     border-top: none;
     border-radius: 0 0 10px 10px;
-    position: absolute;
-    top: 200px;
-    left: 200px;
+    position: relative;
+    /* top: 200px;
+    left: 200px; */
     overflow: hidden;
-    transform: rotate(-20deg);
-    -webkit-animation: glass 10s infinite;
+    /* transform: rotate(-20deg); */
+    -webkit-animation: glass 10s 1;
 }
 
 #poignet {
@@ -413,22 +431,21 @@ body {
     height: 55px;
     background: transparent;
     border: solid 3.5px white;
-    position: absolute;
-    top: 192px;
-    left: 270px;
+    position: relative;
+    top: -73px;
+    left: 51px;
     border-radius: 0 16px 16px 0;
     border-left: none;
-    transform: rotate(-20deg);
-    -webkit-animation: poignet 10s infinite;
+    /* transform: rotate(-20deg); */
+    -webkit-animation: poignet 10s 1;
 }
 
 #beer {
     width: 58px;
     height: 84px;
     background: transparent;
-    position: absolute;
-    left: 6px;
-    top: 0px;
+    position: relative;
+    left: 3px;
     border-radius: 0 0 5px 5px;
     overflow: hidden;
 }
@@ -439,16 +456,16 @@ body {
     height: 250px;
     background: #E8B504;
     position: absolute;
-    top: 83px;
+    top: 0px;
     left: -190px;
-    transform: rotate(40deg);
-    -webkit-animation: beer 10s infinite;
+    /* transform: rotate(40deg); */
+    -webkit-animation: beer 10s 1;
 }
 
 #mousse_1 {
-    position: absolute;
-    top: 192px;
-    left: 198px;
+    position: relative;
+    top: -161px;
+    left: -35px;
     z-index: 4;
 }
 
@@ -459,7 +476,7 @@ body {
     background: white;
     border-radius: 50%;
     position: absolute;
-    -webkit-animation: mousse 10s infinite;
+    -webkit-animation: mousse 10s 1;
 }
 
 #mousse_1::after {
@@ -471,13 +488,13 @@ body {
     position: absolute;
     top: 5px;
     left: 10px;
-    -webkit-animation: mousse 10s infinite;
+    -webkit-animation: mousse 10s 1;
 }
 
 #mousse_2 {
-    position: absolute;
-    top: 192px;
-    left: 212px;
+    position: relative;
+    top: -161px;
+    left: -19px;
     z-index: 4;
 }
 
@@ -487,8 +504,8 @@ body {
     height: 20px;
     background: white;
     border-radius: 50%;
-    position: absolute;
-    -webkit-animation: mousse 10s infinite;
+    position: relative;
+    -webkit-animation: mousse 10s 1;
 }
 
 #mousse_2::after {
@@ -500,13 +517,13 @@ body {
     position: absolute;
     top: -5px;
     left: 10px;
-    -webkit-animation: mousse 10s infinite;
+    -webkit-animation: mousse 10s 1;
 }
 
 #mousse_3 {
-    position: absolute;
-    top: 192px;
-    left: 228px;
+    position: relative;
+    top: -162px;
+    left: -23px;
     z-index: 4;
 }
 
@@ -517,7 +534,7 @@ body {
     background: white;
     border-radius: 50%;
     position: absolute;
-    -webkit-animation: mousse 10s infinite;
+    -webkit-animation: mousse 10s 1;
 }
 
 #mousse_3::after {
@@ -529,13 +546,13 @@ body {
     position: absolute;
     top: 10px;
     left: 15px;
-    -webkit-animation: mousse 10s infinite;
+    -webkit-animation: mousse 10s 1;
 }
 
 #mousse_4 {
-    position: absolute;
-    top: 192px;
-    left: 242px;
+    position: relative;
+    top: -165px;
+    left: 6px;
     z-index: 4;
 }
 
@@ -546,7 +563,7 @@ body {
     background: white;
     border-radius: 50%;
     position: absolute;
-    -webkit-animation: mousse 10s infinite;
+    -webkit-animation: mousse 10s 1;
 }
 
 #mousse_4::after {
@@ -558,15 +575,15 @@ body {
     position: absolute;
     top: 5px;
     left: 10px;
-    -webkit-animation: mousse 10s infinite;
+    -webkit-animation: mousse 10s 1;
 }
 
 #mousse_5 {
-    position: absolute;
-    top: 192px;
-    left: 257px;
+    position: relative;
+    top: -156px;
+    left: 2px;
     z-index: 4;
-    -webkit-animation: mousse 10s infinite;
+    -webkit-animation: mousse 10s 1;
 }
 
 #mousse_5::before {
@@ -579,9 +596,9 @@ body {
 }
 
 #mousse_volante {
-    position: absolute;
-    top: 185px;
-    left: 212px;
+    position: relative;
+    top: -136px;
+    left: -30px;
     z-index: 4;
 }
 
@@ -592,10 +609,10 @@ body {
     background: white;
     border-radius: 50%;
     position: absolute;
-    -webkit-animation: mousse_volante 10s infinite;
-}
+    -webkit-animation: mousse_volante 5s 2;
+} 
 
-#mousse_volante::after {
+ #mousse_volante::after {
     content: "";
     width: 8px;
     height: 8px;
@@ -604,15 +621,15 @@ body {
     position: absolute;
     top: 15px;
     left: 40px;
-    -webkit-animation: mousse_volante 10s infinite;
+    -webkit-animation: mousse_volante 5s 2;
 }
 
 #mousse_interieur {
-    position: absolute;
-    top: 255px;
-    left: 218px;
+    position: relative;
+    top: -94px;
+    left: -8px;
     z-index: 4;
-    opacity: 0.9;
+    opacity: 0.5;
 }
 
 #mousse_interieur::before {
@@ -622,7 +639,7 @@ body {
     background: white;
     border-radius: 50%;
     position: absolute;
-    -webkit-animation: mousse_interieur 10s infinite;
+    -webkit-animation: mousse_interieur 10s 1;
 }
 
 #mousse_interieur::after {
@@ -634,15 +651,15 @@ body {
     position: absolute;
     top: 15px;
     left: 30px;
-    -webkit-animation: mousse_interieur 5s infinite;
+    -webkit-animation: mousse_interieur 5s 1;
 }
 
 #mousse_interieur_2 {
-    position: absolute;
-    top: 235px;
-    left: 225px;
+    position: relative;
+    top: -125px;
+    left: -4px;
     z-index: 4;
-    opacity: 0.9;
+    opacity: 0.5;
 }
 
 #mousse_interieur_2::before {
@@ -652,7 +669,7 @@ body {
     background: white;
     border-radius: 50%;
     position: absolute;
-    -webkit-animation: mousse_interieur 10s infinite;
+    -webkit-animation: mousse_interieur 10s 1;
 }
 
 #mousse_interieur_2::after {
@@ -664,15 +681,15 @@ body {
     position: absolute;
     top: 5px;
     left: 17px;
-    -webkit-animation: mousse_interieur 5s infinite;
+    -webkit-animation: mousse_interieur 5s 1;
 }
 
 #mousse_interieur_3 {
-    position: absolute;
-    top: 245px;
-    left: 232px;
+    position: relative;
+    top: -116px;
+    left: -18px;
     z-index: 4;
-    opacity: 0.9;
+    opacity: 0.5;
 }
 
 #mousse_interieur_3::before {
@@ -682,7 +699,7 @@ body {
     background: white;
     border-radius: 50%;
     position: absolute;
-    -webkit-animation: mousse_interieur 10s infinite;
+    -webkit-animation: mousse_interieur 10s 1;
 }
 
 #mousse_interieur_3::after {
@@ -694,15 +711,15 @@ body {
     position: absolute;
     top: 8px;
     left: 12px;
-    -webkit-animation: mousse_interieur 5s infinite;
+    -webkit-animation: mousse_interieur 5s 1;
 }
 
 #mousse_interieur_4 {
-    position: absolute;
-    top: 241px;
-    left: 238px;
+    position: relative;
+    top: -137px;
+    left: 0px;
     z-index: 4;
-    opacity: 0.9;
+    opacity: 0.5;
 }
 
 #mousse_interieur_4::before {
@@ -712,7 +729,7 @@ body {
     background: white;
     border-radius: 50%;
     position: absolute;
-    -webkit-animation: mousse_interieur 10s infinite;
+    -webkit-animation: mousse_interieur 10s 1;
 }
 
 #mousse_interieur_4::after {
@@ -724,17 +741,17 @@ body {
     position: absolute;
     top: 28px;
     left: 2px;
-    -webkit-animation: mousse_interieur 5s infinite;
+    -webkit-animation: mousse_interieur 5s 1;
 }
 
 /* ANIMATIONS */
 @-webkit-keyframes beer {
     0% {
-        transform: translateY(-5);
+        transform: translateY(82px);
     }
 
     17% {
-        transform: translateY(-82px);
+        transform: translateY(-41px);
     }
 
     100% {
@@ -762,11 +779,11 @@ body {
     }
 
     17% {
-        transform: rotate(0deg) translateX(5px) translateY(20px);
+        transform: rotate(0deg) translateX(0px);
     }
 
     100% {
-        transform: rotate(0deg) translateX(5px) translateY(20px);
+        transform: rotate(0deg) translateX(0px);
     }
 }
 
@@ -794,15 +811,15 @@ body {
     }
 
     20% {
-        transform: scale(1) translateY(-20px);
+        transform: scale(1) translateY(-15px);
     }
 
     40% {
-        opacity: 0;
+        opacity: .2;
     }
 
     100% {
-        transform: scale(1) translateY(-80px);
+        transform: scale(1) translateY(-20px);
         opacity: 0;
     }
 }
@@ -810,10 +827,12 @@ body {
 @-webkit-keyframes mousse_interieur {
     0% {
         transform: scale(0) translateY(0px);
+        opacity: 0.9;
     }
 
     20% {
         transform: scale(0) translateY(0px);
+        opacity: 0.9;
     }
 
     40% {
@@ -821,7 +840,7 @@ body {
     }
 
     50% {
-        opacity: 0;
+        opacity: 0.9;
     }
 
     100% {
@@ -847,12 +866,9 @@ body {
 
 #allWrapper {
     position: relative;
-    width: 50%;
     height: 200px;
     /*background: url("http://svgur.com/i/5Y.svg");*/
     background-size: cover;
-    z-index: -5;
-    left: 28%;
 }
 
 
@@ -860,19 +876,17 @@ body {
 
 #ballWrapper {
     width: 100px;
-    height: 260px;
+    height: 170px;
     display: block;
     position: absolute;
     cursor: pointer;
-    left: 47%;
-    top: 35%;
 }
 
 #ball {
     width: 70px;
     height: 70px;
     position: relative;
-    animation: jump 1s 5;
+    animation: jump 1s infinite;
     overflow: hidden;
 }
 
@@ -886,7 +900,7 @@ body {
     border-radius: 100%;
     background: url("http://svgur.com/i/4D.svg");
     position: absolute;
-    animation: rotate 2s 2, back 1s 5;
+    animation: rotate 2s infinite, back 1s infinite;
     z-index: 5;
     background-repeat: repeat;
     background-size: cover;
@@ -905,7 +919,7 @@ body {
     background-image: url("http://svgur.com/i/5C.svg");
     background-size: 110%;
     border-radius: 100%;
-    animation: lightop 1s 5;
+    animation: lightop 1s infinite;
 }
 
 
@@ -917,7 +931,7 @@ body {
     height: 100%;
     position: absolute;
     border-radius: 100%;
-    animation: shadop 1s 5;
+    animation: shadop 1s infinite;
     margin: auto;
     display: block;
     background-size: contain;
@@ -936,13 +950,13 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 100%;
-    animation: shrink 1s 5;
+    animation: shrink 1s infinite;
     z-index: -1;
     background-position: center;
 }
 
 
-/* Animation keyframes */
+/* Basketball-animation keyframes */
 
 @keyframes jump {
     0% {
@@ -955,7 +969,7 @@ body {
         transform: scale3d(1, 1, 1);
     }
     50% {
-        top: 200px;
+        top: 100px;
         animation-timing-function: ease-out;
         transform: scale3d(1.3, .8, 1);
     }
