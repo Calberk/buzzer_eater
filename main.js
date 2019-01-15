@@ -132,16 +132,16 @@ function landing() {
         // $("#address").val('');
         openPageEats();
     });
-    document.getElementById('eats1').addEventListener('click', function() {
-        // search_result(geocoder, map);
-        // $("#address").val('');
-        openPageEats1();
-    });
-    document.getElementById('home1').addEventListener('click', function() {
-        // search_result(geocoder, map);
-        // $("#address").val('');
-        openPageHome1();
-    });
+    // document.getElementById('eats1').addEventListener('click', function() {
+    //     // search_result(geocoder, map);
+    //     // $("#address").val('');
+    //     openPageEats1();
+    // });
+    // document.getElementById('home1').addEventListener('click', function() {
+    //     // search_result(geocoder, map);
+    //     // $("#address").val('');
+    //     openPageHome1();
+    // });
     document.getElementById('home2').addEventListener('click', function() {
         // search_result(geocoder, map);
         // $("#address").val('');

@@ -2,14 +2,15 @@ body {
     margin: 0;
     padding-top: 70px; 
     font-size: 0;
+    box-sizing: border-box
 }
 
 .mainContent {
     position: relative;
-    height: 60vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .title-grouping {
@@ -49,16 +50,23 @@ body {
 
 
 .pageOne {
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
+    background-color: black;
+    position:relative;
+    z-index:200;
+    top: -100px;
 }
+
 .menu {
     height: 10%;
     background-color: orange;
 }
+
  #home1, #home2, #eats1, #nba1 {
-    font-size: 1rem;
+    font-size: 18px;
 }
+
 #search {
     font-size: 1rem;
 }
@@ -94,7 +102,7 @@ body {
     background-color: black;
     display: inline-block;
     display: none;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .leftHalf {
@@ -1174,6 +1182,23 @@ body {
 
 /* HEADER NAV SECTION */
 
+.navbar-fixed-top {
+    z-index: 100;
+}
+
+.nav-container {
+    height: 100%;
+}
+
+.navbar-brand {
+    height: 100%;
+    font-size: 25px;
+}
+
+.navbar-nav {
+    margin-right: 0%;
+}
+
 #nav-title {
     font-family: 'futura';
     color: white;
@@ -1183,11 +1208,11 @@ body {
 }
 
 .navbar-header {
+    height: 100%;
     font-family: 'futura';
     color: white;
     letter-spacing: 5px;
     font-size: 30px;
-    position: absolute;
 }
 
 .header-img {
