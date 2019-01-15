@@ -123,20 +123,34 @@ function landing() {
         openPageNBA();
     });
     document.getElementById('nba1').addEventListener('click', function() {
+        if($("#pageTwo").css('display') == 'none') {
+            openPageNBA1();
+        }
         // search_result(geocoder, map);
         // $("#address").val('');
-        openPageNBA1();
+        // openPageNBA1();
+
+        else{
+            return
+        }
     });
     document.getElementById('eats').addEventListener('click', function() {
+            openPageEats();
+
         // search_result(geocoder, map);
         // $("#address").val('');
-        openPageEats();
+        // openPageEats();
     });
-    // document.getElementById('eats1').addEventListener('click', function() {
-    //     // search_result(geocoder, map);
-    //     // $("#address").val('');
-    //     openPageEats1();
-    // });
+    document.getElementById('eats1').addEventListener('click', function() {
+        if($("#pageThree").css('display') == 'none') {
+            openPageEats1();
+        }
+        else {
+            return
+        }
+        // search_result(geocoder, map);
+        // $("#address").val('');
+    });
     // document.getElementById('home1').addEventListener('click', function() {
     //     // search_result(geocoder, map);
     //     // $("#address").val('');
