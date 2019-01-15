@@ -90,31 +90,6 @@
 
     </div>
     <div class="pageTwo" id= "pageTwo" >
-        <!-- <nav class="navbar fixed-top navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#be-links" aria-expanded="false">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <p class="navbar-brand navbar-center">Buzzer Eater</p>
-                    <img class="header-img" src="./images/basketball.png"/>
-                </div>
-                <div class="collapse navbar-collapse" id="be-links">
-                    <ul class="navbar-nav nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" id="home1" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" id="eats1" href="#">Eats</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav> -->
-
-
         <div class="">
 
             <div class="gameSection" id="gameSection">
@@ -162,44 +137,27 @@
     </div>
 </div>
     <div class="pageThree" id= "pageThree">
-        <!-- <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="nav-container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#be-links" aria-expanded="false">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <p class="navbar-brand navbar-center">Buzzer Eater</p>
-                    <img class="header-img" src="./images/basketball.png"/>
+        <div class='eats-container container-fluid'>
+            <form class="addressSection row">
+                    <header>Pick a place. Watch the game. </header>
+                    <input id="address" type="input" onfocus="this.placeholder=''" name="search" placeholder="city, state">
+                    <button id="search-btn" type="submit" name="searchBtn">Search</button>
+            </form>
+            <div class="eats-content row">
+                <div class="map col-xs-10">
+                    <div class="mapSection">
+                        <div id="map"></div>
+                    </div>
                 </div>
-                <div class="collapse navbar-collapse" id="be-links">
-                    <ul class="navbar-nav nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" id="home2" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" id="nba1" href="#">Scores</a>
-                        </li>
-                    </ul>
+                <div class="restaurants col-xs-10">
+                    <div class="restaurantSection">
+                    </div>
                 </div>
             </div>
-        </nav> -->
-        <div class="addressSection">
-                <header>Pick a place. Watch the game. </header>
-                <input id="address" type="text" name="search" placeholder="city, state">
-                <button id="submit" type="button" name="searchBtn">Search</button>
-        </div>
-        <div class="leftHalf">
-            <div class="mapSection col-8">
-                <div id="map"></div>
+            
             </div>
         </div>
-        <div class="rightHalf col-8">
-            <div class="restaurantSection">
-            </div>
-        </div>
-    </div>
+        
             <!-- <div class="tweetMain"> -->
             <!-- <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
             <!-- <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->

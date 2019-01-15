@@ -112,7 +112,7 @@ function landing() {
     // });
     // var geocoder = new google.maps.Geocoder();
 
-    document.getElementById('submit').addEventListener('click', function() {
+    document.getElementById('search-btn').addEventListener('click', function() {
         search_result();
         $("#address").val('');
         // openPage();

@@ -5,6 +5,10 @@ body {
     box-sizing: border-box
 }
 
+*:focus {
+    outline: none;
+}
+
 .mainContent {
     position: relative;
     height: 100%;
@@ -79,16 +83,6 @@ body {
     font-size: 35px;
 }
 
-.addressSection {
-    position: relative;
-    height: 15%;
-    top: 50px;
-    color: gold;
-    text-align: center;
-    font-family: 'Roboto','sans-serif';
-    font-size: 2rem;
-}
-
 .pageTwo {
     width: 100vw;
     height: 100vh;
@@ -97,29 +91,54 @@ body {
     display: none;
 }
 .pageThree {
-    width: 100%;
-    height: 100%;
+    height: 90vh;
     background-color: black;
     display: inline-block;
     display: none;
     /* overflow: hidden; */
 }
 
-.leftHalf {
-    width: 60%;
-    height: 100%;
-    background-color: black;
-    display: inline-block;
-    padding: 10px;
+.addressSection {
+    position: relative;
+    height: 20%;
+    top: 10%;
+    color: gold;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    font-size: 2rem;
 }
 
-.rightHalf {
-    width: 35%;
+.eats-container {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.eats-content {
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.map {
+    height: 75%;
+    width:35%;
+    /* border: 2px solid white; */
+    padding: 2%;
+    background-color: black;
+}
+
+.restaurants {
+    height: 75%;
+    width: 55%;
     background-color: black;
     display: inline-block;
     /* padding: 10px; */
-    overflow: auto;
+    overflow: hidden;
 }
 
 /*.twitterSection {*/
@@ -145,7 +164,7 @@ body {
 }
 
 
-
+/* Dynamically Created Restaurant List */
 .mainRestaurantContainer {
     width: 100%;
     height: 20%;
@@ -195,11 +214,11 @@ body {
 
 
 #address {
-    width: 40%;
-    height: 20px;
     text-align: center;
-    border-radius: 7px;
-    font-size: 16px;
+    border-radius: 15px;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
 }
 
 .address {
@@ -209,8 +228,7 @@ body {
     color: white;
 }
 
-#submit {
-    width: 20%;
+#search-btn {
     border-radius: 7px;
     background-color: chocolate;
     cursor: pointer;
