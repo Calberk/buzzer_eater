@@ -2,7 +2,8 @@ body {
     margin: 0;
     padding-top: 70px; 
     font-size: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
+    background: black;
 }
 
 *:focus {
@@ -104,8 +105,12 @@ body {
     top: 10%;
     color: gold;
     text-align: center;
-    font-family: 'Roboto','sans-serif';
+    font-family: "Montserrat", "Arial";
     font-size: 2rem;
+}
+
+.addressSection input {
+    width: 30%;
 }
 
 .eats-container {
@@ -433,9 +438,6 @@ a {
     text-decoration: none;
 }
 
-body {
-    background: #201F1E;
-}
 
 #glass {
     width: 70px;
