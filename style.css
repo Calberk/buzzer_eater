@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding-top: 70px; 
+    padding-top: 60px; 
     font-size: 0;
     box-sizing: border-box;
     background: black;
@@ -69,7 +69,7 @@ body {
 }
 
  #home1, #home2, #eats1, #nba1 {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #search {
@@ -97,20 +97,24 @@ body {
     display: inline-block;
     display: none;
     /* overflow: hidden; */
+    margin: 0 5%;
+    box-shadow:0 0px 0px white, 0 0 30px white;
 }
 
 .addressSection {
-    position: relative;
     height: 20%;
+    width: 50%;
+    margin: auto;
     top: 10%;
     color: gold;
     text-align: center;
     font-family: "Montserrat", "Arial";
     font-size: 2rem;
+    position: relative;
 }
 
 .addressSection input {
-    width: 30%;
+    width: 55%;
 }
 
 .eats-container {
@@ -130,8 +134,8 @@ body {
 }
 
 .map {
-    height: 75%;
-    width:35%;
+    height: 60%;
+    width:40%;
     /* border: 2px solid white; */
     padding: 2%;
     background-color: black;
@@ -139,7 +143,7 @@ body {
 
 .restaurants {
     height: 75%;
-    width: 55%;
+    width: 50%;
     background-color: black;
     display: inline-block;
     /* padding: 10px; */
@@ -1201,6 +1205,9 @@ a {
 }
 
 /* HEADER NAV SECTION */
+.navbar {
+    margin-bottom: 0;
+}
 
 .navbar-fixed-top {
     z-index: 100;
@@ -1216,7 +1223,22 @@ a {
 }
 
 .navbar-nav {
-    margin-right: 0%;
+    margin-right: 2%;
+    letter-spacing: 4px;
+}
+
+.navbar-nav a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    margin: auto;
+    background: currentColor;
+    transition: all .3s ease;
+}
+
+.navbar-nav a:hover::after {
+    width: 100%;
 }
 
 #nav-title {
@@ -1228,6 +1250,7 @@ a {
 }
 
 .navbar-header {
+    margin-left: 2%;
     height: 100%;
     font-family: 'futura';
     color: white;
