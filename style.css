@@ -1,3 +1,4 @@
+
 body {
     height: 100vh;
     width: 100%;
@@ -1149,9 +1150,9 @@ a {
 /*TWITTER CSS BEGINS HERE*/
 
 .twitterContainer{
-    width: 35vw;
-    height: 40vh;
-    background-color: black;
+    /* width: 35vw;*/
+    height: 40vh; 
+    /* background-color: black; */
     color: white;
     padding: 1%;
     font-size: 1rem;

@@ -160,7 +160,15 @@ function landing() {
     document.getElementById('home2').addEventListener('click', function() {
         // search_result(geocoder, map);
         // $("#address").val('');
-        openPageHome2();
+     
+        if($("#pageTwo").css('display') == 'none') {
+            openPageHome2();
+        }
+        if($("#pageThree").css('display') == 'none') {
+            openPageHome3();
+        }
+
+
     });
 }
 
@@ -682,6 +690,12 @@ function openPageEats() {
     $(".pageOne").toggle(".display");
     // $(".pageTwo").toggle(".display");
     $(".pageThree").toggle(".display");
+  }
+  function openPageHome3() {
+    $(".navbar").toggle(".display");
+    $(".pageOne").toggle(".display");
+    $(".pageTwo").toggle(".display");
+    // $(".pageThree").toggle(".display");
   }
 
   function searchDisplay() {
