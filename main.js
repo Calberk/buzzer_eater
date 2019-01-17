@@ -170,6 +170,17 @@ function landing() {
 
 
     });
+
+
+
+
+    var input = document.getElementById('address');
+    var options = {
+      types: ['(cities)'],
+      componentRestrictions: {country: 'USA'}
+    };
+    
+    autocomplete = new google.maps.places.Autocomplete(input, options);
 }
 
 /***************************************************************************************************
@@ -182,6 +193,8 @@ function landing() {
 
 
 function search_result(geocoder) {
+   
+
     var geocoder = new google.maps.Geocoder();
 
     var address = $("#address").val();
