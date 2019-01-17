@@ -1,9 +1,12 @@
 body {
+    height: 100vh;
     margin: 0;
-    padding-top: 60px; 
+    /* padding-top: 60px;  */
     font-size: 0;
     box-sizing: border-box;
     background: black;
+    background-image: url("images/court.jpg");
+    background-size: fill;
 }
 
 *:focus {
@@ -21,7 +24,7 @@ body {
 .title-grouping {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .beer-icon {
@@ -55,12 +58,12 @@ body {
 
 
 .pageOne {
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     background-color: black;
     position:relative;
     z-index:200;
-    top: -100px;
+    /* top: -100px; */
 }
 
 .menu {
@@ -85,20 +88,24 @@ body {
 }
 
 .pageTwo {
-    width: 100vw;
-    height: 100vh;
+    height: 95%;
     background-color: black;
     display: inline-flex;
     display: none;
+    margin: 0 5%;
+    box-shadow:0 0px 0px white, 0 0 30px white;
 }
+
 .pageThree {
-    height: 90vh;
+    height: 95%;
     background-color: black;
     display: inline-block;
     display: none;
     /* overflow: hidden; */
     margin: 0 5%;
     box-shadow:0 0px 0px white, 0 0 30px white;
+    /* background-image: url("images/court.jpg"); */
+
 }
 
 .addressSection {
@@ -146,8 +153,13 @@ body {
     width: 50%;
     background-color: black;
     display: inline-block;
-    /* padding: 10px; */
     overflow: hidden;
+    /* box-shadow:0 0px 0px white, 0 0 30px white; */
+    /* border-radius: 5px; */
+    /* padding: 10px; */
+    display: none;
+    position: relative;
+
 }
 
 /*.twitterSection {*/
@@ -169,18 +181,30 @@ body {
     height: 100%;
     width: 100%;
     font-size: 35px;
-
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-left: 2px;
 }
+
+.inner-container::-webkit-scrollbar {
+    display: none;
+   }
+    
 
 
 /* Dynamically Created Restaurant List */
 .mainRestaurantContainer {
-    width: 100%;
+    /* width: 100%; */
     height: 20%;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     display: flex;
     box-sizing: border-box;
     justify-content: space-between;
+    box-shadow:0 0px 0px white, 0 0 11px white;
+    border-radius: 10px;
+    margin: 5%;
+    background: white;
 }
 
 .image {
@@ -211,14 +235,14 @@ body {
     width: 100%;
     height: 30%;
     font-size: 100%;
-    color: red;
+    color: black;
 }
 
 .city {
     width: 100%;
     height: 20%;
     font-size: 75%;
-    color: white;
+    color: black;
 }
 
 
@@ -234,7 +258,7 @@ body {
     width: 100%;
     height: 20%;
     font-size: 100%;
-    color: white;
+    color: black;
 }
 
 #search-btn {
@@ -263,7 +287,7 @@ body {
     width: 40%;
     height: 20%;
     font-size: 40%;
-    color: white;
+    color: black;
 }
 
 .votes{
@@ -272,7 +296,7 @@ body {
     font-size: 30%;
     color: dimgrey;
     text-align: right;
-    color: white;
+    color: black;
 }
 
 /* ::-webkit-scrollbar {
@@ -306,10 +330,10 @@ border-radius: 10px;
     background-color: black;
     height: 75%;
     width:100%;
-    /* overflow: auto; */
+    overflow: hidden;
     font-size:1rem;
     /* display: inline-flex; */
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .scoreboard {
@@ -1207,10 +1231,26 @@ a {
 /* HEADER NAV SECTION */
 .navbar {
     margin-bottom: 0;
+    background: black;
+    border-color: black;
+    display: none;
 }
 
 .navbar-fixed-top {
     z-index: 100;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: white;
+    background-color: transparent;
 }
 
 .nav-container {
