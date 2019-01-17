@@ -671,12 +671,12 @@ function openPageEats() {
     $(".pageTwo").toggle(".display");
     $(".pageThree").toggle(".display");
   }
-  function openPageHome1() {
-    $(".navbar").toggle(".display");
-    $(".pageOne").toggle(".display");
-    $(".pageTwo").toggle(".display");
-    // $(".pageThree").toggle(".display");
-  }
+//   function openPageHome1() {
+//     $(".navbar").toggle(".display");
+//     $(".pageOne").toggle(".display");
+//     $(".pageTwo").toggle(".display");
+//     // $(".pageThree").toggle(".display");
+//   }
   function openPageHome2() {
     $(".navbar").toggle(".display");
     $(".pageOne").toggle(".display");
