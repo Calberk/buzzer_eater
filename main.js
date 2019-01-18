@@ -113,7 +113,6 @@ function landing() {
     // var geocoder = new google.maps.Geocoder();
 
     document.getElementById('search-btn').addEventListener('click', function() {
-        searchDisplay()
         search_result();
         $("#address").val('');
         // openPage();
@@ -711,9 +710,9 @@ function openPageEats() {
     // $(".pageThree").toggle(".display");
   }
 
-  function searchDisplay() {
-      $(".restaurants").toggle(".display");
-  }
+//   function searchDisplay() {
+//       $(".restaurants").toggle(".display");
+//   }
 
 function playIntro(){
     var audio = new Audio('sounds/buzzer-eater.mp3');
