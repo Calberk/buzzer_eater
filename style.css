@@ -149,30 +149,17 @@ body {
 .map {
     height: 60%;
     width:40%;
-    /* border: 2px solid white; */
     padding: 2%;
-    /* background-color: black; */
 }
 
 .restaurants {
     height: 75%;
     width: 50%;
-    /* background-color: black; */
     display: inline-block;
     overflow: hidden;
-    /* box-shadow:0 0px 0px white, 0 0 30px white; */
-    /* border-radius: 5px; */
-    /* padding: 10px; */
-    /* display: none; */
     position: relative;
 
 }
-
-/*.twitterSection {*/
-    /*width: 60%;*/
-    /*height: 40%;*/
-    /*background-color: green;*/
-/*}*/
 
 .mapSection {
     width: 100%;
@@ -201,16 +188,23 @@ body {
 
 /* Dynamically Created Restaurant List */
 .mainRestaurantContainer {
-    /* width: 100%; */
+    width: 70%;
     height: 20%;
     /* border: 1px solid white; */
     display: flex;
     box-sizing: border-box;
-    justify-content: space-between;
+    justify-content: space-around;
     box-shadow:0 0px 0px white, 0 0 11px white;
     border-radius: 10px;
-    margin: 5%;
+    margin: 3% 2% 3% 2%;
     background: white;
+}
+
+.mainRestaurantContainer:hover {
+    transition-duration: 0.5s;
+    transform: translateY(-5px);
+    background-color: rgb(250, 228, 203);
+    box-shadow:0 0px 0px white, 0 0 11px white;
 }
 
 .image {
@@ -300,11 +294,12 @@ body {
 
 
 .rateSection {
-    width: 10%;
-    height: 95%;
+    width: 15%;
+    margin-right: 5%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: flex-end
 }
 
 .rating {

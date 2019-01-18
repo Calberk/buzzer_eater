@@ -731,7 +731,7 @@ function openPageEats() {
   }
 
 //   function searchDisplay() {
-    //   $(".restaurants").toggle(".display");
+//       $(".restaurants").toggle(".display");
 //   }
 
 function playIntro(){
