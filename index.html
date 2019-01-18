@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
     <link rel="icon" href="./images/bball.png">
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -21,34 +22,35 @@
 </head>
 
 <body>
-        <nav class="navbar navbar-default navbar-fixed-top ">
-                <div class="nav-container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#be-links" aria-expanded="false">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <p class="navbar-brand navbar-center">Buzzer Eater</p>
-                        <img class="header-img" src="./images/basketball.png"/>
-                    </div>
-                    <div class="collapse navbar-collapse" id="be-links">
-                        <ul class="navbar-nav nav navbar-right">
-                            <li class="nav-item">
-                                <a class="nav-link" id="home2" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                    <a class="nav-link" id="nba1" href="#">Scores</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="eats1" href="#">Eats</a>
-                        </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>  
-    <div class="pageOne" id= "pageOne">
-        
+    <nav class="navbar navbar-default navbar-fixed-top ">
+        <div class="nav-container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#be-links"
+                    aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <p class="navbar-brand navbar-center">Buzzer Eater</p>
+                <img class="header-img" src="./images/basketball.png" />
+            </div>
+            <div class="collapse navbar-collapse" id="be-links">
+                <ul class="navbar-nav nav navbar-right">
+                    <li class="nav-item">
+                        <a class="nav-link" id="home2" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nba1" href="#">Scores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="eats1" href="#">Eats</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="pageOne" id="pageOne">
+
         <div class="mainContent container-fluid">
             <div class="title-grouping row">
                 <div class="beer-icon row">
@@ -68,7 +70,7 @@
                     <div id="mousse_interieur_4"></div>
                 </div>
                 <div class="main-title row">
-                        <p id="beer_text">Buzzer Eater</p>
+                    <p id="beer_text">Buzzer Eater</p>
                 </div>
                 <div class="row ball-icon row">
                     <div id="allWrapper">
@@ -80,57 +82,59 @@
                     </div>
                 </div>
             </div>
-            
-            
+
+
             <div class="searchSection row">
-                    <header>Pick a place. Watch the game. </header>
-                    <!-- <input id="address" type="text" name="search" placeholder="city, state"> -->
-                    <button id="nba" class="landingButtons" type="button" name="searchBtn">NBA Scores</button>
-                    <button id="eats" class="landingButtons" type="button" name="searchBtn">Eats</button>
-                </div>
+                <header>Pick a place. Watch the game. </header>
+                <!-- <input id="address" type="text" name="search" placeholder="city, state"> -->
+                <button id="nba" class="btn btn-warning btn-lg landingButtons" type="button" name="searchBtn">NBA
+                    Scores</button>
+                <button id="eats" class="btn btn-warning btn-lg landingButtons" type="button" name="searchBtn">Eats</button>
+            </div>
         </div>
 
 
     </div>
-    <div class="pageTwo" id= "pageTwo" >
+    <div class="pageTwo" id="pageTwo">
         <div class="">
 
             <div class="gameSection" id="gameSection">
 
             </div>
-            <div class="row">
-            <div class=" col-md-offset-5 twitterContainer">
-                <!-- <div class="tweetLogo">
+            <div class="">
+                <div class=" twitterContainer">
+                    <!-- <div class="tweetLogo">
 
                 </div> -->
 
 
 
 
-                <!-- Button trigger modal -->
-                <button type="button" class="twitterBtn btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                    NBA Twitter Feed
-                </button>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="twitterBtn btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        NBA Twitter Feed
+                    </button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">NBA Twitter</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets
-                                    by NBA</a>
-                                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">NBA Twitter</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets
+                                        by NBA</a>
+                                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -138,13 +142,12 @@
             </div>
         </div>
     </div>
-</div>
-    <div class="pageThree" id= "pageThree">
+    <div class="pageThree" id="pageThree">
         <div class='eats-container container-fluid'>
             <form class="addressSection row">
-                    <header>Pick a place. Watch the game. </header>
-                    <input id="address" type="input" onfocus="this.placeholder=''" name="search" placeholder="City, State">
-                    <button id="search-btn" type="submit" name="searchBtn">Search</button>
+                <header>Pick a place. Watch the game. </header>
+                <input id="address" type="input" onfocus="this.placeholder=''" name="search" placeholder="City, State">
+                <button id="search-btn" type="submit" name="searchBtn">Search</button>
             </form>
             <div class="eats-content row">
                 <div class="map col-xs-10">
@@ -157,14 +160,14 @@
                     </div>
                 </div>
             </div>
-            
-            </div>
+
         </div>
-        
-            <!-- <div class="tweetMain"> -->
-            <!-- <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-            <!-- <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-            <!-- <div class="tweetMainHeader">
+    </div>
+
+    <!-- <div class="tweetMain"> -->
+    <!-- <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+    <!-- <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+    <!-- <div class="tweetMainHeader">
                 <div class="twitterHandle">
 
                 </div>
@@ -175,14 +178,14 @@
             <div class="tweetsFeed">
 
             </div> -->
-            <!-- </div> -->
-            <!-- </div> -->
-            <!-- <button type="button" class="reset">Search Again</button> -->
-            <!-- <div class="gameSection" id="gameSection">
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- <button type="button" class="reset">Search Again</button> -->
+    <!-- <div class="gameSection" id="gameSection">
 
     </div> -->
-            <!-- </div> -->
-            <!-- <div class="rightHalf">
+    <!-- </div> -->
+    <!-- <div class="rightHalf">
     <div class="mapSection">
         <div id="map"></div>
     </div>
@@ -190,10 +193,10 @@
 
     </div>
 </div> -->
-            <!-- </div> -->
+    <!-- </div> -->
 
 
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMI5B4uukiR41lKj4atfShc1dC6MOxhus&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMI5B4uukiR41lKj4atfShc1dC6MOxhus&libraries=places"></script>
 
 </body>
 
