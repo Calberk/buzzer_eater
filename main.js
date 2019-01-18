@@ -113,7 +113,7 @@ function landing() {
     // var geocoder = new google.maps.Geocoder();
 
     document.getElementById('search-btn').addEventListener('click', function() {
-        searchDisplay()
+        // searchDisplay()
         search_result();
         $("#address").val('');
         // openPage();
@@ -590,8 +590,15 @@ function getNBADataInterval() {
         var teamDetails1 = $("<div>").addClass("team-detail");
         var teamNameandScore1 = $("<div>").addClass("team-nameandscore");
         var teamName1 = $("<div>").addClass("homeTeamName").text(teamOne.tricode);
+        if(teamOne.score == "0") {
+            var teamScore1 = " "
+       }
+
+       else{
         var teamScore1 = $("<div>").addClass("homeTeamScore").text(teamOne.score);
+       }
         var space = $("<div>").addClass('space');
+
 
         teamNameandScore1.append(teamName1, teamScore1);
         teamDetails1.append(teamNameandScore1, space);
@@ -606,8 +613,20 @@ function getNBADataInterval() {
         var teamDetails2 = $("<div>").addClass("team-detail");
         var teamNameandScore2 = $("<div>").addClass("team-nameandscore");
         var teamName2 = $("<div>").addClass("homeTeamName").text(teamTwo.tricode);
-        var teamScore2 = $("<div>").addClass("awayTeamScore").text(teamTwo.score);
+
+        if(teamTwo.score == "0") {
+            var teamScore1 = " "
+       }
+
+       else{
+        var teamScore2 = $("<div>").addClass("homeTeamScore").text(teamOne.score);
+       }
+
         var space = $("<div>").addClass('space');
+
+        if(teamScore2 == "0") {
+            var teamScore2 = " "
+        };
 
         teamNameandScore2.append(teamName2, teamScore2);
         teamDetails2.append(teamNameandScore2, space);
@@ -711,9 +730,9 @@ function openPageEats() {
     // $(".pageThree").toggle(".display");
   }
 
-  function searchDisplay() {
-      $(".restaurants").toggle(".display");
-  }
+//   function searchDisplay() {
+    //   $(".restaurants").toggle(".display");
+//   }
 
 function playIntro(){
     var audio = new Audio('sounds/buzzer-eater.mp3');
