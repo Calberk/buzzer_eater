@@ -171,6 +171,18 @@ function landing() {
 
     });
 
+    document.getElementById('home1').addEventListener('click', function() {
+        if($("#pageTwo").css('display') == 'none') {
+            openPageHome2();
+        }
+        if($("#pageThree").css('display') == 'none') {
+            openPageHome3();
+        }
+
+
+    });
+    
+
 
 
 

@@ -1,3 +1,4 @@
+
 body {
     height: 100vh;
     width: 100%;
@@ -50,7 +51,7 @@ body {
     font-family: 'futura';
     color: white;
     letter-spacing: 5px;
-    font-size: 40px;
+    font-size: 16px;
     position: absolute;
 }
 
@@ -75,7 +76,7 @@ body {
     background-color: orange;
 }
 
-#home2, #eats1, #nba1 {
+ #home1, #home2, #eats1, #nba1 {
     font-size: 16px;
 }
 
@@ -83,17 +84,9 @@ body {
     font-size: 1rem;
 }
 
-.intro {
-    margin: inherit;
-    padding: 5px;
-    color: gold;
-    text-align: center;
-    font-family: 'Roboto','sans-serif';
-    font-size: 13px;
-}
-
 .searchSection {
     padding: 5px;
+    color: gold;
     text-align: center;
     font-family: 'Roboto','sans-serif';
     font-size: 35px;
@@ -101,16 +94,23 @@ body {
 
 .pageTwo {
     height: calc(90vh - 60px);
+    /* background-image: url("images/court1.jpg"); */
+    /* background-color: black; */
     display: inline-block;
     display: none;
     margin: 5% 5% 0 5%;
+    /* box-shadow:0 0px 0px white, 0 0 30px white; */
 }
 
 .pageThree {
     height: calc(90vh - 60px);
+    /* background-color: black; */
     display: inline-block;
     display: none;
+    /* overflow: hidden; */
     margin: 5% 5% 0 5%;
+    /* box-shadow:0 0px 0px white, 0 0 30px white; */
+    /* background-image: url("images/court.jpg"); */
 
 }
 
@@ -179,6 +179,11 @@ body {
     overflow-x: hidden;
     margin-left: 2px;
 }
+
+/* .inner-container::-webkit-scrollbar {
+    display: none;
+   }
+     */
 
 
 /* Dynamically Created Restaurant List */
@@ -281,12 +286,6 @@ body {
     font-size: 3em;
     width: 20%;
     }
-
-.landingButtons:hover {
-    background-image: linear-gradient(to bottom,  rgb(190, 94, 26), rgb(109, 49, 6));
-    border: 1px solid white;    
-}
-    
 
 
 .rateSection {
@@ -1147,10 +1146,10 @@ a {
 
 .twitterContainer{
     width: 100%;
-    /* height: 40vh;  */
+    height: 40vh; 
     /* background-color: black; */
     color: white;
-    /* padding: 1%; */
+    padding: 1%;
     font-size: 1rem;
     /* border: 1px solid white; */
     display: inline-block;
@@ -1281,12 +1280,6 @@ a {
 .navbar-brand {
     height: 100%;
     font-size: 25px;
-    cursor: pointer;
-}
-
-#home1:hover, #home1:focus {
-    color: white;
-    background-color: transparent;
 }
 
 .navbar-nav {
@@ -1366,6 +1359,11 @@ a {
   color: black;
 }
 
+
+
+
+
+
 .twitterBtn::after {
     height: 0;
     left: 50%;
@@ -1380,430 +1378,31 @@ a {
     width: 100%;
   }
 
-@media (max-width: 415px ) and (orientation: portrait) {
 
-.main-title {
-    align-items: flex-start;
-}
 
-.title-grouping {
-    justify-content: space-between;
-}
+  /* @media only screen and (min-width:710px) {
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:33.33%;
+        height: 30%;
+        padding: 5px;
+    }
 
-#glass {
-    width: 44px;
-    height: 54px;
-}
+} */
+@media (max-width: 575px) { 
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:50%;
+        height: 30%;
+        padding: 5px;
+    }
 
- #beer {
-    width: 36px;
-    height: 55px;
-    left: 0px;
  }
 
- #poignet {
-    width: 14px;
-    height: 28px;
-    top: -47px;
-    left: 29px;
-    border-radius: 0 10px 10px 0;
-}
 
-#mousse_1 {
-    top: -93px;
-    left: -23px;
-}
-
-#mousse_1::before {
-    width: 13px;
-    height: 13px;
-}
-
-#mousse_1::after {
-    width: 13px;
-    height: 13px;
-}
-
-#mousse_2 {
-    top: -90px;
-    left: -19px;
-}
-
-#mousse_2::after {
-    width: 13px;
-    height: 13px;
-}
-
-#mousse_3 {
-    top: -96px;
-    left: -18px;
-}
-
-#mousse_3::before {
-    width: 13px;
-    height: 13px;
-}
-
-#mousse_3::after {
-    width: 13px;
-    height: 13px;
-}
-
-#mousse_4 {
-    top: -95px;
-    left: 5px;
-}
-
-#mousse_4::before {
-    width: 14px;
-    height: 14px;
-}
-
-#mousse_4::after {
-    width: 10px;
-    height: 10px;
-}
-#mousse_5 {
-    top: -98px;
-    left: -1px;
-}
-
-#mousse_5::before {
-    width: 14px;
-    height: 14px;
-}
-
-#mousse_volante {
-    top: -71px;
-    left: -13px;
-}
-
-#mousse_volante::after {
-    width: 8px;
-    height: 8px;
-    top: 15px;
-    left: 19px;
-}
-
-#mousse_interieur {
-    top: -65px;
-    left: -8px;
-}
-
-#mousse_interieur::before {
-    width: 6px;
-    height: 6px;
-}
-
-#mousse_interieur::after {
-    width: 4px;
-    height: 4px;
-    top: 15px;
-    left: 13px;
-}
-
-#mousse_interieur_2 {
-    top: -73px;
-    left: -4px;
-}
-
-#mousse_interieur_3 {
-    top: -53px;
-    left: -9px;
-}
-
-#mousse_interieur_4 {
-    top: -89px;
-    left: 0px;
-}
-
-.ball-icon {
-    display:none;
-}
-}
-
-
-/* Iphone 4 */
-@media  (min-width: 320px) { 
-    .navbar-brand {
-        height: 100%;
-        font-size: 14px;
-    }
-
-    .pageTwo {
-        height: calc(90vh - 60px);
-        /* background-image: url("images/court1.jpg"); */
-        /* background-color: black; */
-        display: inline-block;
-        display: none;
-        margin: 20% 5% 0 5%;
-        /* box-shadow:0 0px 0px white, 0 0 30px white; */
-    }
-    .gameSection {
-        font-family: "Montserrat", "Arial";
-        color: white;
-        /* background-color: #444; */
-        /* background-color: black; */
-        height: 75%;
-        overflow: hidden;
-        font-size: 10px;
-    }
-    .team-detail {
-        padding:0px
-    }
-
-    #beer_text {
-        font-size: 20px;
-    }
-
-    .landingButtons {
-        font-size: 16px;
-        width: 40%;
-    }
-
-    .searchSection {
-        font-size: 20px;
-    }
-
-}
-
-/* Iphone 5SE */
-@media  (min-width: 320px) { 
-
-    .navbar-brand {
-        font-size: 14px;
-    }
-    
-    #beer_text {
-        font-size: 16px;
-    }
-
-    .landingButtons {
-        font-size: 16px;
-        width: 40%;
-    }
-
-    .searchSection {
-        font-size: 20px;
-    }
-
-    .intro {
-        font-size: 13px;
-    }
-
-    .pageTwo {
-        height: calc(90vh - 60px);
-        /* background-image: url("images/court1.jpg"); */
-        /* background-color: black; */
-        display: inline-block;
-        display: none;
-        margin: 20% 5% 0 5%;
-        /* box-shadow:0 0px 0px white, 0 0 30px white; */
-    }
-    .gameSection {
-        font-family: "Montserrat", "Arial";
-        color: white;
-        /* background-color: #444; */
-        /* background-color: black; */
-        height: 75%;
-        width: 100%;
-        overflow: hidden;
-        font-size: 10px;
-    }
-
-    .team-detail {
-        padding:0px
-    }
-
-    .twitterContainer{
-        width: 100%;
-        /* height: 40vh;  */
-        /* background-color: black; */
-        color: white;
-        /* padding: 1%; */
-        font-size: 1rem;
-        /* border: 1px solid white; */
-        /* display: inline-block; */
-    }
-    
-
-    .twitterBtn {
-        background: none;
-        background-color: black;
-        border: 3px solid #fff;
-        border-radius: 5px;
-        color: #fff;
-        font-size: 1.6em;
-        font-weight: bold;
-        margin: none;
-        padding: 2em 4em;
-
-      }
-
-}
-
-
-/* Galaxy S5 */
-@media  (min-width: 360px) { 
-
-
-    #beer_text {
-        font-size: 24px;
-    }
-
-    .landingButtons {
-        font-size: 16px;
-        width: 35%;
-    }
-
-    .searchSection {
-        font-size: 24px;
-    }
-
-    .intro {
-        font-size: 15px;
-    }
-
-    .pageTwo {
-        height: calc(90vh - 60px);
-        /* background-image: url("images/court1.jpg"); */
-        /* background-color: black; */
-        display: inline-block;
-        display: none;
-        margin: 20% 5% 0 5%;
-        /* box-shadow:0 0px 0px white, 0 0 30px white; */
-    }
-
-    .gameSection {
-        font-family: "Montserrat", "Arial";
-        color: white;
-        /* background-color: #444; */
-        /* background-color: black; */
-        height: 75%;
-        width: 100%;
-        overflow: hidden;
-        font-size: 10px;
-    }
-
-    .scoreboard {
-        display: inline-flex;
-        flex-direction:column;
-        width:50%;
-        height: 30%;
-        padding: 5px;
-    }
-}
-
-/* Iphone 6/7/8 */
-@media  (min-width: 375px) { 
-
-    .navbar-brand {
-        font-size: 14px;
-    }
-
-    #beer_text {
-        letter-spacing: 7px; 
-        font-size: 22px;
-    }
-
-    .landingButtons {
-        font-size: 18px;
-        width: 35%;
-    }
-
-    .searchSection {
-        font-size: 24px;
-    }
-
-    .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
-        margin: 20% 5% 0 5%;
-    }
-    .gameSection {
-        font-family: "Montserrat", "Arial";
-        color: white;
-        height: 75%;
-        overflow: hidden;
-        font-size: 10px;
-    }
-    .team-detail {
-        padding:0px
-    }
-    .team-detail .team-nameandscore {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-    .homeTeamScore {
-        padding-left: 19px;
-    }
-    .awayTeamScore {
-        padding-left: 19px;
-    }
-
-}
-
-/* Pixel 2 */
-@media  (min-width: 411px) { 
-    
-    .navbar-brand {
-        font-size: 17px;
-    }
-
-    #beer_text {
-        letter-spacing: 7px; 
-        font-size: 26px;
-    }
-
-    .landingButtons {
-        font-size: 18px;
-        width: 35%;
-    }
-
-    .searchSection {
-        font-size: 24px;
-    }
-
-    .intro {
-        font-size: 17px;
-    }
-
-    .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
-        margin: 20% 5% 0 5%;
-    }
-    
-    .gameSection {
-        font-family: "Montserrat", "Arial";
-        color: white;
-        height: 75%;
-        width: 100%;
-        overflow: hidden;
-        font-size: 10px;
-    }
-
-    .team-detail {
-        padding:0px
-    }
-
-    .team-detail .team-nameandscore {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-
-    .homeTeamScore {
-        padding-left: 19px;
-    }
-
-    .awayTeamScore {
-        padding-left: 19px;
-    }
-
+@media (min-width: 576px) { 
     .scoreboard {
         display: inline-flex;
         flex-direction:column;
@@ -1812,108 +1411,22 @@ a {
         padding: 5px;
     }
 
-}
+ }
 
-/* Pixel 2XL */
-@media  (min-width: 411px) {
 
-    .navbar-brand {
-        font-size: 17px;
-    }
-
-    #beer_text {
-        letter-spacing: 7px; 
-        font-size: 20px;
-    }
-
-    .landingButtons {
-        font-size: 18px;
-        width: 35%;
-    }
-
-    .searchSection {
-        font-size: 24px;
-    }
-
-    .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
-        margin: 20% 5% 0 5%;
-    }
-    
-    .gameSection {
-        font-family: "Montserrat", "Arial";
-        color: white;
-        height: 75%;
-        width: 100%;
-        overflow: hidden;
-        font-size: 10px;
-    }
-
-    .team-detail {
-        padding:0px
-    }
-
-    .team-detail .team-nameandscore {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-
-    .homeTeamScore {
-        padding-left: 19px;
-    }
-
-    .awayTeamScore {
-        padding-left: 19px;
-    }
-
+@media (min-width: 768px) { 
     .scoreboard {
         display: inline-flex;
         flex-direction:column;
-        width:50%;
+        width:33.3%;
         height: 30%;
-        padding: 5px;
+        padding: 15px;
     }
 
 }
 
-/* IPAD */
-@media  (min-width: 768px) { 
-    .navbar-brand {
-        font-size: 22px;
-    }
 
-    .title-grouping {
-        justify-content: space-around;
-    }
-
-    #beer_text {
-        letter-spacing: 12px; 
-        font-size: 36px;
-    }
-
-    .landingButtons {
-        font-size: 22px;
-        width: 30%;
-    }
-
-    .searchSection {
-        font-size: 30px;
-    }
-
-    .intro {
-        font-size: 28px;
-    }
-
-    .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
-        margin: 12% 5% 0 5%;
-    }
-
+@media (min-width: 992px) { 
     .scoreboard {
         display: inline-flex;
         flex-direction:column;
@@ -1921,45 +1434,11 @@ a {
         height: 30%;
         padding: 15px;
     }
+
 }
 
-/* IPAD PRO*/
-@media  (min-width: 1024px) { 
-    .navbar-brand {
-        font-size: 30px;
-    }
 
-    .title-grouping {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    #beer_text {
-        letter-spacing: 17px; 
-        font-size: 45px;
-    }
-
-    .landingButtons {
-        font-size: 28px;
-        width: 30%;
-    }
-
-    .searchSection {
-        font-size: 48px;
-    }
-
-    .intro {
-        font-size: 35px;
-    }
-
-    .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
-        margin: 10% 5% 0 5%;
-    }
-    
+@media (min-width: 1200px) { 
     .scoreboard {
         display: inline-flex;
         flex-direction:column;
@@ -1967,307 +1446,262 @@ a {
         height: 30%;
         padding: 30px;
     }
-}
-
-@media (max-width: 575px) and (orientation: landscape) {
-
-    .main-content {
-        justify-content: space-around;
-    }
-
-    .main-title {
-        margin-top: 3%;
-        align-items: flex-start
-    }
-
-    .title-grouping {
-        justify-content: space-around;
-    }
-
-    .ball-icon {
-        display:none;
-    }
-
-    #glass {
-        width: 44px;
-        height: 54px;
-    }
-    
-     #beer {
-        width: 36px;
-        height: 55px;
-        left: 0px;
-     }
-    
-     #poignet {
-        width: 14px;
-        height: 28px;
-        top: -47px;
-        left: 29px;
-        border-radius: 0 10px 10px 0;
-    }
-    
-    #mousse_1 {
-        top: -93px;
-        left: -23px;
-    }
-    
-    #mousse_1::before {
-        width: 13px;
-        height: 13px;
-    }
-    
-    #mousse_1::after {
-        width: 13px;
-        height: 13px;
-    }
-    
-    #mousse_2 {
-        top: -90px;
-        left: -19px;
-    }
-    
-    #mousse_2::after {
-        width: 13px;
-        height: 13px;
-    }
-    
-    #mousse_3 {
-        top: -96px;
-        left: -18px;
-    }
-    
-    #mousse_3::before {
-        width: 13px;
-        height: 13px;
-    }
-    
-    #mousse_3::after {
-        width: 13px;
-        height: 13px;
-    }
-    
-    #mousse_4 {
-        top: -95px;
-        left: 5px;
-    }
-    
-    #mousse_4::before {
-        width: 14px;
-        height: 14px;
-    }
-    
-    #mousse_4::after {
-        width: 10px;
-        height: 10px;
-    }
-    #mousse_5 {
-        top: -98px;
-        left: -1px;
-    }
-    
-    #mousse_5::before {
-        width: 14px;
-        height: 14px;
-    }
-    
-    #mousse_volante {
-        top: -71px;
-        left: -13px;
-    }
-    
-    #mousse_volante::after {
-        width: 8px;
-        height: 8px;
-        top: 15px;
-        left: 19px;
-    }
-    
-    #mousse_interieur {
-        top: -65px;
-        left: -8px;
-    }
-    
-    #mousse_interieur::before {
-        width: 6px;
-        height: 6px;
-    }
-    
-    #mousse_interieur::after {
-        width: 4px;
-        height: 4px;
-        top: 15px;
-        left: 13px;
-    }
-    
-    #mousse_interieur_2 {
-        top: -73px;
-        left: -4px;
-    }
-    
-    #mousse_interieur_3 {
-        top: -53px;
-        left: -9px;
-    }
-    
-    #mousse_interieur_4 {
-        top: -89px;
-        left: 0px;
-    }
-    
-    .ball-icon {
-        display:none;
-    }
-}
-
-
-@media (min-width: 575.98px) and (orientation: landscape) {
-    .title-grouping {
-        justify-content: space-around;
-    }
 
     #beer_text {
-        letter-spacing: 7px; 
-        font-size: 30px;
-    }
-    
-    .landingButtons {
-        font-size: 20px;
-        width: 25%;
-    }
-
-    .searchSection {
-        font-size: 18px;
-    }
-
-    .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
-        margin: 14% 5% 0 5%;
-    }
-}
-
-@media (min-width: 820px) and (max-width: 1024px) and (orientation: landscape) {
-    .title-grouping {
-        justify-content: space-around;
-    }
-
-    .intro {
-        font-size: 24px;
-    }
-
-   .navbar-brand {
-        font-size: 20px;
-    }
-    
-    #beer_text {
-        letter-spacing: 17px; 
-        font-size: 36px;
-    }
-
-    .landingButtons {
-        font-size: 20px;
-        width: 25%;
-    }
-
-    .searchSection {
-        font-size: 30px;
-    }
-
-    .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
-        margin: 8% 5% 0 5%;
-    }
-
-    .scoreboard {
-        display: inline-flex;
-        flex-direction:column;
-        width:33%;
-        height: 30%;
-        padding: 30px;
-    }
-}
-
-@media (min-width: 1024.98px) and (max-width: 1366.98px) and (orientation: landscape) {
-    .title-grouping {
-        justify-content: center;
-    }
-
-   .navbar-brand {
-        font-size: 20px;
-    }
-    
-    #beer_text {
-        letter-spacing: 17px; 
-        font-size: 44px;
-    }
-
-    .landingButtons {
-        font-size: 20px;
-        width: 25%;
-    }
-
-    .searchSection {
-        font-size: 30px;
-    }
-
-    .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
-        margin: 8% 5% 0 5%;
-    }
-
-    .scoreboard {
-        display: inline-flex;
-        flex-direction:column;
-        width:33%;
-        height: 30%;
-        padding: 30px;
-    }
-}
-
-@media (min-width: 1367px) and (orientation: landscape) {
-    .title-grouping {
-        justify-content: center;
-    }
-
-    .navbar-brand {
-        font-size: 22px;
-    }
-
-    #beer_text {
-        letter-spacing: 20px; 
-        font-size: 60px;
-    }
-
-    .landingButtons {
-        font-size: 26px;
-        width: 15%;
-    }
-
-    .searchSection {
+        letter-spacing: 20px;
         font-size: 40px;
     }
 
+}
+
+@media (max-width: 920px) { 
     .pageTwo {
         height: calc(90vh - 60px);
         /* background-image: url("images/court1.jpg"); */
         /* background-color: black; */
         display: inline-block;
         display: none;
-        margin: 8% 5% 0 5%;
+        margin: 10% 5% 0 5%;
         /* box-shadow:0 0px 0px white, 0 0 30px white; */
     }
 
-    .scoreboard {
-        display: inline-flex;
-        flex-direction:column;
-        width:25%;
-        height: 30%;
-        padding: 30px;
+}
+
+
+@media  (max-width: 320px) and (max-height: 568px) { 
+    .navbar-brand {
+        height: 100%;
+        font-size: 14px;
     }
+    .pageTwo {
+        height: calc(90vh - 60px);
+        /* background-image: url("images/court1.jpg"); */
+        /* background-color: black; */
+        display: inline-block;
+        display: none;
+        margin: 20% 5% 0 5%;
+        /* box-shadow:0 0px 0px white, 0 0 30px white; */
+    }
+    
+
+}
+@media  (min-width: 320) and  (min-height: 480px) { 
+    .navbar-brand {
+        height: 100%;
+        font-size: 14px;
+    }
+    .pageTwo {
+        height: calc(90vh - 60px);
+        /* background-image: url("images/court1.jpg"); */
+        /* background-color: black; */
+        display: inline-block;
+        display: none;
+        margin: 12% 5% 0 5%;
+        /* box-shadow:0 0px 0px white, 0 0 30px white; */
+    }
+    .gameSection {
+        font-family: "Montserrat", "Arial";
+        color: white;
+        /* background-color: #444; */
+        /* background-color: black; */
+        height: 75%;
+        width: 100%;
+        overflow: hidden;
+        font-size: 10px;
+    }
+    .team-detail {
+        padding:0px
+    }
+}
+
+@media  (max-width: 480px) and  (max-height: 320px) { 
+    .navbar-brand {
+        height: 100%;
+        font-size: 14px;
+    }
+    .pageTwo {
+        height: calc(90vh - 60px);
+        /* background-image: url("images/court1.jpg"); */
+        /* background-color: black; */
+        display: inline-block;
+        display: none;
+        margin: 12% 5% 0 5%;
+        /* box-shadow:0 0px 0px white, 0 0 30px white; */
+    }
+    .gameSection {
+        font-family: "Montserrat", "Arial";
+        color: white;
+        /* background-color: #444; */
+        /* background-color: black; */
+        height: 75%;
+        width: 100%;
+        overflow: hidden;
+        font-size: 10px;
+    }
+    .team-detail {
+        padding:0px
+    }
+}
+
+@media  (max-width: 320px) and  (max-height: 568px) { 
+    .navbar-brand {
+        height: 100%;
+        font-size: 14px;
+    }
+    .pageTwo {
+        height: calc(90vh - 60px);
+        /* background-image: url("images/court1.jpg"); */
+        /* background-color: black; */
+        display: inline-block;
+        display: none;
+        margin: 20% 5% 0 5%;
+        /* box-shadow:0 0px 0px white, 0 0 30px white; */
+    }
+    .gameSection {
+        font-family: "Montserrat", "Arial";
+        color: white;
+        /* background-color: #444; */
+        /* background-color: black; */
+        height: 75%;
+        width: 100%;
+        overflow: hidden;
+        font-size: 10px;
+    }
+    .team-detail {
+        padding:0px
+    }
+    .team-detail .team-nameandscore {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .homeTeamScore {
+        padding-left: 19px;
+    }
+    .awayTeamScore {
+        padding-left: 19px;
+    }
+
+}
+
+@media  (max-width: 375px) and  (max-height: 667px) { 
+    .navbar-brand {
+        height: 100%;
+        font-size: 14px;
+    }
+    .pageTwo {
+        height: calc(90vh - 60px);
+        /* background-image: url("images/court1.jpg"); */
+        /* background-color: black; */
+        display: inline-block;
+        display: none;
+        margin: 20% 5% 0 5%;
+        /* box-shadow:0 0px 0px white, 0 0 30px white; */
+    }
+    .gameSection {
+        font-family: "Montserrat", "Arial";
+        color: white;
+        /* background-color: #444; */
+        /* background-color: black; */
+        height: 75%;
+        width: 100%;
+        overflow: hidden;
+        font-size: 10px;
+    }
+    .team-detail {
+        padding:0px
+    }
+    .team-detail .team-nameandscore {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .homeTeamScore {
+        padding-left: 19px;
+    }
+    .awayTeamScore {
+        padding-left: 19px;
+    }
+
+}
+@media  (max-width: 414px) and  (max-height: 736px) { 
+    .navbar-brand {
+        height: 100%;
+        font-size: 14px;
+    }
+    .pageTwo {
+        height: calc(90vh - 60px);
+        /* background-image: url("images/court1.jpg"); */
+        /* background-color: black; */
+        display: inline-block;
+        display: none;
+        margin: 20% 5% 0 5%;
+        /* box-shadow:0 0px 0px white, 0 0 30px white; */
+    }
+    .gameSection {
+        font-family: "Montserrat", "Arial";
+        color: white;
+        /* background-color: #444; */
+        /* background-color: black; */
+        height: 75%;
+        width: 100%;
+        overflow: hidden;
+        font-size: 10px;
+    }
+    .team-detail {
+        padding:0px
+    }
+    .team-detail .team-nameandscore {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .homeTeamScore {
+        padding-left: 19px;
+    }
+    .awayTeamScore {
+        padding-left: 19px;
+    }
+
+}
+
+@media  (max-width: 375px) and  (max-height: 812px) { 
+    .navbar-brand {
+        height: 100%;
+        font-size: 14px;
+    }
+    .pageTwo {
+        height: calc(90vh - 60px);
+        /* background-image: url("images/court1.jpg"); */
+        /* background-color: black; */
+        display: inline-block;
+        display: none;
+        margin: 20% 5% 0 5%;
+        /* box-shadow:0 0px 0px white, 0 0 30px white; */
+    }
+    .gameSection {
+        font-family: "Montserrat", "Arial";
+        color: white;
+        /* background-color: #444; */
+        /* background-color: black; */
+        height: 75%;
+        width: 100%;
+        overflow: hidden;
+        font-size: 10px;
+    }
+    .team-detail {
+        padding:0px
+    }
+    .team-detail .team-nameandscore {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .homeTeamScore {
+        padding-left: 19px;
+    }
+    .awayTeamScore {
+        padding-left: 19px;
+    }
+
 }
