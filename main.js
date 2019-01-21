@@ -351,7 +351,7 @@ function renderRestaurants(restObj) {
     var cityContainer = $("<div>").addClass("city").text(restObj.city);
     var addressContainer = $("<div>").addClass("address").text(restObj.address);
     var rateContainer = $("<div>").addClass("rateSection");
-    var ratingContainer = $("<div>").addClass("rating label label-success").text(restObj.rating);
+    var ratingContainer = $("<div>").addClass("rating label label-warning").text(restObj.rating);
     var voteContainer = $("<div>").addClass("votes").text(restObj.votes + " reviews");
     infoContainer.append(nameContainer, cityContainer, addressContainer);
     rateContainer.append(ratingContainer, voteContainer);
