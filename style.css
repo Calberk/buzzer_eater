@@ -354,7 +354,7 @@ border-radius: 10px;
 .scoreboard {
     display: inline-flex;
     flex-direction:column;
-    width:33.33%;
+    width:48%;
     height: 30%;
     padding: 5px;
 }
@@ -1523,51 +1523,7 @@ a {
 }
 
 
-/* Iphone 4 */
-@media  (min-width: 320px) { 
-    .navbar-brand {
-        height: 100%;
-        font-size: 14px;
-    }
-
-    .pageTwo {
-        height: calc(90vh - 60px);
-        /* background-image: url("images/court1.jpg"); */
-        /* background-color: black; */
-        display: inline-block;
-        display: none;
-        margin: 20% 5% 0 5%;
-        /* box-shadow:0 0px 0px white, 0 0 30px white; */
-    }
-    .gameSection {
-        font-family: "Montserrat", "Arial";
-        color: white;
-        /* background-color: #444; */
-        /* background-color: black; */
-        height: 75%;
-        overflow: hidden;
-        font-size: 10px;
-    }
-    .team-detail {
-        padding:0px
-    }
-
-    #beer_text {
-        font-size: 20px;
-    }
-
-    .landingButtons {
-        font-size: 16px;
-        width: 40%;
-    }
-
-    .searchSection {
-        font-size: 20px;
-    }
-
-}
-
-/* Iphone 5SE */
+/*Iphone 4 & Iphone 5SE */
 @media  (min-width: 320px) { 
 
     .navbar-brand {
@@ -2126,8 +2082,12 @@ a {
         justify-content: space-around;
     }
 
+    .intro {
+        font-size: 18px;
+    }
+
     #beer_text {
-        letter-spacing: 7px; 
+        letter-spacing: 10px; 
         font-size: 30px;
     }
     
@@ -2154,7 +2114,7 @@ a {
     }
 
     .intro {
-        font-size: 24px;
+        font-size: 20px;
     }
 
    .navbar-brand {
@@ -2167,7 +2127,7 @@ a {
     }
 
     .landingButtons {
-        font-size: 20px;
+        font-size: 22px;
         width: 25%;
     }
 
@@ -2196,8 +2156,12 @@ a {
         justify-content: center;
     }
 
+    .intro {
+        font-size: 24px;
+    }
+
    .navbar-brand {
-        font-size: 20px;
+        font-size: 22px;
     }
     
     #beer_text {
@@ -2206,7 +2170,7 @@ a {
     }
 
     .landingButtons {
-        font-size: 20px;
+        font-size: 24px;
         width: 25%;
     }
 
