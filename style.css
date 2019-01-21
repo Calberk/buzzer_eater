@@ -100,14 +100,14 @@ body {
 }
 
 .pageTwo {
-    height: calc(90vh - 60px);
+    height: calc(95vh - 60px);
     display: inline-block;
     display: none;
     margin: 5% 5% 0 5%;
 }
 
 .pageThree {
-    height: calc(90vh - 60px);
+    height: calc(95vh - 60px);
     display: inline-block;
     display: none;
     margin: 5% 5% 0 5%;
@@ -117,12 +117,12 @@ body {
 .addressSection {
     height: 15%;
     /* width: 100%; */
-    margin: auto;
+    /* margin: auto; */
     top: 5%;
     color: gold;
     text-align: center;
     font-family: "Montserrat", "Arial";
-    font-size: 2rem;
+    /* font-size: 2rem; */
     position: relative;
 }
 
@@ -152,6 +152,7 @@ body {
     height: 50%;
     /* width:40%; */
     padding: 1%;
+    /* border: 5px solid white; */
 }
 
 .mapSection {
@@ -384,6 +385,7 @@ border-radius: 10px;
 .team {
     display: flex;
     flex-direction: row;
+    align-items: center;
     color: white;
     background-color: black
 }
@@ -1531,6 +1533,9 @@ a {
 
 /*Iphone 4 & Iphone 5SE */
 @media  (min-width: 320px) { 
+    body{
+        background-size: 600px 550px;
+    }
 
     .navbar-brand {
         font-size: 14px;
@@ -1554,7 +1559,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
+        height: calc(95vh - 60px);
         /* background-image: url("images/court1.jpg"); */
         /* background-color: black; */
         display: inline-block;
@@ -1605,13 +1610,13 @@ a {
       .pageThree {
           margin: 15% 5% 0 5%;
       }
+      
+      .addressSection {
+        font-size: 16px;
+    }
 
       #address {
           font-size: 14px;
-      }
-
-      .addressSection {
-          font-size: 16px;
       }
 
       #search-btn {
@@ -1624,6 +1629,9 @@ a {
 /* Galaxy S5 */
 @media  (min-width: 360px) { 
 
+    body{
+        background-size: 725px 650px;
+    }
 
     #beer_text {
         font-size: 24px;
@@ -1643,7 +1651,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
+        height: calc(95vh - 60px);
         /* background-image: url("images/court1.jpg"); */
         /* background-color: black; */
         display: inline-block;
@@ -1670,10 +1678,40 @@ a {
         height: 30%;
         padding: 5px;
     }
+
+    
+    .addressSection {
+        font-size: 20px;
+    }
+
+    #address {
+        font-size: 16px;
+    }
+
+    #search-btn {
+        font-size: 18px;
+    }
+
+    .info {
+        font-size: 15px;
+    }
+    
+    .rating {
+        font-size: 18px;
+    }
+    
+    .votes{
+        font-size: 14px;
+    }
+
 }
 
 /* Iphone 6/7/8 */
 @media  (min-width: 375px) { 
+
+    body{
+        background-size: 850px 800px;
+    }
 
     .navbar-brand {
         font-size: 14px;
@@ -1694,7 +1732,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
+        height: calc(95vh - 60px);
         display: inline-block;
         display: none;
         margin: 20% 5% 0 5%;
@@ -1721,11 +1759,31 @@ a {
         padding-left: 19px;
     }
 
+    .addressSection input {
+        width: 65%;
+    }
+
+    .info {
+        font-size: 15px;
+    }
+    
+    .rating {
+        font-size: 18px;
+    }
+    
+    .votes{
+        font-size: 13px;
+    }
+
 }
 
-/* Pixel 2 */
+/* Pixel 2 & Pixel 2 XL */
 @media  (min-width: 411px) { 
-    
+
+    body{
+        background-size: 925px 825px;
+    }
+
     .navbar-brand {
         font-size: 17px;
     }
@@ -1749,7 +1807,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
+        height: calc(95vh - 60px);
         display: inline-block;
         display: none;
         margin: 20% 5% 0 5%;
@@ -1790,9 +1848,37 @@ a {
         padding: 5px;
     }
 
+    .addressSection {
+        font-size: 22px;
+    }
+
+    .addressSection input {
+        width: 70%;
+    }
+
+    #address {
+        font-size: 18px;
+    }
+
+    #search-btn {
+        font-size: 20px;
+    }
+
+    .info {
+        font-size: 15px;
+    }
+    
+    .rating {
+        font-size: 20px;
+    }
+    
+    .votes{
+        font-size: 15px;
+    }
+
 }
 
-/* Pixel 2XL */
+/* Pixel 2XL
 @media  (min-width: 411px) {
 
     .navbar-brand {
@@ -1814,7 +1900,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
+        height: calc(95vh - 60px);
         display: inline-block;
         display: none;
         margin: 20% 5% 0 5%;
@@ -1855,10 +1941,15 @@ a {
         padding: 5px;
     }
 
-}
+} */
 
 /* IPAD */
 @media  (min-width: 768px) { 
+
+    body{
+        background-size: 1200px 1024px;
+    }
+
     .navbar-brand {
         font-size: 22px;
     }
@@ -1873,7 +1964,7 @@ a {
     }
 
     .landingButtons {
-        font-size: 22px;
+        font-size: 32px;
         width: 30%;
     }
 
@@ -1886,7 +1977,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
+        height: calc(95vh - 60px);
         display: inline-block;
         display: none;
         margin: 12% 5% 0 5%;
@@ -1899,10 +1990,46 @@ a {
         height: 30%;
         padding: 15px;
     }
+
+    .addressSection {
+        height: 10%;
+        font-size: 30px;
+        top: 0;
+    }
+
+    .addressSection input {
+        width: 55%;
+    }
+
+    #address {
+        font-size: 24px;
+    }
+
+    #search-btn {
+        font-size: 26px;
+    }
+
+    .info {
+        font-size: 30px;
+    }
+
+    .rating {
+        font-size: 34px;
+    }
+
+    .votes {
+        font-size: 25px;
+    }
+
 }
 
 /* IPAD PRO*/
 @media  (min-width: 1024px) { 
+
+    body{
+        background-size: 1500px 1366px;
+    }
+
     .navbar-brand {
         font-size: 30px;
     }
@@ -1919,7 +2046,7 @@ a {
     }
 
     .landingButtons {
-        font-size: 28px;
+        font-size: 36px;
         width: 30%;
     }
 
@@ -1932,7 +2059,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
+        height: calc(95vh - 60px);
         display: inline-block;
         display: none;
         margin: 10% 5% 0 5%;
@@ -1941,10 +2068,31 @@ a {
     .scoreboard {
         display: inline-flex;
         flex-direction:column;
-        width:25%;
-        height: 30%;
+        width: 33%;
+        height: 250px;
         padding: 30px;
     }
+
+    .pageThree {
+        margin: 8% 5% 0 5%;
+    }
+
+    .addressSection {
+        font-size: 40px;
+    }
+
+    .addressSection input {
+        width: 60%;
+    }
+
+    #address {
+        font-size: 32px;
+    }
+
+    #search-btn {
+        font-size: 36px;
+    }
+
 }
 
 @media (max-width: 575px) and (orientation: landscape) {
@@ -2123,7 +2271,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
+        height: calc(95vh - 60px);
         display: inline-block;
         display: none;
         margin: 14% 5% 0 5%;
@@ -2158,7 +2306,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
+        height: calc(95vh - 60px);
         display: inline-block;
         display: none;
         margin: 8% 5% 0 5%;
@@ -2201,7 +2349,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
+        height: calc(95vh - 60px);
         display: inline-block;
         display: none;
         margin: 8% 5% 0 5%;
@@ -2240,7 +2388,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
+        height: calc(95vh - 60px);
         /* background-image: url("images/court1.jpg"); */
         /* background-color: black; */
         display: inline-block;
