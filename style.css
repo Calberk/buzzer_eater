@@ -100,7 +100,7 @@ body {
 }
 
 .pageTwo {
-    height: calc(95vh - 60px);
+    height: calc(90vh - 60px);
     display: inline-block;
     display: none;
     margin: 5% 5% 0 5%;
@@ -182,10 +182,10 @@ body {
     height: 100%;
     width: 100%;
     font-size: 35px;
-    /* position: absolute;
-    overflow-y: scroll;
-    overflow-x: hidden; */
-    /* margin-left: 2px; */
+    /* /* position: absolute; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-left: 2px;
 }
 
 
@@ -200,7 +200,7 @@ body {
     box-shadow:0 0px 0px white, 0 0 11px white;
     border-radius: 10px;
     /* margin: 3% 2% 3% 2%; */
-    margin: 3% 0;
+    margin: 3% 1%;
     background: white;
 }
 
@@ -354,9 +354,9 @@ border-radius: 10px;
     color: white;
     /* background-color: #444 */
     /* background-color: black; */
-    height: 75%;
+    height: 90%;
     width:100%;
-    overflow: hidden;
+    overflow: auto;
     font-size:1rem;
     /* display: inline-flex; */
     /* overflow: scroll; */
@@ -365,7 +365,7 @@ border-radius: 10px;
 .scoreboard {
     display: inline-flex;
     flex-direction:column;
-    width:48%;
+    width: 50%;
     height: 30%;
     padding: 5px;
 }
@@ -1158,13 +1158,20 @@ a {
 /*TWITTER CSS BEGINS HERE*/
 
 .twitterContainer{
+    height: 10%;
     width: 100%;
     color: white;
     font-size: 1rem;
     display: inline-block;
     bottom: 0;
-    position: fixed;
-    margin: 0% 5% 0 -5%;
+    /* position: fixed; */
+    margin: 0;
+}
+
+.twitterSection{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .tweetLogo{
@@ -1354,15 +1361,20 @@ a {
   background: none;
   background-color: black;
   border: 3px solid #fff;
-  border-radius: 5px;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
   color: #fff;
   display: block;
   font-size: 1.6em;
   font-weight: bold;
-  margin: 1em auto;
-  padding: 2em 4em;
+  margin: 0 auto;
+  /* margin: 1em auto; */
+  /* padding: 2em 4em; */
   position: relative;
   text-transform: uppercase;
+  position: fixed;
+  bottom: 0;
+
 }
 
 .twitterBtn::before,
@@ -1537,7 +1549,7 @@ a {
 /*Iphone 4 & Iphone 5SE */
 @media  (min-width: 320px) { 
     body{
-        background-size: 600px 550px;
+        background-size: 600px 640px;
     }
 
     .navbar-brand {
@@ -1563,7 +1575,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(95vh - 60px);
+        height: calc(90vh - 60px);
         /* background-image: url("images/court1.jpg"); */
         /* background-color: black; */
         display: inline-block;
@@ -1578,7 +1590,6 @@ a {
         /* background-color: black; */
         height: 75%;
         width: 100%;
-        overflow: hidden;
         font-size: 10px;
     }
 
@@ -1586,19 +1597,19 @@ a {
         padding:0px
     }
 
-    .twitterContainer{
+    /* .twitterContainer{
         width: 100%;
-        /* height: 40vh;  */
-        /* background-color: black; */
+        height: 40vh; 
+        background-color: black;
         color: white;
-        /* padding: 1%; */
+        padding: 1%;
         font-size: 1rem;
-        /* border: 1px solid white; */
-        /* display: inline-block; */
-    }
+        border: 1px solid white;
+        display: inline-block;
+    }  */
     
 
-    .twitterBtn {
+    /* .twitterBtn {
         background: none;
         background-color: black;
         border: 3px solid #fff;
@@ -1608,8 +1619,9 @@ a {
         font-weight: bold;
         margin: none;
         padding: 2em 4em;
+        position: fixed; */
 
-      }
+      /* } */
 
       .pageThree {
           margin: 15% 5% 0 5%;
@@ -1656,7 +1668,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(95vh - 60px);
+        height: calc(90vh - 60px);
         /* background-image: url("images/court1.jpg"); */
         /* background-color: black; */
         display: inline-block;
@@ -1670,9 +1682,8 @@ a {
         color: white;
         /* background-color: #444; */
         /* background-color: black; */
-        height: 75%;
+        height: 90%;
         width: 100%;
-        overflow: hidden;
         font-size: 10px;
     }
 
@@ -1738,7 +1749,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(95vh - 60px);
+        height: calc(90vh - 60px);
         display: inline-block;
         display: none;
         margin: 20% 5% 0 5%;
@@ -1746,8 +1757,7 @@ a {
     .gameSection {
         font-family: "Montserrat", "Arial";
         color: white;
-        height: 75%;
-        overflow: hidden;
+        height: 90%;
         font-size: 10px;
     }
     .team-detail {
@@ -1814,18 +1824,17 @@ a {
     }
 
     .pageTwo {
-        height: calc(95vh - 60px);
+        height: calc(90vh - 60px);
         display: inline-block;
         display: none;
-        margin: 20% 5% 0 5%;
+        margin: 15% 5% 0 5%;
     }
     
     .gameSection {
         font-family: "Montserrat", "Arial";
         color: white;
-        height: 75%;
-        width: 100%;
-        overflow: hidden;
+        height: 90%;
+        width: 100%;;
         font-size: 10px;
     }
 
@@ -1907,7 +1916,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(95vh - 60px);
+        height: calc(90vh - 60px);
         display: inline-block;
         display: none;
         margin: 20% 5% 0 5%;
@@ -1984,7 +1993,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(95vh - 60px);
+        height: calc(90vh - 60px);
         display: inline-block;
         display: none;
         margin: 12% 5% 0 5%;
@@ -2071,7 +2080,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(95vh - 60px);
+        height: calc(90vh - 60px);
         display: inline-block;
         display: none;
         margin: 10% 5% 0 5%;
@@ -2257,6 +2266,21 @@ a {
         display:none;
     }
 
+    .pageTwo {
+        height: calc(90vh - 60px);
+        display: inline-block;
+        display: none;
+        margin: 13% 5% 0 5%;
+    }
+
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:50%;
+        height: 40%;
+        padding: 5px;
+    }
+
     .pageThree {
         height: auto;
         margin: 18% 5% 0 5%;
@@ -2329,10 +2353,18 @@ a {
     }
 
     .pageTwo {
-        height: calc(95vh - 60px);
+        height: calc(90vh - 60px);
         display: inline-block;
         display: none;
-        margin: 14% 5% 0 5%;
+        margin: 10% 5% 0 5%;
+    }
+
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:50%;
+        height: 50%;
+        padding: 5px;
     }
 
     .pageThree {
@@ -2421,7 +2453,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(95vh - 60px);
+        height: calc(90vh - 60px);
         display: inline-block;
         display: none;
         margin: 8% 5% 0 5%;
@@ -2431,7 +2463,7 @@ a {
         display: inline-flex;
         flex-direction:column;
         width:33%;
-        height: 30%;
+        height: 50%;
         padding: 30px;
     }
 
@@ -2509,7 +2541,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(95vh - 60px);
+        height: calc(90vh - 60px);
         display: inline-block;
         display: none;
         margin: 8% 5% 0 5%;
@@ -2521,6 +2553,18 @@ a {
         width:33%;
         height: 30%;
         padding: 30px;
+    }
+
+    .team-detail {
+        font-size: 22px;
+    }
+
+    .timer-container {
+        font-size: 16px;
+    }
+
+    .twitterBtn {
+        font-size: 22px;
     }
 
     .pageThree {
@@ -2596,7 +2640,7 @@ a {
     }
 
     .pageTwo {
-        height: calc(95vh - 60px);
+        height: calc(90vh - 60px);
         /* background-image: url("images/court1.jpg"); */
         /* background-color: black; */
         display: inline-block;
@@ -2611,6 +2655,18 @@ a {
         width:33%;
         height: 35%;
         padding: 30px;
+    }
+
+    .team-detail {
+        font-size: 26px;
+    }
+
+    .timer-container {
+        font-size: 18px;
+    }
+
+    .twitterBtn {
+        font-size: 26px;
     }
 
     .pageThree {
@@ -2684,7 +2740,7 @@ a {
         width: 16%;
     }
     .pageTwo {
-        height: calc(95vh - 60px);
+        height: calc(90vh - 60px);
         display: inline-block;
         display: none;
         margin: 6% 5% 0 5%;
@@ -2696,6 +2752,19 @@ a {
         width:25%;
         height: 35%;
         padding: 30px;
+    }
+
+    .team-detail {
+        font-size: 30px;
+    }
+
+    .timer-container {
+        font-size: 20px;
+    }
+
+
+    .twitterBtn {
+        font-size: 30px;
     }
 
     .pageThree {
