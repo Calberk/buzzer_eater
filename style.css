@@ -1991,6 +1991,10 @@ a {
         padding: 15px;
     }
 
+    .pageThree {
+        margin: 12% 10% 0 8%;
+    }
+
     .addressSection {
         height: 10%;
         font-size: 30px;
@@ -2074,7 +2078,7 @@ a {
     }
 
     .pageThree {
-        margin: 8% 5% 0 5%;
+        margin: 8% 10% 0 8%;
     }
 
     .addressSection {
@@ -2244,10 +2248,55 @@ a {
     .ball-icon {
         display:none;
     }
+
+    .pageThree {
+        height: auto;
+        margin: 18% 5% 0 5%;
+    }
+
+    .addressSection {
+        height: 30%;
+        font-size: 20px;
+    }
+
+    .addressSection input {
+        width: 60%;
+    }
+
+    #address {
+        font-size: 16px;
+    }
+
+    #search-btn {
+        font-size: 18px;
+    }
+
+    .eats-content {
+        height: 70%;
+        margin-top: 10%;
+    }
+
+    .map {
+        height: 200px;
+    }
+
+    .restaurants {
+        height: 400px;
+    }
+
+    .mainRestaurantContainer {
+        height: 25%;
+    }
+
 }
 
 
 @media (min-width: 575.98px) and (orientation: landscape) {
+
+    body {
+        background-size: 925px 975px;
+    }
+
     .title-grouping {
         justify-content: space-around;
     }
@@ -2276,9 +2325,66 @@ a {
         display: none;
         margin: 14% 5% 0 5%;
     }
+
+    .pageThree {
+        height: auto;
+        margin: 16% 9% 0 9%;
+    }
+
+    .addressSection {
+        height: 30%;
+        font-size: 22px;
+    }
+
+    .addressSection input {
+        width: 50%;
+    }
+
+    #address {
+        font-size: 16px;
+    }
+
+    #search-btn {
+        font-size: 18px;
+    }
+
+    .eats-content {
+        height: 70%;
+        margin-top: 10%;
+    }
+
+    .map {
+        height: 275px;
+    }
+
+    .restaurants {
+        height: 400px;
+    }
+
+    .mainRestaurantContainer {
+        height: 25%;
+    }
+
+    .info {
+        font-size: 18px;
+    }
+
+    .rating {
+        font-size: 20px;
+    }
+
+    .votes {
+        font-size: 18px;
+    }
+
 }
 
 @media (min-width: 820px) and (max-width: 1024px) and (orientation: landscape) {
+
+    body {
+        background-size: 1024px 975px;
+    }
+
     .title-grouping {
         justify-content: space-around;
     }
@@ -2319,9 +2425,54 @@ a {
         height: 30%;
         padding: 30px;
     }
+
+    
+    .pageThree {
+        height: auto;
+        margin: 12% 12% 0 12%;
+    }
+
+    .addressSection {
+        height: 30%;
+        font-size: 24px;
+    }
+
+    .addressSection input {
+        width: 50%;
+    }
+
+    #address {
+        font-size: 18px;
+    }
+
+    #search-btn {
+        font-size: 20px;
+    }
+
+    .eats-content {
+        height: 70%;
+        margin-top: 10%;
+    }
+
+    .map {
+        height: 275px;
+    }
+
+    .restaurants {
+        height: 400px;
+    }
+
+    .mainRestaurantContainer {
+        height: 25%;
+    }
 }
 
-@media (min-width: 1024.98px) and (max-width: 1366.98px) and (orientation: landscape) {
+@media (min-width: 1024.98px) and (max-width: 1199.98px) and (orientation: landscape) {
+    
+    body {
+        background-size: 1366px 1125px;
+    }
+
     .title-grouping {
         justify-content: center;
     }
@@ -2362,11 +2513,59 @@ a {
         height: 30%;
         padding: 30px;
     }
+
+    .pageThree {
+        height: auto;
+        margin: 10% 15% 0 15%;
+    }
+
+    .addressSection {
+        height: 30%;
+        font-size: 30px;
+    }
+
+    .addressSection input {
+        width: 50%;
+    }
+
+    #address {
+        font-size: 24px;
+    }
+
+    #search-btn {
+        font-size: 26px;
+    }
+
+    .eats-content {
+        height: 70%;
+        margin-top: 8%;
+    }
+
+    .map {
+        height: 400px;
+    }
+
+    .restaurants {
+        height: 450px;
+    }
+
+    .mainRestaurantContainer {
+        height: 25%;
+    }
 }
 
-@media (min-width: 1367px) and (orientation: landscape) {
+@media (min-width: 1200px) and (orientation: landscape) {
+
+    body {
+        background-size: 1875px 1300px;
+    }
+
     .title-grouping {
         justify-content: center;
+    }
+
+    .intro {
+        font-size: 28px;
     }
 
     .navbar-brand {
@@ -2379,8 +2578,8 @@ a {
     }
 
     .landingButtons {
-        font-size: 26px;
-        width: 15%;
+        font-size: 30px;
+        width: 16%;
     }
 
     .searchSection {
@@ -2400,8 +2599,50 @@ a {
     .scoreboard {
         display: inline-flex;
         flex-direction:column;
-        width:25%;
+        width:33%;
         height: 30%;
         padding: 30px;
+    }
+
+    .pageThree {
+        height: auto;
+        margin: 7% 5% 0 5%;
+    }
+
+    .addressSection {
+        height: 30%;
+        font-size: 30px;
+    }
+
+    .addressSection input {
+        width: 50%;
+    }
+
+    #address {
+        font-size: 24px;
+    }
+
+    #search-btn {
+        font-size: 26px;
+    }
+
+    .eats-content {
+        height: 70%;
+        margin-top: 5%;
+        display: flex;
+        flex-direction: row-reverse
+    }
+
+    .map {
+        height: 500px;
+    }
+
+    .restaurants {
+        margin-top: 0;
+        height: 500px;
+    }
+
+    .mainRestaurantContainer {
+        height: 25%;
     }
 }
