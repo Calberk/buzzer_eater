@@ -130,6 +130,7 @@ function landing() {
     });
     document.getElementById('nba1').addEventListener('click', function () {
         if ($("#pageTwo").css('display') == 'none') {
+            $(".navbar-collapse").removeClass('in')
             openPageNBA1();
         }
         // search_result(geocoder, map);
@@ -149,6 +150,7 @@ function landing() {
     });
     document.getElementById('eats1').addEventListener('click', function () {
         if ($("#pageThree").css('display') == 'none') {
+            $(".navbar-collapse").removeClass('in')
             openPageEats1();
         }
         else {
@@ -167,9 +169,12 @@ function landing() {
         // $("#address").val('');
 
         if ($("#pageTwo").css('display') == 'none') {
+            $(".navbar-collapse").removeClass('in')
             openPageHome2();
         }
+        
         if ($("#pageThree").css('display') == 'none') {
+            $(".navbar-collapse").removeClass('in')
             openPageHome3();
         }
 
@@ -178,9 +183,11 @@ function landing() {
 
     document.getElementById('home1').addEventListener('click', function () {
         if ($("#pageTwo").css('display') == 'none') {
+            $(".navbar-collapse").removeClass('in')
             openPageHome2();
         }
         if ($("#pageThree").css('display') == 'none') {
+            $(".navbar-collapse").removeClass('in')
             openPageHome3();
         }
 
@@ -736,6 +743,7 @@ function openPageEats1() {
     // $(".pageOne").toggle(".display");
     $(".pageTwo").toggle(".display");
     $(".pageThree").toggle(".display");
+
 }
 //   function openPageHome1() {
 //     $(".navbar").toggle(".display");

@@ -1158,7 +1158,6 @@ a {
 /*TWITTER CSS BEGINS HERE*/
 
 .twitterContainer{
-    height: 10%;
     width: 100%;
     color: white;
     font-size: 1rem;
@@ -1312,7 +1311,7 @@ a {
     letter-spacing: 4px;
 }
 
-.navbar-nav a:after {
+/* .navbar-nav a:after {
     content: '';
     display: block;
     width: 0;
@@ -1320,11 +1319,11 @@ a {
     margin: auto;
     background: currentColor;
     transition: all .3s ease;
-}
+} */
 
-.navbar-nav a:hover::after {
+/* .navbar-nav a:hover::after {
     width: 100%;
-}
+} */
 
 #nav-title {
     font-family: 'futura';
