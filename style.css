@@ -174,13 +174,17 @@ body {
     padding: 0 1%
 }
 
+.restaurants:hover {
+    overflow-y: auto;
+}
+
 .restaurantSection {
     height: 100%;
     width: 100%;
     font-size: 35px;
-    /* position: absolute; */
+    /* position: absolute;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: hidden; */
     /* margin-left: 2px; */
 }
 
@@ -1155,13 +1159,12 @@ a {
 
 .twitterContainer{
     width: 100%;
-    /* height: 40vh;  */
-    /* background-color: black; */
     color: white;
-    /* padding: 1%; */
     font-size: 1rem;
-    /* border: 1px solid white; */
     display: inline-block;
+    bottom: 0;
+    position: fixed;
+    margin: 0% 5% 0 -5%;
 }
 
 .tweetLogo{
@@ -1548,6 +1551,7 @@ a {
     .landingButtons {
         font-size: 16px;
         width: 40%;
+        margin: 0 1%;
     }
 
     .searchSection {
@@ -1640,6 +1644,7 @@ a {
     .landingButtons {
         font-size: 16px;
         width: 35%;
+        margin: 0 1%;
     }
 
     .searchSection {
@@ -1725,6 +1730,7 @@ a {
     .landingButtons {
         font-size: 18px;
         width: 35%;
+        margin: 0 1%;
     }
 
     .searchSection {
@@ -1795,7 +1801,8 @@ a {
 
     .landingButtons {
         font-size: 18px;
-        width: 35%;
+        width: 30%;
+        margin: 0 1%;
     }
 
     .searchSection {
@@ -1964,7 +1971,7 @@ a {
     }
 
     .landingButtons {
-        font-size: 32px;
+        font-size: 26px;
         width: 30%;
     }
 
@@ -2050,8 +2057,9 @@ a {
     }
 
     .landingButtons {
-        font-size: 36px;
+        font-size: 32px;
         width: 30%;
+        margin: 0 1%;
     }
 
     .searchSection {
@@ -2313,6 +2321,7 @@ a {
     .landingButtons {
         font-size: 20px;
         width: 25%;
+        margin: 0 2%;
     }
 
     .searchSection {
@@ -2554,7 +2563,7 @@ a {
     }
 }
 
-@media (min-width: 1200px) and (orientation: landscape) {
+@media (min-width: 1200px) and (max-width: 1366.98px) and (orientation: landscape) {
 
     body {
         background-size: 1875px 1300px;
@@ -2600,7 +2609,7 @@ a {
         display: inline-flex;
         flex-direction:column;
         width:33%;
-        height: 30%;
+        height: 35%;
         padding: 30px;
     }
 
@@ -2616,6 +2625,91 @@ a {
 
     .addressSection input {
         width: 50%;
+    }
+
+    #address {
+        font-size: 24px;
+    }
+
+    #search-btn {
+        font-size: 26px;
+    }
+
+    .eats-content {
+        height: 70%;
+        margin-top: 5%;
+        display: flex;
+        flex-direction: row-reverse
+    }
+
+    .map {
+        height: 500px;
+    }
+
+    .restaurants {
+        margin-top: 0;
+        height: 500px;
+    }
+
+    .mainRestaurantContainer {
+        height: 25%;
+    }
+}
+
+@media (min-width: 1367px) and (orientation: landscape) {
+
+    body {
+        background-size: 1875px 1300px;
+    }
+
+    .title-grouping {
+        justify-content: center;
+    }
+
+    .intro {
+        font-size: 28px;
+    }
+
+    .navbar-brand {
+        font-size: 30px;
+    }
+
+    #beer_text {
+        letter-spacing: 20px; 
+        font-size: 60px;
+    }
+
+    .landingButtons {
+        font-size: 30px;
+        width: 16%;
+    }
+    .pageTwo {
+        height: calc(95vh - 60px);
+        display: inline-block;
+        display: none;
+        margin: 6% 5% 0 5%;
+    }
+
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:25%;
+        height: 35%;
+        padding: 30px;
+    }
+
+    .pageThree {
+        height: auto;
+        margin: 7% 5% 0 5%;
+    }
+
+    .addressSection {
+        height: 30%;
+        font-size: 30px;
+    }
+
+    .addressSection input {
+        width: 40%;
     }
 
     #address {
