@@ -366,7 +366,6 @@ border-radius: 10px;
     display: inline-flex;
     flex-direction:column;
     width: 50%;
-    height: 30%;
     padding: 5px;
 }
 
@@ -1360,8 +1359,7 @@ a {
   background: none;
   background-color: black;
   border: 3px solid #fff;
-  border-bottom: none;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
   color: #fff;
   display: block;
   font-size: 1.6em;
@@ -1372,7 +1370,7 @@ a {
   position: relative;
   text-transform: uppercase;
   position: fixed;
-  bottom: 0;
+  bottom: 15px;
 
 }
 
@@ -1690,7 +1688,6 @@ a {
         display: inline-flex;
         flex-direction:column;
         width:50%;
-        height: 30%;
         padding: 5px;
     }
 
@@ -1859,7 +1856,6 @@ a {
         display: inline-flex;
         flex-direction:column;
         width:50%;
-        height: 30%;
         padding: 5px;
     }
 
@@ -2002,7 +1998,6 @@ a {
         display: inline-flex;
         flex-direction:column;
         width:33.33%;
-        height: 30%;
         padding: 15px;
     }
 
@@ -2089,7 +2084,6 @@ a {
         display: inline-flex;
         flex-direction:column;
         width: 33%;
-        height: 250px;
         padding: 30px;
     }
 
@@ -2276,7 +2270,6 @@ a {
         display: inline-flex;
         flex-direction:column;
         width:50%;
-        height: 40%;
         padding: 5px;
     }
 
@@ -2362,7 +2355,6 @@ a {
         display: inline-flex;
         flex-direction:column;
         width:50%;
-        height: 50%;
         padding: 5px;
     }
 
@@ -2462,7 +2454,6 @@ a {
         display: inline-flex;
         flex-direction:column;
         width:33%;
-        height: 50%;
         padding: 30px;
     }
 
@@ -2550,7 +2541,6 @@ a {
         display: inline-flex;
         flex-direction:column;
         width:33%;
-        height: 30%;
         padding: 30px;
     }
 
@@ -2652,7 +2642,6 @@ a {
         display: inline-flex;
         flex-direction:column;
         width:33%;
-        height: 35%;
         padding: 30px;
     }
 
@@ -2749,12 +2738,11 @@ a {
         display: inline-flex;
         flex-direction:column;
         width:25%;
-        height: 35%;
         padding: 30px;
     }
 
     .team-detail {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .timer-container {
