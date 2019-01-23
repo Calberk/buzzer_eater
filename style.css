@@ -7,10 +7,9 @@ body {
     font-size: 0;
     box-sizing: border-box;
     background: black;
-    background-image: url("images/court1.jpg");
+    /* background-image: url("images/court1.jpg");
     background-position-x: center;
     background-repeat: no-repeat;
-    background-size: cover;
 }
 
 *:focus {
@@ -64,7 +63,11 @@ body {
 .pageOne {
     height: 100%;
     overflow: hidden;
-    background-color: black;
+    background-image: url("images/background1.jpg");
+    background-position-x: center;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+
     position:relative;
     z-index:200;
     /* top: -100px; */
@@ -104,13 +107,21 @@ body {
     display: inline-block;
     display: none;
     margin: 5% 5% 0 5%;
+    background-image: url("images/court1.jpg");
+    background-position-x: center;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
 }
 
 .pageThree {
     height: calc(95vh - 60px);
     display: inline-block;
     display: none;
+    background-image: url("images/court1.jpg");
+    background-position-x: center;
+    background-repeat: no-repeat;
     margin: 5% 5% 0 5%;
+    /* overflow: hidden */
 
 }
 
@@ -1600,7 +1611,7 @@ a {
 
 /*Iphone 4 & Iphone 5SE */
 @media  (min-width: 320px) { 
-    body{
+    body .pageTwo .pageThree {
         background-size: 600px 640px;
     }
 
@@ -1697,7 +1708,7 @@ a {
 /* Galaxy S5 */
 @media  (min-width: 360px) { 
 
-    body{
+    body .pageTwo .pageThree{
         background-size: 725px 650px;
     }
 
@@ -1776,7 +1787,7 @@ a {
 /* Iphone 6/7/8 */
 @media  (min-width: 375px) { 
 
-    body{
+    body .pageTwo .pageThree{
         background-size: 850px 800px;
     }
 
@@ -1847,7 +1858,7 @@ a {
 /* Pixel 2 & Pixel 2 XL */
 @media  (min-width: 411px) { 
 
-    body{
+    body .pageTwo .pageThree{
         background-size: 925px 825px;
     }
 
@@ -2012,7 +2023,7 @@ a {
 /* IPAD */
 @media  (min-width: 768px) { 
 
-    body{
+    body .pageTwo .pageThree{
         background-size: 1200px 1024px;
     }
 
@@ -2095,7 +2106,7 @@ a {
 /* IPAD PRO*/
 @media  (min-width: 1024px) { 
 
-    body{
+    body .pageTwo .pageThree{
         background-size: 1500px 1366px;
     }
 
@@ -2372,7 +2383,7 @@ a {
 
 @media (min-width: 575.98px) and (orientation: landscape) {
 
-    body {
+    body .pageTwo .pageThree{
         background-size: 925px 975px;
     }
 
@@ -2468,7 +2479,7 @@ a {
 
 @media (min-width: 820px) and (max-width: 1024px) and (orientation: landscape) {
 
-    body {
+    body .pageTwo .pageThree{
         background-size: 1024px 975px;
     }
 
@@ -2555,7 +2566,7 @@ a {
 
 @media (min-width: 1024.98px) and (max-width: 1199.98px) and (orientation: landscape) {
     
-    body {
+    body .pageTwo .pageThree{
         background-size: 1366px 1125px;
     }
 
@@ -2653,7 +2664,7 @@ a {
 
 @media (min-width: 1200px) and (max-width: 1366.98px) and (orientation: landscape) {
 
-    body {
+    body .pageTwo .pageThree{
         background-size: 1875px 1300px;
     }
 
@@ -2757,7 +2768,7 @@ a {
 
 @media (min-width: 1367px) and (orientation: landscape) {
 
-    body {
+    body .pageTwo .pageThree{
         background-size: 1875px 1300px;
     }
 
