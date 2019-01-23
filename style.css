@@ -10,7 +10,7 @@ body {
     background-image: url("images/court1.jpg");
     background-position-x: center;
     background-repeat: no-repeat;
-    background-size: fill;
+    background-size: cover;
 }
 
 *:focus {
@@ -88,7 +88,7 @@ body {
     padding: 5px;
     color: gold;
     text-align: center;
-    font-family: 'Roboto','sans-serif';
+    font-family: 'futura';
     font-size: 13px;
 }
 
@@ -121,7 +121,7 @@ body {
     top: 5%;
     color: gold;
     text-align: center;
-    font-family: "Montserrat", "Arial";
+    font-family: "futura";
     /* font-size: 2rem; */
     position: relative;
 }
@@ -150,8 +150,8 @@ body {
 .map {
     /* height: 60%; */
     height: 50%;
-    /* width:40%; */
-    padding: 1%;
+    /* width:40%;
+    padding: 1%; */
     /* border: 5px solid white; */
 }
 
