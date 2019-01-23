@@ -9,7 +9,7 @@ body {
     background: black;
     /* background-image: url("images/court1.jpg");
     background-position-x: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
 }
 
 *:focus {
@@ -66,7 +66,7 @@ body {
     background-image: url("images/background1.jpg");
     background-position-x: center;
     background-repeat: no-repeat;
-    /* background-size: cover; */
+    background-size: cover;
 
     position:relative;
     z-index:200;
@@ -114,13 +114,13 @@ body {
 }
 
 .pageThree {
-    height: calc(95vh - 60px);
+    height: calc(100vh - 50px);
     display: inline-block;
     display: none;
     background-image: url("images/court1.jpg");
     background-position-x: center;
     background-repeat: no-repeat;
-    margin: 5% 5% 0 5%;
+    /* margin: 5% 5% 0 5%; */
     /* overflow: hidden */
 
 }
@@ -146,12 +146,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    
+    margin: 14% 5% 0 5%;
 }
 
 .eats-content {
-    height: 75%;
-    margin-top: 5%;
+    height: 85%;
+    margin-top: 10%;
     /* display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
@@ -160,7 +160,7 @@ body {
 
 .map {
     /* height: 60%; */
-    height: 50%;
+    height: 45%;
     /* width:40%;
     padding: 1%; */
     /* border: 5px solid white; */
@@ -176,7 +176,7 @@ body {
 }
 
 .restaurants {
-    height: 75%;
+    height: 48%;
     /* width: 50%; */
     display: inline-block;
     overflow: hidden;
@@ -1611,7 +1611,7 @@ a {
 
 /*Iphone 4 & Iphone 5SE */
 @media  (min-width: 320px) { 
-    body .pageTwo .pageThree {
+    body, .pageTwo, .pageThree {
         background-size: 600px 640px;
     }
 
@@ -1686,9 +1686,6 @@ a {
 
       /* } */
 
-      .pageThree {
-          margin: 15% 5% 0 5%;
-      }
       
       .addressSection {
         font-size: 16px;
@@ -1708,7 +1705,7 @@ a {
 /* Galaxy S5 */
 @media  (min-width: 360px) { 
 
-    body .pageTwo .pageThree{
+    body, .pageTwo, .pageThree{
         background-size: 725px 650px;
     }
 
@@ -1787,7 +1784,7 @@ a {
 /* Iphone 6/7/8 */
 @media  (min-width: 375px) { 
 
-    body .pageTwo .pageThree{
+    body, .pageTwo, .pageThree{
         background-size: 850px 800px;
     }
 
@@ -1837,6 +1834,10 @@ a {
         padding-left: 19px;
     }
 
+    .pageThree {
+        height: calc(100vh - 55px);
+    }
+
     .addressSection input {
         width: 65%;
     }
@@ -1858,7 +1859,7 @@ a {
 /* Pixel 2 & Pixel 2 XL */
 @media  (min-width: 411px) { 
 
-    body .pageTwo .pageThree{
+    body, .pageTwo, .pageThree{
         background-size: 925px 825px;
     }
 
@@ -1923,6 +1924,10 @@ a {
         flex-direction:column;
         width:50%;
         padding: 5px;
+    }
+    
+    .pageThree {
+        height: calc(100vh - 60px);
     }
 
     .addressSection {
@@ -2023,7 +2028,7 @@ a {
 /* IPAD */
 @media  (min-width: 768px) { 
 
-    body .pageTwo .pageThree{
+    body, .pageTwo, .pageThree{
         background-size: 1200px 1024px;
     }
 
@@ -2068,13 +2073,17 @@ a {
     }
 
     .pageThree {
-        margin: 12% 10% 0 8%;
+        height: calc(100vh - 70px);
+    }
+
+    .eats-container {
+        margin: 9% 5% 0 5%;
     }
 
     .addressSection {
         height: 10%;
         font-size: 30px;
-        top: 0;
+        top: 3%;
     }
 
     .addressSection input {
@@ -2106,7 +2115,7 @@ a {
 /* IPAD PRO*/
 @media  (min-width: 1024px) { 
 
-    body .pageTwo .pageThree{
+    body, .pageTwo, .pageThree{
         background-size: 1500px 1366px;
     }
 
@@ -2154,7 +2163,7 @@ a {
     }
 
     .pageThree {
-        margin: 8% 10% 0 8%;
+        height: calc(100vh - 81px);
     }
 
     .addressSection {
@@ -2173,6 +2182,97 @@ a {
         font-size: 36px;
     }
 
+}
+
+@media  (min-width: 1200px) { 
+    body, .pageTwo, .pageThree{
+        background-size: 1500px 1366px;
+    }
+
+    .navbar-brand {
+        font-size: 40px;
+    }
+
+    #home2, #eats1, #nba1 {
+        font-size: 24px;
+    }
+
+    .title-grouping {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #beer_text {
+        letter-spacing: 17px; 
+        font-size: 45px;
+    }
+
+    .landingButtons {
+        font-size: 32px;
+        width: 30%;
+        margin: 0 1%;
+    }
+
+    .searchSection {
+        font-size: 48px;
+    }
+
+    .intro {
+        font-size: 35px;
+    }
+
+    .pageTwo {
+        height: calc(90vh - 60px);
+        display: inline-block;
+        display: none;
+        margin: 10% 5% 0 5%;
+    }
+    
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width: 33%;
+        padding: 30px;
+    }
+
+    .pageThree {
+        height: calc(100vh - 81px);
+    }
+
+    .addressSection {
+        margin-top: 8%;
+        font-size: 48px;
+    }
+
+    .eats-content {
+        margin-top: 15%;
+        display: flex;
+        flex-direction: row-reverse
+    }
+
+    .restaurants {
+        height: 60%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .map {
+        height: 60%;
+    }
+
+
+    .addressSection input {
+        width: 60%;
+    }
+
+    #address {
+        font-size: 38px;
+    }
+
+    #search-btn {
+        font-size: 40px;
+    }
 }
 
 @media (max-width: 575px) and (orientation: landscape) {
@@ -2339,11 +2439,6 @@ a {
         padding: 5px;
     }
 
-    .pageThree {
-        height: auto;
-        margin: 18% 5% 0 5%;
-    }
-
     .addressSection {
         height: 30%;
         font-size: 20px;
@@ -2371,7 +2466,7 @@ a {
     }
 
     .restaurants {
-        height: 400px;
+        height: 225px;
     }
 
     .mainRestaurantContainer {
@@ -2383,7 +2478,7 @@ a {
 
 @media (min-width: 575.98px) and (orientation: landscape) {
 
-    body .pageTwo .pageThree{
+    body, .pageTwo, .pageThree{
         background-size: 925px 975px;
     }
 
@@ -2425,13 +2520,13 @@ a {
     }
 
     .pageThree {
-        height: auto;
-        margin: 16% 9% 0 9%;
+        height: calc(100vh - 60px)
     }
 
     .addressSection {
         height: 30%;
         font-size: 22px;
+        margin-top: 8%;
     }
 
     .addressSection input {
@@ -2446,6 +2541,10 @@ a {
         font-size: 18px;
     }
 
+    .eats-containe {
+        margin: 9% 5% 0 5%
+    }
+
     .eats-content {
         height: 70%;
         margin-top: 10%;
@@ -2456,11 +2555,11 @@ a {
     }
 
     .restaurants {
-        height: 400px;
+        height: 250px;
     }
 
     .mainRestaurantContainer {
-        height: 25%;
+        height: 40%;
     }
 
     .info {
@@ -2479,7 +2578,7 @@ a {
 
 @media (min-width: 820px) and (max-width: 1024px) and (orientation: landscape) {
 
-    body .pageTwo .pageThree{
+    body, .pageTwo, .pageThree{
         background-size: 1024px 975px;
     }
 
@@ -2523,12 +2622,6 @@ a {
         padding: 30px;
     }
 
-    
-    .pageThree {
-        height: auto;
-        margin: 12% 12% 0 12%;
-    }
-
     .addressSection {
         height: 30%;
         font-size: 24px;
@@ -2544,6 +2637,10 @@ a {
 
     #search-btn {
         font-size: 20px;
+    }
+
+    .eats-container {
+        margin: 9% 8% 0 8%;
     }
 
     .eats-content {
@@ -2566,7 +2663,7 @@ a {
 
 @media (min-width: 1024.98px) and (max-width: 1199.98px) and (orientation: landscape) {
     
-    body .pageTwo .pageThree{
+    body, .pageTwo, .pageThree{
         background-size: 1366px 1125px;
     }
 
@@ -2622,11 +2719,6 @@ a {
         font-size: 22px;
     }
 
-    .pageThree {
-        height: auto;
-        margin: 10% 15% 0 15%;
-    }
-
     .addressSection {
         height: 30%;
         font-size: 30px;
@@ -2642,6 +2734,10 @@ a {
 
     #search-btn {
         font-size: 26px;
+    }
+
+    .eats-container {
+        margin: 9% 10% 0 10%;
     }
 
     .eats-content {
@@ -2664,7 +2760,7 @@ a {
 
 @media (min-width: 1200px) and (max-width: 1366.98px) and (orientation: landscape) {
 
-    body .pageTwo .pageThree{
+    body, .pageTwo, .pageThree{
         background-size: 1875px 1300px;
     }
 
@@ -2724,13 +2820,17 @@ a {
     }
 
     .pageThree {
-        height: auto;
-        margin: 7% 5% 0 5%;
+        height: calc(100vh - 80px)
+    }
+
+    .eats-container {
+        margin: 6% 5% 0 5%;
     }
 
     .addressSection {
-        height: 30%;
+        height: 20%;
         font-size: 30px;
+        margin-top: 4%;
     }
 
     .addressSection input {
@@ -2747,18 +2847,18 @@ a {
 
     .eats-content {
         height: 70%;
-        margin-top: 5%;
+        margin-top: 0;
         display: flex;
         flex-direction: row-reverse
     }
 
     .map {
-        height: 500px;
+        height: 400px;
     }
 
     .restaurants {
         margin-top: 0;
-        height: 500px;
+        height: 400px;
     }
 
     .mainRestaurantContainer {
@@ -2768,7 +2868,7 @@ a {
 
 @media (min-width: 1367px) and (orientation: landscape) {
 
-    body .pageTwo .pageThree{
+    body, .pageTwo, .pageThree{
         background-size: 1875px 1300px;
     }
 
@@ -2821,13 +2921,13 @@ a {
     }
 
     .pageThree {
-        height: auto;
-        margin: 7% 5% 0 5%;
+        height: calc(100vh - 70px)
     }
 
     .addressSection {
-        height: 30%;
+        height: 15%;
         font-size: 30px;
+        margin-top: 6%;
     }
 
     .addressSection input {
@@ -2840,6 +2940,10 @@ a {
 
     #search-btn {
         font-size: 26px;
+    }
+
+    .eats-container {
+        margin: 4% 10% 0 10%;
     }
 
     .eats-content {
