@@ -81,7 +81,10 @@ function initMap(restArray) {
             scaledSize: new google.maps.Size(40, 35)
         };
         var position = new google.maps.LatLng(restArray[i].latitude, restArray[i].longitude);
-        var content = restArray[i].name
+        var url = restArray[i].url
+        var name = restArray[i].name
+        var content = `<a href=${url} target= "_blank"> ${name} </a>`
+        // var content = restArray[i].name
         infoWindow = new google.maps.InfoWindow({ content: content });
         bounds.extend(position);
         marker = new google.maps.Marker({
@@ -117,8 +120,9 @@ function landing() {
     // });
     // var geocoder = new google.maps.Geocoder();
 
-    document.getElementById('search-btn').addEventListener('click', function () {
+    document.getElementById('search-btn').addEventListener('click', function (e) {
         // searchDisplay()
+        e.preventDefault();
         search_result();
         $("#address").val('');
         // openPage();
@@ -216,7 +220,7 @@ function landing() {
 
 
 
-function search_result(geocoder) {
+function search_result() {
 
 
     var geocoder = new google.maps.Geocoder();
@@ -224,6 +228,7 @@ function search_result(geocoder) {
     var address = $("#address").val();
     geocoder.geocode({ 'address': address }, function (results, status) {
         if (status === 'OK') {
+           
             console.log("RESULTSSS", results)
             // resultsMap.setCenter(results[0].geometry.location);
             // var marker = new google.maps.Marker({
