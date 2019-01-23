@@ -511,13 +511,13 @@ a {
 }
 
 #poignet {
-    width: 30px;
-    height: 55px;
+    width: 21px;
+    height: 46px;
     background: transparent;
     border: solid 3.5px white;
     position: relative;
     top: -73px;
-    left: 51px;
+    left: 46px;
     border-radius: 0 16px 16px 0;
     border-left: none;
     /* transform: rotate(-20deg); */
@@ -548,7 +548,7 @@ a {
 
 #mousse_1 {
     position: relative;
-    top: -161px;
+    top: -151px;
     left: -35px;
     z-index: 4;
 }
@@ -577,7 +577,7 @@ a {
 
 #mousse_2 {
     position: relative;
-    top: -161px;
+    top: -151px;
     left: -19px;
     z-index: 4;
 }
@@ -606,7 +606,7 @@ a {
 
 #mousse_3 {
     position: relative;
-    top: -162px;
+    top: -152px;
     left: -23px;
     z-index: 4;
 }
@@ -635,7 +635,7 @@ a {
 
 #mousse_4 {
     position: relative;
-    top: -165px;
+    top: -155px;
     left: 6px;
     z-index: 4;
 }
@@ -664,7 +664,7 @@ a {
 
 #mousse_5 {
     position: relative;
-    top: -156px;
+    top: -146px;
     left: 2px;
     z-index: 4;
     -webkit-animation: mousse 10s 1;
@@ -681,7 +681,7 @@ a {
 
 #mousse_volante {
     position: relative;
-    top: -136px;
+    top: -126px;
     left: -30px;
     z-index: 4;
 }
@@ -710,7 +710,7 @@ a {
 
 #mousse_interieur {
     position: relative;
-    top: -94px;
+    top: -84px;
     left: -8px;
     z-index: 4;
     opacity: 0.5;
@@ -740,7 +740,7 @@ a {
 
 #mousse_interieur_2 {
     position: relative;
-    top: -125px;
+    top: -115px;
     left: -4px;
     z-index: 4;
     opacity: 0.5;
@@ -770,7 +770,7 @@ a {
 
 #mousse_interieur_3 {
     position: relative;
-    top: -116px;
+    top: -106px;
     left: -18px;
     z-index: 4;
     opacity: 0.5;
@@ -800,7 +800,7 @@ a {
 
 #mousse_interieur_4 {
     position: relative;
-    top: -137px;
+    top: -127px;
     left: 0px;
     z-index: 4;
     opacity: 0.5;
@@ -1400,14 +1400,14 @@ a {
     width: 100%;
   }
 
-@media (max-width: 415px ) and (orientation: portrait) {
+@media (max-width: 550px ) and (orientation: portrait) {
 
 .main-title {
     align-items: flex-start;
 }
 
 .title-grouping {
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 #glass {
