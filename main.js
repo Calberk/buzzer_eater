@@ -355,8 +355,8 @@ function getRestaurantInformation() {
  */
 function renderRestaurants(restObj) {
     var restaurantContainer = $("<div>").addClass("mainRestaurantContainer");
-    var imageContainer = $("<div>").addClass("image");
-    var image = $("<img>").addClass("appImage").attr("src", "images/basketball_beer.jpg");
+    // var imageContainer = $("<div>").addClass("image");
+    // var image = $("<img>").addClass("appImage").attr("src", "images/basketball_beer.jpg");
     var infoContainer = $("<a>", {
         class: "info",
         href: restObj.url,
@@ -370,8 +370,8 @@ function renderRestaurants(restObj) {
     var voteContainer = $("<div>").addClass("votes").text(restObj.votes + " reviews");
     infoContainer.append(nameContainer, cityContainer, addressContainer);
     rateContainer.append(ratingContainer, voteContainer);
-    imageContainer.append(image);
-    restaurantContainer.append(imageContainer, infoContainer, rateContainer);
+    // imageContainer.append(image);
+    restaurantContainer.append(infoContainer, rateContainer);
     $(".restaurantSection").append(restaurantContainer);
 }
 
@@ -776,10 +776,10 @@ function openPageHome3() {
 //       $(".restaurants").toggle(".display");
 //   }
 
-function playIntro() {
-    var audio = new Audio('sounds/buzzer-eater.mp3');
-    audio.play();
-}
+// function playIntro() {
+//     var audio = new Audio('sounds/buzzer-eater.mp3');
+//     audio.play();
+// }
 
 // function clickHandler(){
 //     $(".reset").click(openPage);
