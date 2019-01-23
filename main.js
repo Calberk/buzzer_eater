@@ -123,8 +123,11 @@ function landing() {
     document.getElementById('search-btn').addEventListener('click', function (e) {
         // searchDisplay()
         e.preventDefault();
+        document.getElementById("loaderBackground").style.display = "block";
+
         search_result();
         $("#address").val('');
+        loader();
         // openPage();
     });
     document.getElementById('nba').addEventListener('click', function () {
@@ -783,5 +786,17 @@ function playIntro() {
 // }
 
 
+/***************************************************************************************************
+ * loading screen - loader after search function
+ * @param:
+ * @returns
+ */
 
+function loader() {
+    const loadingImg = setTimeout( hideLoader , 2000);
+}
 
+function hideLoader() {
+    document.getElementById("loaderBackground").style.display = "none"
+
+}
