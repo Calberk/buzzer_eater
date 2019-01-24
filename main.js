@@ -57,7 +57,7 @@ function initializeApp() {
     getTwitterData();
     getNBAData();
     landing();
-    playIntro();
+    // playIntro();
     // clickHandler();
 }
 
@@ -232,7 +232,7 @@ function search_result() {
     geocoder.geocode({ 'address': address }, function (results, status) {
         if (status === 'OK') {
            
-            console.log("RESULTSSS", results)
+            // console.log("RESULTSSS", results)
             // resultsMap.setCenter(results[0].geometry.location);
             // var marker = new google.maps.Marker({
             //     map: resultsMap,
@@ -381,7 +381,7 @@ function renderRestaurants(restObj) {
  * @param object of restaurant info
  */
 function createRestaurantObj(apiObj) {
-    console.log(apiObj)
+    // console.log(apiObj)
     $(".restaurantSection").empty();
     var brewery = apiObj.restaurants;
     var restaurantsArray = [];
@@ -431,7 +431,7 @@ function getNBAData() {
     var month = currentTime.getMonth() + 1;
     var day = currentTime.getDate();
     var year = currentTime.getFullYear();
-    console.log(month, day, year)
+    // console.log(month, day, year)
     if (day < 10) {
         var date = `${year}${month}0${day}`
         var nbaData = {
@@ -563,7 +563,7 @@ function getNBADataInterval() {
  * @returns teamOne, teamTwo, gameInfo
  */
 function updateNBAScores(nbaData) {
-    console.log(nbaData)
+    // console.log(nbaData)
     $("#gameSection").empty();
 
 
