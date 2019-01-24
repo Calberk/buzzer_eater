@@ -2924,7 +2924,7 @@ a {
     .addressSection {
         height: 15%;
         font-size: 30px;
-        margin-top: 6%;
+        margin-top: 2%;
     }
 
     .addressSection input {
@@ -2945,18 +2945,18 @@ a {
 
     .eats-content {
         height: 70%;
-        margin-top: 5%;
+        margin-top: 2%;
         display: flex;
         flex-direction: row-reverse
     }
 
     .map {
-        height: 500px;
+        height: 450px;
     }
 
     .restaurants {
         margin-top: 0;
-        height: 500px;
+        height: 450px;
     }
 
     .mainRestaurantContainer {
