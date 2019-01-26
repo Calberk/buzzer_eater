@@ -124,7 +124,6 @@ function landing() {
         // searchDisplay()
         e.preventDefault();
         document.getElementById("loaderBackground").style.display = "block";
-
         search_result();
         $("#address").val('');
         loader();
@@ -340,7 +339,24 @@ function getRestaurantInformation() {
 
         },
         success: function (response) {
-            createRestaurantObj(response);
+            if(response.restaurants.length === 0 ){
+                emptyRestaurant()
+                
+            }else{
+
+                if($(".emptyRestaurantContainer").css('display') == 'block'){
+                    $(".emptyRestaurantContainer").toggle(".display");
+                    $(".map").toggle(".display");
+                    $(".restaurants").toggle(".display");
+                    createRestaurantObj(response);
+                }else if($(".map").css('display') == 'block'){
+                    createRestaurantObj(response);
+                }else{
+                    $(".map").toggle(".display");
+                    $(".restaurants").toggle(".display");
+                    createRestaurantObj(response);
+                }
+            }   
         },
         error: function (err) {
 
@@ -381,7 +397,7 @@ function renderRestaurants(restObj) {
  * @param object of restaurant info
  */
 function createRestaurantObj(apiObj) {
-    // console.log(apiObj)
+
     $(".restaurantSection").empty();
     var brewery = apiObj.restaurants;
     var restaurantsArray = [];
@@ -407,18 +423,32 @@ function createRestaurantObj(apiObj) {
         restaurantObj.url = restUrl;
 
 
-
-
-
-
-
-
-
-        renderRestaurants(restaurantObj);
-        restaurantsArray.push(restaurantObj);
+            renderRestaurants(restaurantObj);
+            restaurantsArray.push(restaurantObj);
+        
     }
+
+
     initMap(restaurantsArray);
 }
+
+/***************************************************************************************************
+ * FallbackScreen -
+ * @param: none
+ * @returns: object response from NBA API
+ */
+
+ function emptyRestaurant(){
+    if($(".emptyRestaurantContainer").css('display') == 'block'){
+        return
+    }else if($(".map").css('display') == 'block'){
+        $(".emptyRestaurantContainer").toggle(".display");
+        $(".map").toggle(".display");
+        $(".restaurants").toggle(".display");
+    }else {
+        $(".emptyRestaurantContainer").toggle(".display");
+    }
+ }
 
 /***************************************************************************************************
  * getNBAData -
@@ -737,7 +767,11 @@ function openPageNBA() {
     //   $(".pageThree").toggle(".display");
 }
 function openPageNBA1() {
-    // $(".pageOne").toggle(".display");
+    if($(".emptyRestaurantContainer").css('display') == 'block'){
+        $(".emptyRestaurantContainer").toggle(".display");
+    }
+    $("#map").empty();
+    $(".restaurantSection").empty();
     $(".pageTwo").toggle(".display");
     $(".pageThree").toggle(".display");
 }
@@ -751,7 +785,6 @@ function openPageEats1() {
     // $(".pageOne").toggle(".display");
     $(".pageTwo").toggle(".display");
     $(".pageThree").toggle(".display");
-
 }
 //   function openPageHome1() {
 //     $(".navbar").toggle(".display");
@@ -760,9 +793,13 @@ function openPageEats1() {
 //     // $(".pageThree").toggle(".display");
 //   }
 function openPageHome2() {
+    if($(".emptyRestaurantContainer").css('display') == 'block'){
+        $(".emptyRestaurantContainer").toggle(".display");
+    }
+    $("#map").empty();
+    $(".restaurantSection").empty();
     $(".navbar").toggle(".display");
     $(".pageOne").toggle(".display");
-    // $(".pageTwo").toggle(".display");
     $(".pageThree").toggle(".display");
 }
 function openPageHome3() {
