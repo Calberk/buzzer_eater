@@ -57,8 +57,6 @@ function initializeApp() {
     getTwitterData();
     getNBAData();
     landing();
-    // playIntro();
-    // clickHandler();
 }
 
 /***************************************************************************************************
@@ -114,24 +112,15 @@ function initMap(restArray) {
  */
 
 function landing() {
-    // var map = new google.maps.Map(document.getElementById('map'), {
-    //     zoom: 10,
-    //     center: {lat: 33.652775, lng: -117.750732}
-    // });
-    // var geocoder = new google.maps.Geocoder();
 
     document.getElementById('search-btn').addEventListener('click', function (e) {
-        // searchDisplay()
         e.preventDefault();
         document.getElementById("loaderBackground").style.display = "block";
         search_result();
         $("#address").val('');
         loader();
-        // openPage();
     });
     document.getElementById('nba').addEventListener('click', function () {
-        // search_result(geocoder, map);
-        // $("#address").val('');
         openPageNBA();
     });
     document.getElementById('nba1').addEventListener('click', function () {
@@ -139,9 +128,6 @@ function landing() {
             $(".navbar-collapse").removeClass('in');
             openPageNBA1();
         }
-        // search_result(geocoder, map);
-        // $("#address").val('');
-        // openPageNBA1();
 
         else {
             return
@@ -150,9 +136,6 @@ function landing() {
     document.getElementById('eats').addEventListener('click', function () {
         openPageEats();
 
-        // search_result(geocoder, map);
-        // $("#address").val('');
-        // openPageEats();
     });
     document.getElementById('eats1').addEventListener('click', function () {
         if ($("#pageThree").css('display') == 'none') {
@@ -162,17 +145,10 @@ function landing() {
         else {
             return
         }
-        // search_result(geocoder, map);
-        // $("#address").val('');
+
     });
-    // document.getElementById('home1').addEventListener('click', function() {
-    //     // search_result(geocoder, map);
-    //     // $("#address").val('');
-    //     openPageHome1();
-    // });
+
     document.getElementById('home2').addEventListener('click', function () {
-        // search_result(geocoder, map);
-        // $("#address").val('');
 
         if ($("#pageTwo").css('display') == 'none') {
             $(".navbar-collapse").removeClass('in');
@@ -183,7 +159,6 @@ function landing() {
             $(".navbar-collapse").removeClass('in');
             openPageHome3();
         }
-
 
     });
 
@@ -197,12 +172,7 @@ function landing() {
             openPageHome3();
         }
 
-
     });
-
-
-
-
 
     var input = document.getElementById('address');
     var options = {
@@ -230,14 +200,6 @@ function search_result() {
     var address = $("#address").val();
     geocoder.geocode({ 'address': address }, function (results, status) {
         if (status === 'OK') {
-           
-            // console.log("RESULTSSS", results)
-            // resultsMap.setCenter(results[0].geometry.location);
-            // var marker = new google.maps.Marker({
-            //     map: resultsMap,
-            //     position: results[0].geometry.location,
-            // });
-            // var loc = resultsMap.getCenter();
             var loc = results[0].geometry.location
             numCoord = {
                 lat: loc.lat(),
@@ -371,8 +333,6 @@ function getRestaurantInformation() {
  */
 function renderRestaurants(restObj) {
     var restaurantContainer = $("<div>").addClass("mainRestaurantContainer");
-    // var imageContainer = $("<div>").addClass("image");
-    // var image = $("<img>").addClass("appImage").attr("src", "images/basketball_beer.jpg");
     var infoContainer = $("<a>", {
         class: "info",
         href: restObj.url,
@@ -386,7 +346,6 @@ function renderRestaurants(restObj) {
     var voteContainer = $("<div>").addClass("votes").text(restObj.votes + " reviews");
     infoContainer.append(nameContainer, cityContainer, addressContainer);
     rateContainer.append(ratingContainer, voteContainer);
-    // imageContainer.append(image);
     restaurantContainer.append(infoContainer, rateContainer);
     $(".restaurantSection").append(restaurantContainer);
 }
@@ -475,7 +434,6 @@ function getNBAData() {
         $.ajax(nbaData).done(function (response) {
             var nbaData = response.data;
             updateNBAScores(nbaData);
-            // getNBADataInterval();
 
         })
 
@@ -493,7 +451,6 @@ function getNBAData() {
         $.ajax(nbaData).done(function (response) {
             var nbaData = response.data;
             updateNBAScores(nbaData);
-            // getNBADataInterval();
 
         })
 
@@ -501,9 +458,6 @@ function getNBAData() {
     else {
         var date = `${year}0${month}${day}`
         var nbaData = {
-            // "async": true,
-            // "crossDomain": true,
-            // 'dataType': 'json',
             "url": `https://place.kim-chris.com/nba/${date}`,
             "method": "GET",
         };
@@ -511,7 +465,6 @@ function getNBAData() {
         $.ajax(nbaData).done(function (response) {
             var nbaData = response.data;
             updateNBAScores(nbaData);
-            // getNBADataInterval();
 
         })
     }
@@ -746,10 +699,7 @@ function generateScoreboard(teamOne, teamTwo, gameInfo) {
     scoreboard.append(homeTeam, awayTeam, timer);
     $(".gameSection").append(scoreboard);
 
-
 }
-
-
 
 
 /***************************************************************************************************
@@ -759,12 +709,10 @@ function generateScoreboard(teamOne, teamTwo, gameInfo) {
  */
 
 
-
 function openPageNBA() {
     $(".navbar").toggle(".display");
     $(".pageOne").toggle(".display");
     $(".pageTwo").toggle(".display");
-    //   $(".pageThree").toggle(".display");
 }
 function openPageNBA1() {
     if($(".emptyRestaurantContainer").css('display') == 'block'){
@@ -778,20 +726,13 @@ function openPageNBA1() {
 function openPageEats() {
     $(".navbar").toggle(".display");
     $(".pageOne").toggle(".display");
-    // $(".pageTwo").toggle(".display");
     $(".pageThree").toggle(".display");
 }
 function openPageEats1() {
-    // $(".pageOne").toggle(".display");
     $(".pageTwo").toggle(".display");
     $(".pageThree").toggle(".display");
 }
-//   function openPageHome1() {
-//     $(".navbar").toggle(".display");
-//     $(".pageOne").toggle(".display");
-//     $(".pageTwo").toggle(".display");
-//     // $(".pageThree").toggle(".display");
-//   }
+
 function openPageHome2() {
     if($(".emptyRestaurantContainer").css('display') == 'block'){
         $(".emptyRestaurantContainer").toggle(".display");
@@ -808,19 +749,6 @@ function openPageHome3() {
     $(".pageTwo").toggle(".display");
     // $(".pageThree").toggle(".display");
 }
-
-//   function searchDisplay() {
-//       $(".restaurants").toggle(".display");
-//   }
-
-// function playIntro() {
-//     var audio = new Audio('sounds/buzzer-eater.mp3');
-//     audio.play();
-// }
-
-// function clickHandler(){
-//     $(".reset").click(openPage);
-// }
 
 
 /***************************************************************************************************
