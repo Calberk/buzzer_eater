@@ -422,7 +422,7 @@ function createRestaurantObj(apiObj) {
         restaurantObj.votes = restRateCount;
         restaurantObj.url = restUrl;
 
-
+ 
             renderRestaurants(restaurantObj);
             restaurantsArray.push(restaurantObj);
         
