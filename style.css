@@ -3,7 +3,6 @@ body {
     width: 100%;
     position: absolute;
     margin: 0;
-    /* padding-top: 60px;  */
     font-size: 0;
     box-sizing: border-box;
     background: black;
@@ -67,7 +66,6 @@ body {
 
     position:relative;
     z-index:200;
-    /* top: -100px; */
 }
 
 .menu {
@@ -107,7 +105,6 @@ body {
     background-image: url("images/court1.jpg");
     background-position-x: center;
     background-repeat: no-repeat;
-    /* background-size: cover; */
 }
 
 .pageThree {
@@ -117,20 +114,15 @@ body {
     background-image: url("images/court1.jpg");
     background-position-x: center;
     background-repeat: no-repeat;
-    /* margin: 5% 5% 0 5%; */
-    /* overflow: hidden */
 
 }
 
 .addressSection {
     height: 15%;
-    /* width: 100%; */
-    /* margin: auto; */
     top: 5%;
     color: gold;
     text-align: center;
     font-family: "futura";
-    /* font-size: 2rem; */
     position: relative;
 }
 
@@ -149,23 +141,14 @@ body {
 .eats-content {
     height: 85%;
     margin-top: 10%;
-    /* display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    align-items: center; */
 }
 
 .map {
-    /* height: 60%; */
     height: 45%;
-    /* width:40%;
-    padding: 1%; */
-    /* border: 5px solid white; */
     display:none;
 }
 
 .mapSection {
-    /* width: 100%; */
     height: 100%;
 }
 #map {
@@ -175,7 +158,6 @@ body {
 
 .restaurants {
     height: 48%;
-    /* width: 50%; */
     display: inline-block;
     overflow: auto;
     position: relative;
@@ -192,7 +174,6 @@ body {
     height: 100%;
     width: 100%;
     font-size: 35px;
-    /* /* position: absolute; */
     overflow-y: auto;
     overflow-x: hidden;
     margin-left: 2px;
@@ -202,15 +183,12 @@ body {
 
 /* Dynamically Created Restaurant List */
 .mainRestaurantContainer {
-    /* width: 100%; */
     height: 30%;
-    /* border: 1px solid white; */
     display: flex;
     box-sizing: border-box;
     justify-content: space-around;
     box-shadow:0 0px 0px white, 0 0 11px white;
     border-radius: 10px;
-    /* margin: 3% 2% 3% 2%; */
     margin: 3% 1%;
     background: white;
 }
@@ -236,12 +214,6 @@ body {
 
 
 .image {
-    /* width: 25%;
-    height: 95%;
-    display: flex;
-    align-items: center;
-    justify-content: center; */
-
     display: none;
 }
 
@@ -363,16 +335,6 @@ body {
     left:47%;
     top: 40%;
     z-index: 20;
-    /* width: 150px;
-    height: 150px;
-    margin: -75px 0 0 -75px;
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid #3498db;
-    width: 120px;
-    height: 120px;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite; */
   }
 
   #loader:after{
@@ -404,26 +366,6 @@ body {
     100% { transform: rotate(360deg); }
   }
 
-/* ::-webkit-scrollbar {
-width: 10px;
-} */
-
-
-/* ::-webkit-scrollbar-track {
-box-shadow: inset 0 0 5px whitesmoke;
-} */
-
-
-/* ::-webkit-scrollbar-thumb {
-background: white;
-border-radius: 10px;
-} */
-/*.titleContainer{*/
-    /*display: inline-flex;*/
-/*}*/
-
-
-
 
 /*NBA Scoreboard*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
@@ -431,14 +373,10 @@ border-radius: 10px;
 .gameSection {
     font-family: "Montserrat", "Arial";
     color: white;
-    /* background-color: #444 */
-    /* background-color: black; */
     height: 90%;
     width:100%;
     overflow: auto;
     font-size:1rem;
-    /* display: inline-flex; */
-    /* overflow: scroll; */
 }
 
 .scoreboard {
@@ -548,10 +486,7 @@ border-radius: 10px;
 /*end NBA Scoreboard*/
 
 
-
-
 /*LOGO ANIMATION from (clemishow on https://codepen.io/clemishow/pen/ZYPPeE) and (Vladimir Gashenko onhttps://codepen.io/gxash/pen/QNzKoj)*/
-
 
 #dribbble {
     color: #EC4E8B;
@@ -582,10 +517,7 @@ a {
     border-top: none;
     border-radius: 0 0 10px 10px;
     position: relative;
-    /* top: 200px;
-    left: 200px; */
     overflow: hidden;
-    /* transform: rotate(-20deg); */
     -webkit-animation: glass 10s 1;
 }
 
@@ -599,7 +531,6 @@ a {
     left: 46px;
     border-radius: 0 16px 16px 0;
     border-left: none;
-    /* transform: rotate(-20deg); */
     -webkit-animation: poignet 10s 1;
 }
 
@@ -1390,20 +1321,6 @@ a {
     letter-spacing: 4px;
 }
 
-/* .navbar-nav a:after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    margin: auto;
-    background: currentColor;
-    transition: all .3s ease;
-} */
-
-/* .navbar-nav a:hover::after {
-    width: 100%;
-} */
-
 #nav-title {
     font-family: 'futura';
     color: white;
@@ -1617,7 +1534,7 @@ a {
     left: 0px;
 }
 
-.ball-icon {
+.pageOne-ball {
     display:none;
 }
 }
@@ -1653,18 +1570,13 @@ a {
 
     .pageTwo {
         height: calc(90vh - 60px);
-        /* background-image: url("images/court1.jpg"); */
-        /* background-color: black; */
         display: inline-block;
         display: none;
         margin: 20% 5% 0 5%;
-        /* box-shadow:0 0px 0px white, 0 0 30px white; */
     }
     .gameSection {
         font-family: "Montserrat", "Arial";
         color: white;
-        /* background-color: #444; */
-        /* background-color: black; */
         height: 75%;
         width: 100%;
         font-size: 10px;
@@ -1673,32 +1585,6 @@ a {
     .team-detail {
         padding:0px
     }
-
-    /* .twitterContainer{
-        width: 100%;
-        height: 40vh; 
-        background-color: black;
-        color: white;
-        padding: 1%;
-        font-size: 1rem;
-        border: 1px solid white;
-        display: inline-block;
-    }  */
-    
-
-    /* .twitterBtn {
-        background: none;
-        background-color: black;
-        border: 3px solid #fff;
-        border-radius: 5px;
-        color: #fff;
-        font-size: 1.6em;
-        font-weight: bold;
-        margin: none;
-        padding: 2em 4em;
-        position: fixed; */
-
-      /* } */
 
       
       .addressSection {
@@ -1743,19 +1629,14 @@ a {
 
     .pageTwo {
         height: calc(90vh - 60px);
-        /* background-image: url("images/court1.jpg"); */
-        /* background-color: black; */
         display: inline-block;
         display: none;
         margin: 20% 5% 0 5%;
-        /* box-shadow:0 0px 0px white, 0 0 30px white; */
     }
 
     .gameSection {
         font-family: "Montserrat", "Arial";
         color: white;
-        /* background-color: #444; */
-        /* background-color: black; */
         height: 90%;
         width: 100%;
         font-size: 10px;
@@ -1978,70 +1859,6 @@ a {
 
 }
 
-/* Pixel 2XL
-@media  (min-width: 411px) {
-
-    .navbar-brand {
-        font-size: 17px;
-    }
-
-    #beer_text {
-        letter-spacing: 7px; 
-        font-size: 20px;
-    }
-
-    .landingButtons {
-        font-size: 18px;
-        width: 35%;
-    }
-
-    .searchSection {
-        font-size: 24px;
-    }
-
-    .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
-        margin: 20% 5% 0 5%;
-    }
-    
-    .gameSection {
-        font-family: "Montserrat", "Arial";
-        color: white;
-        height: 75%;
-        width: 100%;
-        overflow: hidden;
-        font-size: 10px;
-    }
-
-    .team-detail {
-        padding:0px
-    }
-
-    .team-detail .team-nameandscore {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-
-    .homeTeamScore {
-        padding-left: 19px;
-    }
-
-    .awayTeamScore {
-        padding-left: 19px;
-    }
-
-    .scoreboard {
-        display: inline-flex;
-        flex-direction:column;
-        width:50%;
-        height: 30%;
-        padding: 5px;
-    }
-
-} */
 
 /* IPAD */
 @media  (min-width: 768px) { 
@@ -2844,12 +2661,9 @@ a {
 
     .pageTwo {
         height: calc(90vh - 60px);
-        /* background-image: url("images/court1.jpg"); */
-        /* background-color: black; */
         display: inline-block;
         display: none;
         margin: 8% 5% 0 5%;
-        /* box-shadow:0 0px 0px white, 0 0 30px white; */
     }
 
     .scoreboard {
