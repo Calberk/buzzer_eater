@@ -1487,7 +1487,7 @@ a {
 }
 
 .title-grouping {
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 #glass {
