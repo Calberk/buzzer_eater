@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="main.js"></script>
+
+        <!--Google Geocoding API-->
+    <title>Hackathon 2</title>
+</head>
+<body>
+    <div class="pageOne">
+        <div class="mainContent">
+            <div id="glass">
+                <div id="beer"></div>
+            </div>
+            <div id="poignet"></div>
+            <div id="mousse_1"></div>
+            <div id="mousse_2"></div>
+            <div id="mousse_3"></div>
+            <div id="mousse_4"></div>
+            <div id="mousse_5"></div>
+            <div id="mousse_volante"></div>
+            <div id="mousse_interieur"></div>
+            <div id="mousse_interieur_2"></div>
+            <div id="mousse_interieur_3"></div>
+            <div id="mousse_interieur_4"></div>
+            <p id="beer_text">Buzzer Eater</p>
+
+            <div id="allWrapper">
+                <!--<div id="basket"><img src="http://svgur.com/i/4N.svg" alt="" /></div>-->
+                <div id="ballWrapper">
+                    <div id="ball"><span id="ballshad"></span></div>
+                    <div id="ballShadow"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="searchSection">
+            <header>Pick a place. Watch the game. </header>
+            <input id="address" type="text" name="search" placeholder="city, state">
+            <button id="submit" type="button" name="searchBtn">Search</button>
+        </div>
+    </div>
+    <div class="pageTwo">
+        <div class="leftHalf">
+                <div class="gameSection" id="gameSection">
+
+                    </div>
+            <div class="twitterContainer">
+                <div class="tweetLogo">
+
+                </div>
+
+                <div class="tweetMain">
+                        <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <!-- <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+                    <!-- <div class="tweetMainHeader">
+                        <div class="twitterHandle">
+
+                        </div>
+                        <div class="twitterVerified">
+
+                        </div>
+                    </div>
+                    <div class="tweetsFeed">
+
+                    </div> -->
+                </div>
+            </div>
+            <button type="button" class="reset">Search Again</button>
+           
+        </div>
+        <div class="rightHalf">
+            <div class="mapSection">
+                <div id="map"></div>
+            </div>
+            <!-- <div class="restaurantSection"> -->
+
+            <!-- </div> -->
+        </div>
+    </div>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMI5B4uukiR41lKj4atfShc1dC6MOxhus"></script>
+
+</body>
+</html>

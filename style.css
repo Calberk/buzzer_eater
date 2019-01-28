@@ -1,0 +1,3025 @@
+body {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    /* padding-top: 60px;  */
+    font-size: 0;
+    box-sizing: border-box;
+    background: black;
+}
+
+*:focus {
+    outline: none;
+}
+
+.mainContent {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title-grouping {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.beer-icon {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center
+}
+
+.main-title {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#beer_text {
+    font-family: 'futura';
+    color: white;
+    letter-spacing: 5px;
+    font-size: 40px;
+    position: absolute;
+}
+
+.ball-icon {
+    width: 10%;
+    display: flex;
+}
+
+
+
+.pageOne {
+    height: 100%;
+    overflow: hidden;
+    background-image: url("images/background1.jpg");
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position:relative;
+    z-index:200;
+    /* top: -100px; */
+}
+
+.menu {
+    height: 10%;
+    background-color: orange;
+}
+
+#home2, #eats1, #nba1 {
+    font-size: 16px;
+}
+
+#search {
+    font-size: 1rem;
+}
+
+.intro {
+    margin: inherit;
+    padding: 5px;
+    color: gold;
+    text-align: center;
+    font-family: 'futura';
+    font-size: 13px;
+}
+
+.searchSection {
+    padding: 5px;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    font-size: 35px;
+}
+
+.pageTwo {
+    height: calc(90vh - 60px);
+    display: inline-block;
+    display: none;
+    margin: 5% 5% 0 5%;
+    background-image: url("images/court1.jpg");
+    background-position-x: center;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+}
+
+.pageThree {
+    height: calc(100vh - 50px);
+    display: inline-block;
+    display: none;
+    background-image: url("images/court1.jpg");
+    background-position-x: center;
+    background-repeat: no-repeat;
+    /* margin: 5% 5% 0 5%; */
+    /* overflow: hidden */
+
+}
+
+.addressSection {
+    height: 15%;
+    /* width: 100%; */
+    /* margin: auto; */
+    top: 5%;
+    color: gold;
+    text-align: center;
+    font-family: "futura";
+    /* font-size: 2rem; */
+    position: relative;
+}
+
+.addressSection input {
+    width: 55%;
+}
+
+.eats-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 14% 5% 0 5%;
+}
+
+.eats-content {
+    height: 85%;
+    margin-top: 10%;
+    /* display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center; */
+}
+
+.map {
+    /* height: 60%; */
+    height: 45%;
+    /* width:40%;
+    padding: 1%; */
+    /* border: 5px solid white; */
+    display:none;
+}
+
+.mapSection {
+    /* width: 100%; */
+    height: 100%;
+}
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.restaurants {
+    height: 48%;
+    /* width: 50%; */
+    display: inline-block;
+    overflow: auto;
+    position: relative;
+    margin-top: 5%;
+    padding: 0 1%;
+    display: none;
+}
+
+.restaurants:hover {
+    overflow-y: auto;
+}
+
+.restaurantSection {
+    height: 100%;
+    width: 100%;
+    font-size: 35px;
+    /* /* position: absolute; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-left: 2px;
+
+}
+
+
+/* Dynamically Created Restaurant List */
+.mainRestaurantContainer {
+    /* width: 100%; */
+    height: 30%;
+    /* border: 1px solid white; */
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-around;
+    box-shadow:0 0px 0px white, 0 0 11px white;
+    border-radius: 10px;
+    /* margin: 3% 2% 3% 2%; */
+    margin: 3% 1%;
+    background: white;
+}
+
+.mainRestaurantContainer:hover {
+    transition-duration: 0.5s;
+    transform: translateY(-5px);
+    background-color: rgb(250, 228, 203);
+    box-shadow:0 0px 0px white, 0 0 11px white;
+}
+
+.emptyRestaurantContainer {
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    display:none;
+}
+
+.emptyRestaurantContainer p{
+    margin: auto;    
+}
+
+
+
+.image {
+    /* width: 25%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+
+    display: none;
+}
+
+.appImage {
+    width: 70%;
+    height: 80%;
+    border-radius: 30%;
+}
+
+.info {
+    width: 70%;
+    height: 100%;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.restaurantName {
+    color: black;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.city {
+    width: 100%;
+    height: 20%;
+    font-size: 75%;
+    color: black;
+}
+
+
+#address {
+    text-align: center;
+    border-radius: 15px;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.address {
+    color: black;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.rateSection {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end
+}
+
+.rating {
+    font-size: 40%;
+    color: white;
+}
+
+.votes{
+    width: 100%;
+    height: 20%;
+    font-size: 30%;
+    color: dimgrey;
+    text-align: right;
+    color: black;
+}
+
+#search-btn {
+    font-family: "Montserrat", "Arial";
+    color: white;
+    text-align: center;
+    background: linear-gradient(178.26deg, rgba(255, 255, 255, 0) 50.39%, rgba(255, 255, 255, 0.34) 114.5%), chocolate;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background-image: linear-gradient(to bottom,  #D2691E, #8B4513);
+}
+
+#search-btn:hover,
+#search-btn:focus {
+    background-image: linear-gradient(to bottom,  rgb(190, 94, 26), rgb(109, 49, 6));
+    border: 1px solid white;  
+}
+
+.landingButtons {
+    font-family: "Montserrat", "Arial";
+    color: white;
+    text-align: center;
+    background: linear-gradient(178.26deg, rgba(255, 255, 255, 0) 50.39%, rgba(255, 255, 255, 0.34) 114.5%), chocolate;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    background-image: linear-gradient(to bottom,  #D2691E, #8B4513);
+    font-size: 3em;
+    width: 20%;
+    }
+
+.landingButtons:hover {
+    background-image: linear-gradient(to bottom,  rgb(190, 94, 26), rgb(109, 49, 6));
+    border: 1px solid white;    
+}
+
+#loaderBackground {
+    position:fixed;
+    width:100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(0, 0 ,0 ,1);
+    z-index:10;
+    display:none;
+}
+
+#loader {
+    position: absolute;
+    left:47%;
+    top: 40%;
+    z-index: 20;
+    /* width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite; */
+  }
+
+  #loader:after{
+    content: "LOADING...";
+    display: block;
+    position: absolute;
+    top: 93%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 26px;
+  }
+
+  #loadingBackground > p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: white;
+    font-size: 50px;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+/* ::-webkit-scrollbar {
+width: 10px;
+} */
+
+
+/* ::-webkit-scrollbar-track {
+box-shadow: inset 0 0 5px whitesmoke;
+} */
+
+
+/* ::-webkit-scrollbar-thumb {
+background: white;
+border-radius: 10px;
+} */
+/*.titleContainer{*/
+    /*display: inline-flex;*/
+/*}*/
+
+
+
+
+/*NBA Scoreboard*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.gameSection {
+    font-family: "Montserrat", "Arial";
+    color: white;
+    /* background-color: #444 */
+    /* background-color: black; */
+    height: 90%;
+    width:100%;
+    overflow: auto;
+    font-size:1rem;
+    /* display: inline-flex; */
+    /* overflow: scroll; */
+}
+
+.scoreboard {
+    display: inline-flex;
+    flex-direction:column;
+    width: 50%;
+    padding: 5px;
+}
+
+
+.scoreboard > * {
+    background-color: black;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+}
+
+.scoreboard > *:first-child {
+    border-left: 1px solid white;
+}
+
+.team {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    background-color: black
+}
+
+.team-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.team-detail {
+    padding: 0em 0.5em;
+}
+
+.team-detail {
+    font-size: 1.5em;
+}
+
+.team-detail .team-nameandscore {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.team-detail .space {
+    width: 150px;
+    font-size: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    opacity: 0.8;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #222;
+    font-size: 1.4rem;
+}
+
+.timer-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.timer-container > * {
+    border-right: 1px solid white;
+    padding: 0em 1em;
+    color: white;
+}
+
+.timer-container > *:last-child {
+    border-right: 0;
+    color: yellow;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0em 0.5em;
+    background-color: black;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.hometeam {
+    background-color: black;
+}
+
+.awayteam {
+    background-color: black;
+}
+
+/*end NBA Scoreboard*/
+
+
+
+
+/*LOGO ANIMATION from (clemishow on https://codepen.io/clemishow/pen/ZYPPeE) and (Vladimir Gashenko onhttps://codepen.io/gxash/pen/QNzKoj)*/
+
+
+#dribbble {
+    color: #EC4E8B;
+}
+
+#hetic {
+    color: #6FB400;
+}
+
+#text {
+    position: absolute;
+    top: 335px;
+    left: 150px;
+    font-family: "futura std";
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+#glass {
+    width: 70px;
+    height: 90px;
+    background: transparent;
+    border: solid 3.5px white;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    /* top: 200px;
+    left: 200px; */
+    overflow: hidden;
+    /* transform: rotate(-20deg); */
+    -webkit-animation: glass 10s 1;
+}
+
+#poignet {
+    width: 21px;
+    height: 46px;
+    background: transparent;
+    border: solid 3.5px white;
+    position: relative;
+    top: -73px;
+    left: 46px;
+    border-radius: 0 16px 16px 0;
+    border-left: none;
+    /* transform: rotate(-20deg); */
+    -webkit-animation: poignet 10s 1;
+}
+
+#beer {
+    width: 58px;
+    height: 84px;
+    background: transparent;
+    position: relative;
+    left: 3px;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+}
+
+#beer::before {
+    content: "";
+    width: 250px;
+    height: 250px;
+    background: #E8B504;
+    position: absolute;
+    top: 0px;
+    left: -190px;
+    /* transform: rotate(40deg); */
+    -webkit-animation: beer 10s 1;
+}
+
+#mousse_1 {
+    position: relative;
+    top: -151px;
+    left: -35px;
+    z-index: 4;
+}
+
+#mousse_1::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse 10s 1;
+}
+
+#mousse_1::after {
+    content: "";
+    width: 17px;
+    height: 17px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    -webkit-animation: mousse 10s 1;
+}
+
+#mousse_2 {
+    position: relative;
+    top: -151px;
+    left: -19px;
+    z-index: 4;
+}
+
+#mousse_2::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    -webkit-animation: mousse 10s 1;
+}
+
+#mousse_2::after {
+    content: "";
+    width: 17px;
+    height: 17px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 10px;
+    -webkit-animation: mousse 10s 1;
+}
+
+#mousse_3 {
+    position: relative;
+    top: -152px;
+    left: -23px;
+    z-index: 4;
+}
+
+#mousse_3::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse 10s 1;
+}
+
+#mousse_3::after {
+    content: "";
+    width: 17px;
+    height: 17px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    -webkit-animation: mousse 10s 1;
+}
+
+#mousse_4 {
+    position: relative;
+    top: -155px;
+    left: 6px;
+    z-index: 4;
+}
+
+#mousse_4::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse 10s 1;
+}
+
+#mousse_4::after {
+    content: "";
+    width: 17px;
+    height: 17px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    -webkit-animation: mousse 10s 1;
+}
+
+#mousse_5 {
+    position: relative;
+    top: -146px;
+    left: 2px;
+    z-index: 4;
+    -webkit-animation: mousse 10s 1;
+}
+
+#mousse_5::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#mousse_volante {
+    position: relative;
+    top: -126px;
+    left: -30px;
+    z-index: 4;
+}
+
+#mousse_volante::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse_volante 5s 2;
+} 
+
+ #mousse_volante::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    -webkit-animation: mousse_volante 5s 2;
+}
+
+#mousse_interieur {
+    position: relative;
+    top: -84px;
+    left: -8px;
+    z-index: 4;
+    opacity: 0.5;
+}
+
+#mousse_interieur::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse_interieur 10s 1;
+}
+
+#mousse_interieur::after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    -webkit-animation: mousse_interieur 5s 1;
+}
+
+#mousse_interieur_2 {
+    position: relative;
+    top: -115px;
+    left: -4px;
+    z-index: 4;
+    opacity: 0.5;
+}
+
+#mousse_interieur_2::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse_interieur 10s 1;
+}
+
+#mousse_interieur_2::after {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 17px;
+    -webkit-animation: mousse_interieur 5s 1;
+}
+
+#mousse_interieur_3 {
+    position: relative;
+    top: -106px;
+    left: -18px;
+    z-index: 4;
+    opacity: 0.5;
+}
+
+#mousse_interieur_3::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse_interieur 10s 1;
+}
+
+#mousse_interieur_3::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    -webkit-animation: mousse_interieur 5s 1;
+}
+
+#mousse_interieur_4 {
+    position: relative;
+    top: -127px;
+    left: 0px;
+    z-index: 4;
+    opacity: 0.5;
+}
+
+#mousse_interieur_4::before {
+    content: "";
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: mousse_interieur 10s 1;
+}
+
+#mousse_interieur_4::after {
+    content: "";
+    width: 5.5px;
+    height: 5.5px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 28px;
+    left: 2px;
+    -webkit-animation: mousse_interieur 5s 1;
+}
+
+
+/* ANIMATIONS */
+@-webkit-keyframes beer {
+    0% {
+        transform: translateY(82px);
+    }
+
+    17% {
+        transform: translateY(-41px);
+    }
+
+    100% {
+        transform: translateY(-82px);
+    }
+}
+
+@-webkit-keyframes glass {
+    0% {
+        transform: rotate(-20deg);
+    }
+
+    17% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@-webkit-keyframes poignet {
+    0% {
+        transform: rotate(-20deg);
+    }
+
+    17% {
+        transform: rotate(0deg) translateX(0px);
+    }
+
+    100% {
+        transform: rotate(0deg) translateX(0px);
+    }
+}
+
+@-webkit-keyframes mousse {
+    0% {
+        transform: scale(0);
+    }
+
+    10% {
+        transform: scale(0);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes mousse_volante {
+    0% {
+        transform: scale(0) translateY(0px);
+    }
+
+    10% {
+        transform: scale(0) translateY(0px);
+    }
+
+    20% {
+        transform: scale(1) translateY(-15px);
+    }
+
+    40% {
+        opacity: .2;
+    }
+
+    100% {
+        transform: scale(1) translateY(-20px);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes mousse_interieur {
+    0% {
+        transform: scale(0) translateY(0px);
+        opacity: 0.9;
+    }
+
+    20% {
+        transform: scale(0) translateY(0px);
+        opacity: 0.9;
+    }
+
+    40% {
+        transform: scale(1) translateY(-60px);
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(1) translateY(-60px);
+        opacity: 0;
+    }
+}
+
+
+
+/*CSS FOR BASKETBALL*/
+
+
+#basket img {
+    display: block;
+    position: absolute;
+    top: 55px;
+    left: 20px;
+    min-width: 228px;
+    height: 193px;
+}
+
+
+#allWrapper {
+    position: relative;
+    height: 200px;
+    /*background: url("http://svgur.com/i/5Y.svg");*/
+    background-size: cover;
+}
+
+
+/* animation container */
+
+#ballWrapper {
+    width: 100px;
+    height: 170px;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+}
+
+#ball {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    animation: jump 1s infinite;
+    overflow: hidden;
+}
+
+
+/*Ball texture*/
+
+#ball:after {
+    content: "";
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background: url("http://svgur.com/i/4D.svg");
+    position: absolute;
+    animation: rotate 2s infinite, back 1s infinite;
+    z-index: 5;
+    background-repeat: repeat;
+    background-size: cover;
+    animation-timing-function: linear;
+}
+
+
+/*Ball light*/
+
+#ball:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-image: url("http://svgur.com/i/5C.svg");
+    background-size: 110%;
+    border-radius: 100%;
+    animation: lightop 1s infinite;
+}
+
+
+/*Shadow on ball*/
+
+#ballshad {
+    background: url("http://svgur.com/i/5P.svg");
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 100%;
+    animation: shadop 1s infinite;
+    margin: auto;
+    display: block;
+    background-size: contain;
+    z-index: 10;
+}
+
+/*Shadow on floor*/
+
+#ballShadow {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 10;
+    margin-left: -30px;
+    background-image: url("http://svgur.com/i/4V.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    animation: shrink 1s infinite;
+    z-index: -1;
+    background-position: center;
+}
+
+
+/* Basketball-animation keyframes */
+
+@keyframes jump {
+    0% {
+        top: 0;
+        transform: scale3d(1, 1, 1);
+        border-radius: 100%;
+        animation-timing-function: ease-in;
+    }
+    45% {
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        top: 100px;
+        animation-timing-function: ease-out;
+        transform: scale3d(1.3, .8, 1);
+    }
+    55% {
+        transform: scale3d(1, 1, 1);
+    }
+    60% {
+        transform: scale3d(.8, 1.1, 1);
+    }
+    70% {
+        transform: scale3d(.95, 1.05, 1);
+    }
+    72% {
+        transform: scale3d(1, 1, 1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+        top: 0;
+        border-radius: 100%;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shrink {
+    0% {
+        bottom: 0;
+        margin-left: -30px;
+        width: 80px;
+        height: 20px;
+        animation-timing-function: ease-in;
+        left: 150%;
+        opacity: .2;
+    }
+    50% {
+        bottom: 5px;
+        margin-left: -10px;
+        width: 50px;
+        height: 10px;
+        animation-timing-function: ease-out;
+        left: 35%;
+        opacity: 1;
+    }
+    100% {
+        bottom: 0;
+        margin-left: -30px;
+        width: 80px;
+        height: 20px;
+        animation-timing-function: ease-in;
+        left: 150%;
+        opacity: .2;
+    }
+}
+
+@keyframes lightop {
+    0% {
+        opacity: .25;
+    }
+    50% {
+        opacity: .1;
+    }
+    100% {
+        opacity: .25;
+    }
+}
+
+@keyframes shadop {
+    0% {
+        opacity: .25;
+    }
+    50% {
+        opacity: .55;
+    }
+    100% {
+        opacity: .25;
+    }
+}
+
+@keyframes back {
+    0% {
+        background-position: top;
+    }
+    100% {
+        background-position: bottom;
+    }
+}
+
+/*LOGO ANIMATION END from (clemishow on https://codepen.io/clemishow/pen/ZYPPeE) and (Vladimir Gashenko onhttps://codepen.io/gxash/pen/QNzKoj)*/
+
+.display {
+    display: none;
+}
+
+/*TWITTER CSS BEGINS HERE*/
+
+.twitterContainer{
+    width: 100%;
+    color: white;
+    font-size: 1rem;
+    display: inline-block;
+    bottom: 0;
+    /* position: fixed; */
+    margin: 0;
+}
+
+.twitterSection{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.tweetLogo{
+    height: 97%;
+    width: 15%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.tweetLogo img{
+    border-radius: 50%;
+}
+
+.tweetMain{
+    height: 98%;
+    width: 82%;
+    display: inline-block;
+    vertical-align: top;
+    overflow: scroll;
+}
+
+.tweetMainHeader{
+    height: 10%;
+    width: 99%;
+    font-size: 1rem;
+}
+
+.twitterHandle{
+    height: 80%;
+    width: 8%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.twitterVerified{
+    height: 80%;
+    width: 5%;
+    display: inline-block;
+}
+
+.twitterVerified img{
+    width: 80%;
+}
+
+.tweetsFeed{
+    height: 80%;
+    width: 99%;
+    overflow: auto;
+    /*overflow-x: hidden;*/
+}
+
+/* ::-webkit-scrollbar {
+    background: transparent;
+} */
+
+
+.tweetsFeed a{
+    color: lightskyblue;
+    margin: 0 5px;
+}
+
+.tweetText{
+    height: 25%;
+    width: 99%;
+    border: solid lightskyblue 2px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/*TWITTER CSS ENDS HERE*/
+
+
+.reset {
+    position: relative;
+    left: 5%;
+    width: 20%;
+    height: 22px;
+    border-radius: 7px;
+    background-color: chocolate;
+    cursor: pointer;
+}
+
+.reset:hover {
+    background-color: saddlebrown;
+}
+
+#submit:hover {
+    background-color: saddlebrown;
+}
+
+/* HEADER NAV SECTION */
+.navbar {
+    margin-bottom: 0;
+    background: black;
+    border-color: black;
+    display: none;
+}
+
+.navbar-fixed-top {
+    z-index: 100;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: white;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: black;
+}
+
+.nav-container {
+    height: 100%;
+}
+
+.navbar-brand {
+    height: 100%;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#home1:hover, #home1:focus {
+    color: white;
+    background-color: transparent;
+}
+
+.navbar-nav {
+    margin-right: 2%;
+    letter-spacing: 4px;
+}
+
+/* .navbar-nav a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    margin: auto;
+    background: currentColor;
+    transition: all .3s ease;
+} */
+
+/* .navbar-nav a:hover::after {
+    width: 100%;
+} */
+
+#nav-title {
+    font-family: 'futura';
+    color: white;
+    letter-spacing: 20px;
+    font-size: 30px;
+    position: absolute;
+}
+
+.navbar-header {
+    margin-left: 2%;
+    height: 100%;
+    font-family: 'futura';
+    color: white;
+    letter-spacing: 5px;
+    font-size: 30px;
+}
+
+.header-img {
+    height: 50px;
+}
+
+
+/* Button Animation */
+.twitterBtn,
+.twitterBtn::after {
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.twitterBtn {
+  background: none;
+  background-color: black;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 0 auto;
+  /* margin: 1em auto; */
+  /* padding: 2em 4em; */
+  position: relative;
+  text-transform: uppercase;
+  position: fixed;
+  bottom: 15px;
+
+}
+
+.twitterBtn::before,
+.twitterBtn::after {
+  background: #fff;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.twitterBtn:hover {
+  color: black;
+}
+
+.twitterBtn::after {
+    height: 0;
+    left: 50%;
+    top: 50%;
+    width: 0;
+  }
+  
+  .twitterBtn:hover:after {
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+@media (max-width: 550px ) and (orientation: portrait) {
+
+.main-title {
+    align-items: flex-start;
+}
+
+.title-grouping {
+    justify-content: space-around;
+}
+
+#glass {
+    width: 44px;
+    height: 54px;
+}
+
+ #beer {
+    width: 36px;
+    height: 55px;
+    left: 0px;
+ }
+
+ #poignet {
+    width: 14px;
+    height: 28px;
+    top: -47px;
+    left: 29px;
+    border-radius: 0 10px 10px 0;
+}
+
+#mousse_1 {
+    top: -93px;
+    left: -23px;
+}
+
+#mousse_1::before {
+    width: 13px;
+    height: 13px;
+}
+
+#mousse_1::after {
+    width: 13px;
+    height: 13px;
+}
+
+#mousse_2 {
+    top: -90px;
+    left: -19px;
+}
+
+#mousse_2::after {
+    width: 13px;
+    height: 13px;
+}
+
+#mousse_3 {
+    top: -96px;
+    left: -18px;
+}
+
+#mousse_3::before {
+    width: 13px;
+    height: 13px;
+}
+
+#mousse_3::after {
+    width: 13px;
+    height: 13px;
+}
+
+#mousse_4 {
+    top: -95px;
+    left: 5px;
+}
+
+#mousse_4::before {
+    width: 14px;
+    height: 14px;
+}
+
+#mousse_4::after {
+    width: 10px;
+    height: 10px;
+}
+#mousse_5 {
+    top: -98px;
+    left: -1px;
+}
+
+#mousse_5::before {
+    width: 14px;
+    height: 14px;
+}
+
+#mousse_volante {
+    top: -71px;
+    left: -13px;
+}
+
+#mousse_volante::after {
+    width: 8px;
+    height: 8px;
+    top: 15px;
+    left: 19px;
+}
+
+#mousse_interieur {
+    top: -65px;
+    left: -8px;
+}
+
+#mousse_interieur::before {
+    width: 6px;
+    height: 6px;
+}
+
+#mousse_interieur::after {
+    width: 4px;
+    height: 4px;
+    top: 15px;
+    left: 13px;
+}
+
+#mousse_interieur_2 {
+    top: -73px;
+    left: -4px;
+}
+
+#mousse_interieur_3 {
+    top: -53px;
+    left: -9px;
+}
+
+#mousse_interieur_4 {
+    top: -89px;
+    left: 0px;
+}
+
+.ball-icon {
+    display:none;
+}
+}
+
+
+/*Iphone 4 & Iphone 5SE */
+@media  (min-width: 320px) { 
+    body, .pageTwo, .pageThree {
+        background-size: 600px 640px;
+    }
+
+    .navbar-brand {
+        font-size: 14px;
+    }
+    
+    #beer_text {
+        font-size: 16px;
+    }
+
+    .landingButtons {
+        font-size: 16px;
+        width: 40%;
+        margin: 0 1%;
+    }
+
+    .searchSection {
+        font-size: 20px;
+    }
+
+    .intro {
+        font-size: 13px;
+    }
+
+    .pageTwo {
+        height: calc(90vh - 60px);
+        /* background-image: url("images/court1.jpg"); */
+        /* background-color: black; */
+        display: inline-block;
+        display: none;
+        margin: 20% 5% 0 5%;
+        /* box-shadow:0 0px 0px white, 0 0 30px white; */
+    }
+    .gameSection {
+        font-family: "Montserrat", "Arial";
+        color: white;
+        /* background-color: #444; */
+        /* background-color: black; */
+        height: 75%;
+        width: 100%;
+        font-size: 10px;
+    }
+
+    .team-detail {
+        padding:0px
+    }
+
+    /* .twitterContainer{
+        width: 100%;
+        height: 40vh; 
+        background-color: black;
+        color: white;
+        padding: 1%;
+        font-size: 1rem;
+        border: 1px solid white;
+        display: inline-block;
+    }  */
+    
+
+    /* .twitterBtn {
+        background: none;
+        background-color: black;
+        border: 3px solid #fff;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1.6em;
+        font-weight: bold;
+        margin: none;
+        padding: 2em 4em;
+        position: fixed; */
+
+      /* } */
+
+      
+      .addressSection {
+        font-size: 16px;
+    }
+
+      #address {
+          font-size: 14px;
+      }
+
+      #search-btn {
+          font-size: 14px;
+      }
+
+}
+
+
+/* Galaxy S5 */
+@media  (min-width: 360px) { 
+
+    body, .pageTwo, .pageThree{
+        background-size: 725px 650px;
+    }
+
+    #beer_text {
+        font-size: 24px;
+    }
+
+    .landingButtons {
+        font-size: 16px;
+        width: 35%;
+        margin: 0 1%;
+    }
+
+    .searchSection {
+        font-size: 24px;
+    }
+
+    .intro {
+        font-size: 15px;
+    }
+
+    .pageTwo {
+        height: calc(90vh - 60px);
+        /* background-image: url("images/court1.jpg"); */
+        /* background-color: black; */
+        display: inline-block;
+        display: none;
+        margin: 20% 5% 0 5%;
+        /* box-shadow:0 0px 0px white, 0 0 30px white; */
+    }
+
+    .gameSection {
+        font-family: "Montserrat", "Arial";
+        color: white;
+        /* background-color: #444; */
+        /* background-color: black; */
+        height: 90%;
+        width: 100%;
+        font-size: 10px;
+    }
+
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:50%;
+        padding: 5px;
+    }
+
+    
+    .addressSection {
+        font-size: 20px;
+    }
+
+    #address {
+        font-size: 16px;
+    }
+
+    #search-btn {
+        font-size: 18px;
+    }
+
+    .info {
+        font-size: 15px;
+    }
+    
+    .rating {
+        font-size: 18px;
+    }
+    
+    .votes{
+        font-size: 14px;
+    }
+
+}
+
+/* Iphone 6/7/8 */
+@media  (min-width: 375px) { 
+
+    body, .pageTwo, .pageThree{
+        background-size: 850px 800px;
+    }
+
+    .navbar-brand {
+        font-size: 14px;
+    }
+
+    #beer_text {
+        letter-spacing: 7px; 
+        font-size: 22px;
+    }
+
+    .landingButtons {
+        font-size: 18px;
+        width: 35%;
+        margin: 0 1%;
+    }
+
+    .searchSection {
+        font-size: 24px;
+    }
+
+    .pageTwo {
+        height: calc(90vh - 60px);
+        display: inline-block;
+        display: none;
+        margin: 20% 5% 0 5%;
+    }
+    .gameSection {
+        font-family: "Montserrat", "Arial";
+        color: white;
+        height: 90%;
+        font-size: 10px;
+    }
+    .team-detail {
+        padding:0px
+    }
+    .team-detail .team-nameandscore {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .homeTeamScore {
+        padding-left: 19px;
+    }
+    .awayTeamScore {
+        padding-left: 19px;
+    }
+
+    .pageThree {
+        height: calc(100vh - 55px);
+    }
+
+    .addressSection input {
+        width: 65%;
+    }
+
+    .info {
+        font-size: 15px;
+    }
+    
+    .rating {
+        font-size: 18px;
+    }
+    
+    .votes{
+        font-size: 13px;
+    }
+
+}
+
+/* Pixel 2 & Pixel 2 XL */
+@media  (min-width: 411px) { 
+
+    body, .pageTwo, .pageThree{
+        background-size: 925px 825px;
+    }
+
+    .navbar-brand {
+        font-size: 17px;
+    }
+
+    #beer_text {
+        letter-spacing: 7px; 
+        font-size: 26px;
+    }
+
+    .landingButtons {
+        font-size: 18px;
+        width: 30%;
+        margin: 0 1%;
+    }
+
+    .searchSection {
+        font-size: 24px;
+    }
+
+    .intro {
+        font-size: 17px;
+    }
+
+    .pageTwo {
+        height: calc(90vh - 60px);
+        display: inline-block;
+        display: none;
+        margin: 15% 5% 0 5%;
+    }
+    
+    .gameSection {
+        font-family: "Montserrat", "Arial";
+        color: white;
+        height: 90%;
+        width: 100%;;
+        font-size: 10px;
+    }
+
+    .team-detail {
+        padding:0px
+    }
+
+    .team-detail .team-nameandscore {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .homeTeamScore {
+        padding-left: 19px;
+    }
+
+    .awayTeamScore {
+        padding-left: 19px;
+    }
+
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:50%;
+        padding: 5px;
+    }
+    
+    .pageThree {
+        height: calc(100vh - 60px);
+    }
+
+    .emptyRestaurantContainer {
+        font-size: 22px;
+    }
+
+    .addressSection {
+        font-size: 22px;
+    }
+
+    .addressSection input {
+        width: 70%;
+    }
+
+    #address {
+        font-size: 18px;
+    }
+
+    #search-btn {
+        font-size: 20px;
+    }
+
+    .info {
+        font-size: 15px;
+    }
+    
+    .rating {
+        font-size: 20px;
+    }
+    
+    .votes{
+        font-size: 15px;
+    }
+
+}
+
+/* Pixel 2XL
+@media  (min-width: 411px) {
+
+    .navbar-brand {
+        font-size: 17px;
+    }
+
+    #beer_text {
+        letter-spacing: 7px; 
+        font-size: 20px;
+    }
+
+    .landingButtons {
+        font-size: 18px;
+        width: 35%;
+    }
+
+    .searchSection {
+        font-size: 24px;
+    }
+
+    .pageTwo {
+        height: calc(90vh - 60px);
+        display: inline-block;
+        display: none;
+        margin: 20% 5% 0 5%;
+    }
+    
+    .gameSection {
+        font-family: "Montserrat", "Arial";
+        color: white;
+        height: 75%;
+        width: 100%;
+        overflow: hidden;
+        font-size: 10px;
+    }
+
+    .team-detail {
+        padding:0px
+    }
+
+    .team-detail .team-nameandscore {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .homeTeamScore {
+        padding-left: 19px;
+    }
+
+    .awayTeamScore {
+        padding-left: 19px;
+    }
+
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:50%;
+        height: 30%;
+        padding: 5px;
+    }
+
+} */
+
+/* IPAD */
+@media  (min-width: 768px) { 
+
+    body, .pageTwo, .pageThree{
+        background-size: 1200px 1024px;
+    }
+
+    .navbar-brand {
+        font-size: 22px;
+    }
+
+    .title-grouping {
+        justify-content: space-around;
+    }
+
+    #beer_text {
+        letter-spacing: 12px; 
+        font-size: 36px;
+    }
+
+    .landingButtons {
+        font-size: 26px;
+        width: 30%;
+    }
+
+    .searchSection {
+        font-size: 30px;
+    }
+
+    .intro {
+        font-size: 28px;
+    }
+
+    .pageTwo {
+        height: calc(90vh - 60px);
+        display: inline-block;
+        display: none;
+        margin: 12% 5% 0 5%;
+    }
+
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:33.33%;
+        padding: 15px;
+    }
+
+    .pageThree {
+        height: calc(100vh - 70px);
+    }
+
+    .emptyRestaurantContainer {
+        font-size: 35px;
+    }
+
+    .emptyRestaurantContainer p{
+        margin: auto;    
+        width: 80%;
+    }
+    
+
+    .eats-container {
+        margin: 9% 5% 0 5%;
+    }
+
+    .addressSection {
+        height: 10%;
+        font-size: 30px;
+        top: 3%;
+    }
+
+    .addressSection input {
+        width: 55%;
+    }
+
+    #address {
+        font-size: 24px;
+    }
+
+    #search-btn {
+        font-size: 26px;
+    }
+
+    .info {
+        font-size: 30px;
+    }
+
+    .rating {
+        font-size: 34px;
+    }
+
+    .votes {
+        font-size: 25px;
+    }
+
+}
+
+/* IPAD PRO*/
+@media  (min-width: 1024px) { 
+
+    body, .pageTwo, .pageThree{
+        background-size: 1500px 1366px;
+    }
+
+    .navbar-brand {
+        font-size: 30px;
+    }
+
+    .title-grouping {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #beer_text {
+        letter-spacing: 17px; 
+        font-size: 45px;
+    }
+
+    .landingButtons {
+        font-size: 32px;
+        width: 30%;
+        margin: 0 1%;
+    }
+
+    .searchSection {
+        font-size: 48px;
+    }
+
+    .intro {
+        font-size: 35px;
+    }
+
+    .pageTwo {
+        height: calc(90vh - 60px);
+        display: inline-block;
+        display: none;
+        margin: 10% 5% 0 5%;
+    }
+    
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width: 33%;
+        padding: 30px;
+    }
+
+    .pageThree {
+        height: calc(100vh - 81px);
+    }
+
+    .eats-container {
+        margin: 8% 5% 0 5%;
+    }
+
+    .addressSection {
+        font-size: 40px;
+    }
+
+    .addressSection input {
+        width: 60%;
+    }
+
+    #address {
+        font-size: 32px;
+    }
+
+    #search-btn {
+        font-size: 36px;
+    }
+
+}
+
+@media  (min-width: 1200px) { 
+    body, .pageTwo, .pageThree{
+        background-size: 1500px 1366px;
+    }
+
+    .navbar-brand {
+        font-size: 40px;
+    }
+
+    #home2, #eats1, #nba1 {
+        font-size: 24px;
+    }
+
+    .title-grouping {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #beer_text {
+        letter-spacing: 17px; 
+        font-size: 45px;
+    }
+
+    .landingButtons {
+        font-size: 32px;
+        width: 30%;
+        margin: 0 1%;
+    }
+
+    .searchSection {
+        font-size: 48px;
+    }
+
+    .intro {
+        font-size: 35px;
+    }
+
+    .pageTwo {
+        height: calc(90vh - 60px);
+        display: inline-block;
+        display: none;
+        margin: 10% 5% 0 5%;
+    }
+    
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width: 33%;
+        padding: 30px;
+    }
+
+    .pageThree {
+        height: calc(100vh - 81px);
+    }
+
+    .eats-container {
+        margin: 5% 5% 0 5%;
+    }
+    
+    .emptyRestaurantContainer {
+        margin: 0 auto;    
+    }
+    
+    .addressSection {
+        margin-top: 8%;
+        font-size: 48px;
+    }
+
+    .eats-content {
+        margin-top: 15%;
+        display: flex;
+        flex-direction: row-reverse
+    }
+
+    .restaurants {
+        height: 60%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .map {
+        height: 60%;
+    }
+
+
+    .addressSection input {
+        width: 60%;
+    }
+
+    #address {
+        font-size: 38px;
+    }
+
+    #search-btn {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 575px) and (orientation: landscape) {
+
+    .main-content {
+        justify-content: space-around;
+    }
+
+    .main-title {
+        margin-top: 3%;
+        align-items: flex-start
+    }
+
+    .title-grouping {
+        justify-content: space-around;
+    }
+
+    .ball-icon {
+        display:none;
+    }
+
+    #glass {
+        width: 44px;
+        height: 54px;
+    }
+    
+     #beer {
+        width: 36px;
+        height: 55px;
+        left: 0px;
+     }
+    
+     #poignet {
+        width: 14px;
+        height: 28px;
+        top: -47px;
+        left: 29px;
+        border-radius: 0 10px 10px 0;
+    }
+    
+    #mousse_1 {
+        top: -93px;
+        left: -23px;
+    }
+    
+    #mousse_1::before {
+        width: 13px;
+        height: 13px;
+    }
+    
+    #mousse_1::after {
+        width: 13px;
+        height: 13px;
+    }
+    
+    #mousse_2 {
+        top: -90px;
+        left: -19px;
+    }
+    
+    #mousse_2::after {
+        width: 13px;
+        height: 13px;
+    }
+    
+    #mousse_3 {
+        top: -96px;
+        left: -18px;
+    }
+    
+    #mousse_3::before {
+        width: 13px;
+        height: 13px;
+    }
+    
+    #mousse_3::after {
+        width: 13px;
+        height: 13px;
+    }
+    
+    #mousse_4 {
+        top: -95px;
+        left: 5px;
+    }
+    
+    #mousse_4::before {
+        width: 14px;
+        height: 14px;
+    }
+    
+    #mousse_4::after {
+        width: 10px;
+        height: 10px;
+    }
+    #mousse_5 {
+        top: -98px;
+        left: -1px;
+    }
+    
+    #mousse_5::before {
+        width: 14px;
+        height: 14px;
+    }
+    
+    #mousse_volante {
+        top: -71px;
+        left: -13px;
+    }
+    
+    #mousse_volante::after {
+        width: 8px;
+        height: 8px;
+        top: 15px;
+        left: 19px;
+    }
+    
+    #mousse_interieur {
+        top: -65px;
+        left: -8px;
+    }
+    
+    #mousse_interieur::before {
+        width: 6px;
+        height: 6px;
+    }
+    
+    #mousse_interieur::after {
+        width: 4px;
+        height: 4px;
+        top: 15px;
+        left: 13px;
+    }
+    
+    #mousse_interieur_2 {
+        top: -73px;
+        left: -4px;
+    }
+    
+    #mousse_interieur_3 {
+        top: -53px;
+        left: -9px;
+    }
+    
+    #mousse_interieur_4 {
+        top: -89px;
+        left: 0px;
+    }
+    
+    .ball-icon {
+        display:none;
+    }
+
+    .pageTwo {
+        height: calc(90vh - 60px);
+        display: inline-block;
+        display: none;
+        margin: 13% 5% 0 5%;
+    }
+
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:50%;
+        padding: 5px;
+    }
+
+    .addressSection {
+        height: 30%;
+        font-size: 20px;
+    }
+
+    .addressSection input {
+        width: 60%;
+    }
+
+    #address {
+        font-size: 16px;
+    }
+
+    #search-btn {
+        font-size: 18px;
+    }
+
+    .eats-container {
+        margin: 12% 5% 0 5%;
+    }
+
+    .eats-content {
+        height: 70%;
+        margin-top: 10%;
+    }
+
+    .map {
+        height: 200px;
+    }
+
+    .restaurants {
+        height: 225px;
+    }
+
+    .mainRestaurantContainer {
+        height: 25%;
+    }
+
+}
+
+
+@media (min-width: 575.98px) and (orientation: landscape) {
+
+    body, .pageTwo, .pageThree{
+        background-size: 925px 975px;
+    }
+
+    .title-grouping {
+        justify-content: space-around;
+    }
+
+    .intro {
+        font-size: 18px;
+    }
+
+    #beer_text {
+        letter-spacing: 10px; 
+        font-size: 30px;
+    }
+    
+    .landingButtons {
+        font-size: 20px;
+        width: 25%;
+        margin: 0 2%;
+    }
+
+    .searchSection {
+        font-size: 18px;
+    }
+
+    .pageTwo {
+        height: calc(90vh - 60px);
+        display: inline-block;
+        display: none;
+        margin: 10% 5% 0 5%;
+    }
+
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:50%;
+        padding: 5px;
+    }
+
+    .pageThree {
+        height: calc(100vh - 60px)
+    }
+
+    .addressSection {
+        height: 30%;
+        font-size: 22px;
+        margin-top: 8%;
+    }
+
+    .addressSection input {
+        width: 50%;
+    }
+
+    #address {
+        font-size: 16px;
+    }
+
+    #search-btn {
+        font-size: 18px;
+    }
+
+    .eats-container {
+        margin: 7% 5% 0 5%
+    }
+
+    .eats-content {
+        height: 70%;
+        margin-top: 10%;
+    }
+
+    .map {
+        height: 275px;
+    }
+
+    .restaurants {
+        height: 250px;
+    }
+
+    .mainRestaurantContainer {
+        height: 40%;
+    }
+
+    .info {
+        font-size: 18px;
+    }
+
+    .rating {
+        font-size: 20px;
+    }
+
+    .votes {
+        font-size: 18px;
+    }
+
+}
+
+@media (min-width: 820px) and (max-width: 1024px) and (orientation: landscape) {
+
+    body, .pageTwo, .pageThree{
+        background-size: 1024px 975px;
+    }
+
+    .title-grouping {
+        justify-content: space-around;
+    }
+
+    .intro {
+        font-size: 20px;
+    }
+
+   .navbar-brand {
+        font-size: 20px;
+    }
+    
+    #beer_text {
+        letter-spacing: 17px; 
+        font-size: 36px;
+    }
+
+    .landingButtons {
+        font-size: 22px;
+        width: 25%;
+    }
+
+    .searchSection {
+        font-size: 30px;
+    }
+
+    .pageTwo {
+        height: calc(90vh - 60px);
+        display: inline-block;
+        display: none;
+        margin: 8% 5% 0 5%;
+    }
+
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:33%;
+        padding: 30px;
+    }
+
+    .emptyRestaurantContainer {
+        font-size: 22px;
+    }
+
+    .addressSection {
+        height: 30%;
+        font-size: 24px;
+    }
+
+    .addressSection input {
+        width: 50%;
+    }
+
+    #address {
+        font-size: 18px;
+    }
+
+    #search-btn {
+        font-size: 20px;
+    }
+
+    .eats-container {
+        margin: 6% 8% 0 8%;
+    }
+
+    .eats-content {
+        height: 70%;
+        margin-top: 10%;
+    }
+
+    .map {
+        height: 275px;
+    }
+
+    .restaurants {
+        height: 400px;
+    }
+
+    .mainRestaurantContainer {
+        height: 25%;
+    }
+}
+
+@media (min-width: 1024.98px) and (max-width: 1199.98px) and (orientation: landscape) {
+    
+    body, .pageTwo, .pageThree{
+        background-size: 1366px 1125px;
+    }
+
+    .title-grouping {
+        justify-content: center;
+    }
+
+    .intro {
+        font-size: 24px;
+    }
+
+   .navbar-brand {
+        font-size: 22px;
+    }
+    
+    #beer_text {
+        letter-spacing: 17px; 
+        font-size: 44px;
+    }
+
+    .landingButtons {
+        font-size: 24px;
+        width: 25%;
+    }
+
+    .searchSection {
+        font-size: 30px;
+    }
+
+    .pageTwo {
+        height: calc(90vh - 60px);
+        display: inline-block;
+        display: none;
+        margin: 8% 5% 0 5%;
+    }
+
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:33%;
+        padding: 30px;
+    }
+
+    .team-detail {
+        font-size: 22px;
+    }
+
+    .timer-container {
+        font-size: 16px;
+    }
+
+    .twitterBtn {
+        font-size: 22px;
+    }
+
+    .emptyRestaurantContainer {
+        font-size: 30px;
+    }
+
+    .addressSection {
+        height: 30%;
+        font-size: 30px;
+    }
+
+    .addressSection input {
+        width: 50%;
+    }
+
+    #address {
+        font-size: 24px;
+    }
+
+    #search-btn {
+        font-size: 26px;
+    }
+
+    .eats-container {
+        margin: 5% 10% 0 10%;
+    }
+
+    .eats-content {
+        height: 70%;
+        margin-top: 8%;
+    }
+
+    .map {
+        height: 400px;
+    }
+
+    .restaurants {
+        height: 450px;
+    }
+
+    .mainRestaurantContainer {
+        height: 25%;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1366.98px) and (orientation: landscape) {
+
+    body, .pageTwo, .pageThree{
+        background-size: 1875px 1300px;
+    }
+
+    .title-grouping {
+        justify-content: center;
+    }
+
+    .intro {
+        font-size: 28px;
+    }
+
+    .navbar-brand {
+        font-size: 22px;
+    }
+
+    #beer_text {
+        letter-spacing: 20px; 
+        font-size: 60px;
+    }
+
+    .landingButtons {
+        font-size: 30px;
+        width: 16%;
+    }
+
+    .searchSection {
+        font-size: 40px;
+    }
+
+    .pageTwo {
+        height: calc(90vh - 60px);
+        /* background-image: url("images/court1.jpg"); */
+        /* background-color: black; */
+        display: inline-block;
+        display: none;
+        margin: 8% 5% 0 5%;
+        /* box-shadow:0 0px 0px white, 0 0 30px white; */
+    }
+
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:33%;
+        padding: 30px;
+    }
+
+    .team-detail {
+        font-size: 26px;
+    }
+
+    .timer-container {
+        font-size: 18px;
+    }
+
+    .twitterBtn {
+        font-size: 26px;
+    }
+
+    .pageThree {
+        height: calc(100vh - 80px)
+    }
+   
+    .emptyRestaurantContainer {
+        font-size: 35px;
+    }
+
+
+    .eats-container {
+        margin: 6% 5% 0 5%;
+    }
+
+    .addressSection {
+        height: 20%;
+        font-size: 30px;
+        margin-top: 4%;
+    }
+
+    .addressSection input {
+        width: 50%;
+    }
+
+    #address {
+        font-size: 24px;
+    }
+
+    #search-btn {
+        font-size: 26px;
+    }
+
+    .eats-content {
+        height: 70%;
+        margin-top: 0;
+        display: flex;
+        flex-direction: row-reverse
+    }
+
+    .map {
+        height: 400px;
+    }
+
+    .restaurants {
+        margin-top: 0;
+        height: 400px;
+    }
+
+    .mainRestaurantContainer {
+        height: 25%;
+    }
+}
+
+@media (min-width: 1367px) and (orientation: landscape) {
+
+    body, .pageTwo, .pageThree{
+        background-size: 1875px 1300px;
+    }
+
+    .title-grouping {
+        justify-content: center;
+    }
+
+    .intro {
+        font-size: 28px;
+    }
+
+    .navbar-brand {
+        font-size: 30px;
+    }
+
+    #beer_text {
+        letter-spacing: 20px; 
+        font-size: 60px;
+    }
+
+    .landingButtons {
+        font-size: 30px;
+        width: 16%;
+    }
+    .pageTwo {
+        height: calc(90vh - 60px);
+        display: inline-block;
+        display: none;
+        margin: 6% 5% 0 5%;
+    }
+
+    .scoreboard {
+        display: inline-flex;
+        flex-direction:column;
+        width:25%;
+        padding: 30px;
+    }
+
+    .team-detail {
+        font-size: 28px;
+    }
+
+    .timer-container {
+        font-size: 20px;
+    }
+
+
+    .twitterBtn {
+        font-size: 30px;
+    }
+
+    .pageThree {
+        height: calc(100vh - 70px)
+    }
+
+    .addressSection {
+        height: 15%;
+        font-size: 30px;
+        margin-top: 2%;
+    }
+
+    .addressSection input {
+        width: 40%;
+    }
+
+    #address {
+        font-size: 24px;
+    }
+
+    #search-btn {
+        font-size: 26px;
+    }
+
+    .eats-container {
+        margin: 3% 10% 0 10%;
+    }
+
+    .eats-content {
+        height: 70%;
+        margin-top: 2%;
+        display: flex;
+        flex-direction: row-reverse
+    }
+
+    .map {
+        height: 450px;
+    }
+
+    .restaurants {
+        margin-top: 0;
+        height: 450px;
+    }
+
+    .mainRestaurantContainer {
+        height: 25%;
+    }
+}

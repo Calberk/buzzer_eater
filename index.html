@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <link rel="icon" href="./images/bball.png">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    <script type="text/javascript" src="main.js"></script>
+
+    <!--Google Geocoding API-->
+    <title>Buzzer Eater</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top ">
+        <div class="nav-container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#be-links" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <p class="navbar-brand navbar-center" id="home1">Buzzer Eater</p>
+                <img class="header-img" src="./images/basketball.png" />
+            </div>
+            <div class="collapse navbar-collapse" id="be-links">
+                <ul class="navbar-nav nav navbar-right">
+                    <li class="nav-item">
+                        <a class="nav-link" id="home2" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nba1" href="#">Scores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="eats1" href="#">Eats</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="pageOne" id="pageOne">
+
+        <div class="mainContent container-fluid">
+            <div class="title-grouping row">
+                <div class="beer-icon row">
+                    <div id="glass">
+                        <div id="beer"></div>
+                    </div>
+                    <div id="poignet"></div>
+                    <div id="mousse_1"></div>
+                    <div id="mousse_2"></div>
+                    <div id="mousse_3"></div>
+                    <div id="mousse_4"></div>
+                    <div id="mousse_5"></div>
+                    <div id="mousse_volante"></div>
+                    <div id="mousse_interieur"></div>
+                    <div id="mousse_interieur_2"></div>
+                    <div id="mousse_interieur_3"></div>
+                    <div id="mousse_interieur_4"></div>
+                </div>
+                <div class="main-title row">
+                    <p id="beer_text">Buzzer Eater</p>
+                </div>
+                <div class="ball-icon row">
+                    <div id="allWrapper">
+                        <!--<div id="basket"><img src="http://svgur.com/i/4N.svg" alt="" /></div>-->
+                        <div id="ballWrapper">
+                            <div id="ball"><span id="ballshad"></span></div>
+                            <div id="ballShadow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="intro row">
+                <header>Welcome to Buzzer Eater.<br> We love basketball, good food and having a fun time.<br> Get today's NBA
+                    scores and find a place to eat. </header>
+                <!-- <input id="address" type="text" name="search" placeholder="city, state"> -->
+            </div>
+
+            <div class="searchSection row">
+
+                <button id="nba" class="btn btn-warning btn-lg landingButtons" type="button" name="searchBtn">NBA
+                    Scores</button>
+                <button id="eats" class="btn btn-warning btn-lg landingButtons" type="button" name="searchBtn">Eats</button>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="pageTwo" id="pageTwo">
+
+        <div class="gameSection" id="gameSection">
+
+        </div>  
+        <div class=" twitterContainer">
+                    <!-- <div class="tweetLogo">
+
+                </div> -->
+
+
+
+
+                    <!-- Button trigger modal -->
+            <div class="twitterSection">
+                <button type="button" class="twitterBtn " data-toggle="modal" data-target="#exampleModalCenter">
+                    NBA TWITTER FEED 
+                    <img src="images/twitter.png"/>
+                </button>
+                        
+    
+                        <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">NBA Twitter</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets
+                                    by NBA</a>
+                                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+
+    </div>
+    <div class="pageThree" id="pageThree">
+        <div id="loaderBackground">
+            <div id="loader" class="ball-icon">
+                <div id="allWrapper">
+                    <!--<div id="basket"><img src="http://svgur.com/i/4N.svg" alt="" /></div>-->
+                    <div id="ballWrapper">
+                        <div id="ball"><span id="ballshad"></span></div>
+                        <div id="ballShadow"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div id="loader"></div> -->
+            <p>Loading...</p>
+        </div>
+        
+        
+        <div class='eats-container container-fluid'>
+            <form class="addressSection row">
+                <header>Pick a place. Watch the game. </header>
+                <input id="address" type="input" onfocus="this.placeholder=''" name="search" placeholder="City, State">
+                <button id="search-btn" class="btn btn-md" type="submit" name="searchBtn">Search</button>
+            </form>
+            <div class="eats-content row">
+                <div class="map col-xs-12 col-lg-6">
+                    <div class="mapSection">
+                        <div id="map"></div>
+                    </div>
+                </div>
+                <div class="restaurants col-xs-12 col-lg-6">
+                    <div class="restaurantSection">
+                    </div>
+                </div>
+                <div class="emptyRestaurantContainer">
+                    <p>No locations found for your search, please search again.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <div class="tweetMain"> -->
+    <!-- <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+    <!-- <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+    <!-- <div class="tweetMainHeader">
+                <div class="twitterHandle">
+
+                </div>
+                <div class="twitterVerified">
+
+                </div>
+            </div>
+            <div class="tweetsFeed">
+
+            </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- <button type="button" class="reset">Search Again</button> -->
+    <!-- <div class="gameSection" id="gameSection">
+
+    </div> -->
+    <!-- </div> -->
+    <!-- <div class="rightHalf">
+    <div class="mapSection">
+        <div id="map"></div>
+    </div>
+    <div class="restaurantSection">
+
+    </div>
+</div> -->
+    <!-- </div> -->
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMI5B4uukiR41lKj4atfShc1dC6MOxhus&libraries=places"></script>
+
+</body>
+
+</html>
