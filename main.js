@@ -117,6 +117,7 @@ function landing() {
     document.getElementById('search-btn').addEventListener('click', function (e) {
         e.preventDefault();
         document.getElementById("loaderBackground").style.display = "block";
+        $('#search-btn').attr('disabled', 'disabled');
         search_result();
         $("#address").val('');
         loader();
