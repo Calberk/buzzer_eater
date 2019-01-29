@@ -159,7 +159,8 @@ body {
 .restaurants {
     height: 48%;
     display: inline-block;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     position: relative;
     margin-top: 5%;
     padding: 0 1%;

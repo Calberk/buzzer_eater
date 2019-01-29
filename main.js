@@ -57,6 +57,7 @@ function initializeApp() {
     getTwitterData();
     getNBAData();
     landing();
+    checkSearch();
 }
 
 /***************************************************************************************************
@@ -764,4 +765,28 @@ function loader() {
 function hideLoader() {
     document.getElementById("loaderBackground").style.display = "none"
 
+}
+
+/***************************************************************************************************
+ * check search - check input on search 
+ * @param:
+ * @returns
+ */
+
+function checkSearch(){
+    $('#address').keyup(function() {
+
+        var empty = false;
+        $('#address').each(function() {
+            if ($(this).val().length == 0) {
+                empty = true;
+            }
+        });
+
+        if (empty) {
+            $('#search-btn').attr('disabled', 'disabled');
+        } else {
+            $('#search-btn').removeAttr('disabled');
+        }
+    });
 }
