@@ -98,23 +98,26 @@ body {
 }
 
 .pageTwo {
-    height: calc(90vh - 60px);
-    display: inline-block;
-    display: none;
-    margin: 5% 5% 0 5%;
-    background-image: url("images/court1.jpg");
+    background-image: url('images/court1.jpg');
     background-position-x: center;
     background-repeat: no-repeat;
+    height: calc(100vh - 140px);
+    margin-top: 60px;
+    background-size: cover;
+    background-position: 50% 100%;
+    display: none;
+
 }
 
 .pageThree {
-    height: calc(100vh - 50px);
-    display: inline-block;
-    display: none;
-    background-image: url("images/court1.jpg");
+    background-image: url('images/court1.jpg');
     background-position-x: center;
     background-repeat: no-repeat;
-
+    height: calc(100vh - 80px);
+    margin-top: 60px;
+    background-size: cover;
+    background-position: 50% 100%;
+    display: none;
 }
 
 .addressSection {
@@ -374,9 +377,10 @@ body {
 .gameSection {
     font-family: "Montserrat", "Arial";
     color: white;
-    height: 90%;
+    height: 100%;
     width:100%;
     overflow: auto;
+    overflow-x:hidden;
     font-size:1rem;
 }
 
@@ -1543,9 +1547,6 @@ a {
 
 /*Iphone 4 & Iphone 5SE */
 @media  (min-width: 320px) { 
-    body, .pageTwo, .pageThree {
-        background-size: 600px 640px;
-    }
 
     .navbar-brand {
         font-size: 14px;
@@ -1570,15 +1571,11 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
         margin: 20% 5% 0 5%;
     }
     .gameSection {
         font-family: "Montserrat", "Arial";
         color: white;
-        height: 75%;
         width: 100%;
         font-size: 10px;
     }
@@ -1606,10 +1603,6 @@ a {
 /* Galaxy S5 */
 @media  (min-width: 360px) { 
 
-    body, .pageTwo, .pageThree{
-        background-size: 725px 650px;
-    }
-
     #beer_text {
         font-size: 24px;
     }
@@ -1629,16 +1622,12 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
         margin: 20% 5% 0 5%;
     }
 
     .gameSection {
         font-family: "Montserrat", "Arial";
         color: white;
-        height: 90%;
         width: 100%;
         font-size: 10px;
     }
@@ -1680,10 +1669,6 @@ a {
 /* Iphone 6/7/8 */
 @media  (min-width: 375px) { 
 
-    body, .pageTwo, .pageThree{
-        background-size: 850px 800px;
-    }
-
     .navbar-brand {
         font-size: 14px;
     }
@@ -1704,15 +1689,11 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
         margin: 20% 5% 0 5%;
     }
     .gameSection {
         font-family: "Montserrat", "Arial";
         color: white;
-        height: 90%;
         font-size: 10px;
     }
     .team-detail {
@@ -1728,10 +1709,6 @@ a {
     }
     .awayTeamScore {
         padding-left: 19px;
-    }
-
-    .pageThree {
-        height: calc(100vh - 55px);
     }
 
     .addressSection input {
@@ -1755,10 +1732,6 @@ a {
 /* Pixel 2 & Pixel 2 XL */
 @media  (min-width: 411px) { 
 
-    body, .pageTwo, .pageThree{
-        background-size: 925px 825px;
-    }
-
     .navbar-brand {
         font-size: 17px;
     }
@@ -1770,7 +1743,7 @@ a {
 
     .landingButtons {
         font-size: 18px;
-        width: 30%;
+        width: 35%;
         margin: 0 1%;
     }
 
@@ -1783,16 +1756,12 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
         margin: 15% 5% 0 5%;
     }
     
     .gameSection {
         font-family: "Montserrat", "Arial";
         color: white;
-        height: 90%;
         width: 100%;;
         font-size: 10px;
     }
@@ -1820,10 +1789,6 @@ a {
         flex-direction:column;
         width:50%;
         padding: 5px;
-    }
-    
-    .pageThree {
-        height: calc(100vh - 60px);
     }
 
     .emptyRestaurantContainer {
@@ -1864,10 +1829,6 @@ a {
 /* IPAD */
 @media  (min-width: 768px) { 
 
-    body, .pageTwo, .pageThree{
-        background-size: 1200px 1024px;
-    }
-
     .navbar-brand {
         font-size: 22px;
     }
@@ -1895,21 +1856,19 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
-        margin: 12% 5% 0 5%;
+        margin: 9% 5% 0 5%;
     }
+
+    .twitterBtn {
+        font-size: 20px;
+    }
+    
 
     .scoreboard {
         display: inline-flex;
         flex-direction:column;
         width:33.33%;
         padding: 15px;
-    }
-
-    .pageThree {
-        height: calc(100vh - 70px);
     }
 
     .emptyRestaurantContainer {
@@ -1961,10 +1920,6 @@ a {
 /* IPAD PRO*/
 @media  (min-width: 1024px) { 
 
-    body, .pageTwo, .pageThree{
-        background-size: 1500px 1366px;
-    }
-
     .navbar-brand {
         font-size: 30px;
     }
@@ -1995,10 +1950,11 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
-        margin: 10% 5% 0 5%;
+        margin: 8% 5% 0 5%;
+    }
+
+    .twitterBtn {
+        font-size: 24px;
     }
     
     .scoreboard {
@@ -2006,10 +1962,6 @@ a {
         flex-direction:column;
         width: 33%;
         padding: 30px;
-    }
-
-    .pageThree {
-        height: calc(100vh - 81px);
     }
 
     .eats-container {
@@ -2035,9 +1987,6 @@ a {
 }
 
 @media  (min-width: 1200px) { 
-    body, .pageTwo, .pageThree{
-        background-size: 1500px 1366px;
-    }
 
     .navbar-brand {
         font-size: 40px;
@@ -2073,10 +2022,11 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
         margin: 10% 5% 0 5%;
+    }
+
+    .twitterBtn {
+        font-size: 26px;
     }
     
     .scoreboard {
@@ -2084,10 +2034,6 @@ a {
         flex-direction:column;
         width: 33%;
         padding: 30px;
-    }
-
-    .pageThree {
-        height: calc(100vh - 81px);
     }
 
     .eats-container {
@@ -2284,9 +2230,6 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
         margin: 13% 5% 0 5%;
     }
 
@@ -2340,10 +2283,6 @@ a {
 
 @media (min-width: 575.98px) and (orientation: landscape) {
 
-    body, .pageTwo, .pageThree{
-        background-size: 925px 975px;
-    }
-
     .title-grouping {
         justify-content: space-around;
     }
@@ -2368,9 +2307,6 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
         margin: 10% 5% 0 5%;
     }
 
@@ -2379,10 +2315,6 @@ a {
         flex-direction:column;
         width:50%;
         padding: 5px;
-    }
-
-    .pageThree {
-        height: calc(100vh - 60px)
     }
 
     .addressSection {
@@ -2440,10 +2372,6 @@ a {
 
 @media (min-width: 820px) and (max-width: 1024px) and (orientation: landscape) {
 
-    body, .pageTwo, .pageThree{
-        background-size: 1024px 975px;
-    }
-
     .title-grouping {
         justify-content: space-around;
     }
@@ -2471,9 +2399,6 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
         margin: 8% 5% 0 5%;
     }
 
@@ -2528,10 +2453,6 @@ a {
 }
 
 @media (min-width: 1024.98px) and (max-width: 1199.98px) and (orientation: landscape) {
-    
-    body, .pageTwo, .pageThree{
-        background-size: 1366px 1125px;
-    }
 
     .title-grouping {
         justify-content: center;
@@ -2560,9 +2481,6 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
         margin: 8% 5% 0 5%;
     }
 
@@ -2630,10 +2548,6 @@ a {
 
 @media (min-width: 1200px) and (max-width: 1366.98px) and (orientation: landscape) {
 
-    body, .pageTwo, .pageThree{
-        background-size: 1875px 1300px;
-    }
-
     .title-grouping {
         justify-content: center;
     }
@@ -2661,9 +2575,6 @@ a {
     }
 
     .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
         margin: 8% 5% 0 5%;
     }
 
@@ -2686,10 +2597,6 @@ a {
         font-size: 26px;
     }
 
-    .pageThree {
-        height: calc(100vh - 80px)
-    }
-   
     .emptyRestaurantContainer {
         font-size: 35px;
     }
@@ -2740,10 +2647,6 @@ a {
 
 @media (min-width: 1367px) and (orientation: landscape) {
 
-    body, .pageTwo, .pageThree{
-        background-size: 1875px 1300px;
-    }
-
     .title-grouping {
         justify-content: center;
     }
@@ -2766,9 +2669,6 @@ a {
         width: 16%;
     }
     .pageTwo {
-        height: calc(90vh - 60px);
-        display: inline-block;
-        display: none;
         margin: 6% 5% 0 5%;
     }
 
@@ -2790,10 +2690,6 @@ a {
 
     .twitterBtn {
         font-size: 30px;
-    }
-
-    .pageThree {
-        height: calc(100vh - 70px)
     }
 
     .addressSection {
