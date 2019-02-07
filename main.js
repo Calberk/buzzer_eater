@@ -299,7 +299,7 @@ function getRestaurantInformation() {
 
         },
         "headers": {
-            "user-key": [Insert_key],
+            "user-key": 'dd384e671b6ae1836ee2ff1a1829fdbc',
 
         },
         success: function (response) {
